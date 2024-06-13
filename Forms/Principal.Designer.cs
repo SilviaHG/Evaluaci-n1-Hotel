@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            this.lbl_IdHabitacion = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,31 +55,52 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.lblMsj = new System.Windows.Forms.Label();
-            this.materialTabControl1.SuspendLayout();
+            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.lblIDhABITACION = new MaterialSkin.Controls.MaterialLabel();
+            this.cbNumeroHabitacion = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbCapacidadHabitacion = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbTipoHabitacion = new MaterialSkin.Controls.MaterialComboBox();
+            this.txtPrecio = new MaterialSkin.Controls.MaterialTextBox();
+            this.cbNumHotel = new MaterialSkin.Controls.MaterialComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAgregarHabitacion = new MaterialSkin.Controls.MaterialButton();
+            this.dtHabitaciones = new System.Windows.Forms.DataGridView();
+            this.lblMsjHabitacion = new System.Windows.Forms.Label();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_IdHabitacion.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtHoteles)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.materialCard2.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHabitaciones)).BeginInit();
             this.SuspendLayout();
             // 
-            // materialTabControl1
+            // lbl_IdHabitacion
             // 
-            this.materialTabControl1.Controls.Add(this.tabPage1);
-            this.materialTabControl1.Controls.Add(this.tabPage2);
-            this.materialTabControl1.Controls.Add(this.tabPage3);
-            this.materialTabControl1.Controls.Add(this.tabPage4);
-            this.materialTabControl1.Controls.Add(this.tabPage5);
-            this.materialTabControl1.Controls.Add(this.tabPage6);
-            this.materialTabControl1.Controls.Add(this.tabPage7);
-            this.materialTabControl1.Depth = 0;
-            this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
-            this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabControl1.Multiline = true;
-            this.materialTabControl1.Name = "materialTabControl1";
-            this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(772, 523);
-            this.materialTabControl1.TabIndex = 1;
+            this.lbl_IdHabitacion.Controls.Add(this.tabPage1);
+            this.lbl_IdHabitacion.Controls.Add(this.tabPage2);
+            this.lbl_IdHabitacion.Controls.Add(this.tabPage3);
+            this.lbl_IdHabitacion.Controls.Add(this.tabPage4);
+            this.lbl_IdHabitacion.Controls.Add(this.tabPage5);
+            this.lbl_IdHabitacion.Controls.Add(this.tabPage6);
+            this.lbl_IdHabitacion.Controls.Add(this.tabPage7);
+            this.lbl_IdHabitacion.Depth = 0;
+            this.lbl_IdHabitacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_IdHabitacion.Location = new System.Drawing.Point(3, 64);
+            this.lbl_IdHabitacion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_IdHabitacion.Multiline = true;
+            this.lbl_IdHabitacion.Name = "lbl_IdHabitacion";
+            this.lbl_IdHabitacion.SelectedIndex = 0;
+            this.lbl_IdHabitacion.Size = new System.Drawing.Size(772, 523);
+            this.lbl_IdHabitacion.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -122,7 +143,7 @@
             this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.btnAgregarHotel);
             this.panel1.Controls.Add(this.btnEliminar);
-            this.panel1.Location = new System.Drawing.Point(595, 17);
+            this.panel1.Location = new System.Drawing.Point(575, 17);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(125, 211);
             this.panel1.TabIndex = 10;
@@ -198,7 +219,7 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dtHoteles.Location = new System.Drawing.Point(72, 251);
+            this.dtHoteles.Location = new System.Drawing.Point(52, 251);
             this.dtHoteles.Name = "dtHoteles";
             this.dtHoteles.Size = new System.Drawing.Size(637, 150);
             this.dtHoteles.TabIndex = 6;
@@ -238,7 +259,7 @@
             this.lblID.AutoSize = true;
             this.lblID.Depth = 0;
             this.lblID.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblID.Location = new System.Drawing.Point(144, 19);
+            this.lblID.Location = new System.Drawing.Point(124, 19);
             this.lblID.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(18, 19);
@@ -249,7 +270,7 @@
             // 
             this.SliderStars.Depth = 0;
             this.SliderStars.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SliderStars.Location = new System.Drawing.Point(339, 165);
+            this.SliderStars.Location = new System.Drawing.Point(319, 165);
             this.SliderStars.MouseState = MaterialSkin.MouseState.HOVER;
             this.SliderStars.Name = "SliderStars";
             this.SliderStars.RangeMax = 5;
@@ -269,7 +290,7 @@
             this.txtxPais.HideSelection = true;
             this.txtxPais.Hint = "País";
             this.txtxPais.LeadingIcon = null;
-            this.txtxPais.Location = new System.Drawing.Point(339, 83);
+            this.txtxPais.Location = new System.Drawing.Point(319, 83);
             this.txtxPais.MaxLength = 32767;
             this.txtxPais.MouseState = MaterialSkin.MouseState.OUT;
             this.txtxPais.Name = "txtxPais";
@@ -298,7 +319,7 @@
             this.txtCiudad.HideSelection = true;
             this.txtCiudad.Hint = "Ciudad";
             this.txtCiudad.LeadingIcon = null;
-            this.txtCiudad.Location = new System.Drawing.Point(339, 14);
+            this.txtCiudad.Location = new System.Drawing.Point(319, 14);
             this.txtCiudad.MaxLength = 32767;
             this.txtCiudad.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCiudad.Name = "txtCiudad";
@@ -327,7 +348,7 @@
             this.txtDireccion.HideSelection = true;
             this.txtDireccion.Hint = "Dirección";
             this.txtDireccion.LeadingIcon = null;
-            this.txtDireccion.Location = new System.Drawing.Point(63, 157);
+            this.txtDireccion.Location = new System.Drawing.Point(43, 157);
             this.txtDireccion.MaxLength = 32767;
             this.txtDireccion.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDireccion.Name = "txtDireccion";
@@ -356,7 +377,7 @@
             this.txtNombre.HideSelection = true;
             this.txtNombre.Hint = "Nombre";
             this.txtNombre.LeadingIcon = null;
-            this.txtNombre.Location = new System.Drawing.Point(63, 83);
+            this.txtNombre.Location = new System.Drawing.Point(43, 83);
             this.txtNombre.MaxLength = 32767;
             this.txtNombre.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNombre.Name = "txtNombre";
@@ -377,10 +398,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.materialCard2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(764, 444);
+            this.tabPage2.Size = new System.Drawing.Size(764, 497);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Habitación";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -389,7 +411,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(764, 444);
+            this.tabPage3.Size = new System.Drawing.Size(764, 497);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Reserva";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -398,7 +420,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(764, 444);
+            this.tabPage4.Size = new System.Drawing.Size(764, 497);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Cliente";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -407,7 +429,7 @@
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(764, 444);
+            this.tabPage5.Size = new System.Drawing.Size(764, 497);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Pago";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -416,7 +438,7 @@
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(764, 444);
+            this.tabPage6.Size = new System.Drawing.Size(764, 497);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Factura";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -425,41 +447,304 @@
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(764, 444);
+            this.tabPage7.Size = new System.Drawing.Size(764, 497);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Empleado";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(252, 415);
+            this.lblMsj.Location = new System.Drawing.Point(232, 415);
             this.lblMsj.Name = "lblMsj";
             this.lblMsj.Size = new System.Drawing.Size(250, 31);
             this.lblMsj.TabIndex = 11;
+            // 
+            // materialCard2
+            // 
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.lblMsjHabitacion);
+            this.materialCard2.Controls.Add(this.dtHabitaciones);
+            this.materialCard2.Controls.Add(this.panel2);
+            this.materialCard2.Controls.Add(this.cbNumHotel);
+            this.materialCard2.Controls.Add(this.txtPrecio);
+            this.materialCard2.Controls.Add(this.cbTipoHabitacion);
+            this.materialCard2.Controls.Add(this.cbCapacidadHabitacion);
+            this.materialCard2.Controls.Add(this.cbNumeroHabitacion);
+            this.materialCard2.Controls.Add(this.lblIDhABITACION);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard2.Location = new System.Drawing.Point(3, 3);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard2.Size = new System.Drawing.Size(758, 491);
+            this.materialCard2.TabIndex = 0;
+            // 
+            // lblIDhABITACION
+            // 
+            this.lblIDhABITACION.AutoSize = true;
+            this.lblIDhABITACION.Depth = 0;
+            this.lblIDhABITACION.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblIDhABITACION.Location = new System.Drawing.Point(119, 23);
+            this.lblIDhABITACION.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblIDhABITACION.Name = "lblIDhABITACION";
+            this.lblIDhABITACION.Size = new System.Drawing.Size(1, 0);
+            this.lblIDhABITACION.TabIndex = 0;
+            // 
+            // cbNumeroHabitacion
+            // 
+            this.cbNumeroHabitacion.AutoResize = false;
+            this.cbNumeroHabitacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbNumeroHabitacion.Depth = 0;
+            this.cbNumeroHabitacion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbNumeroHabitacion.DropDownHeight = 174;
+            this.cbNumeroHabitacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNumeroHabitacion.DropDownWidth = 121;
+            this.cbNumeroHabitacion.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbNumeroHabitacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbNumeroHabitacion.FormattingEnabled = true;
+            this.cbNumeroHabitacion.Hint = "Número";
+            this.cbNumeroHabitacion.IntegralHeight = false;
+            this.cbNumeroHabitacion.ItemHeight = 43;
+            this.cbNumeroHabitacion.Items.AddRange(new object[] {
+            "100",
+            "200",
+            "300",
+            "400",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"});
+            this.cbNumeroHabitacion.Location = new System.Drawing.Point(53, 54);
+            this.cbNumeroHabitacion.MaxDropDownItems = 4;
+            this.cbNumeroHabitacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbNumeroHabitacion.Name = "cbNumeroHabitacion";
+            this.cbNumeroHabitacion.Size = new System.Drawing.Size(121, 49);
+            this.cbNumeroHabitacion.StartIndex = 0;
+            this.cbNumeroHabitacion.TabIndex = 1;
+            // 
+            // cbCapacidadHabitacion
+            // 
+            this.cbCapacidadHabitacion.AutoResize = false;
+            this.cbCapacidadHabitacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbCapacidadHabitacion.Depth = 0;
+            this.cbCapacidadHabitacion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbCapacidadHabitacion.DropDownHeight = 174;
+            this.cbCapacidadHabitacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCapacidadHabitacion.DropDownWidth = 121;
+            this.cbCapacidadHabitacion.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbCapacidadHabitacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbCapacidadHabitacion.FormattingEnabled = true;
+            this.cbCapacidadHabitacion.Hint = "Capacidad";
+            this.cbCapacidadHabitacion.IntegralHeight = false;
+            this.cbCapacidadHabitacion.ItemHeight = 43;
+            this.cbCapacidadHabitacion.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbCapacidadHabitacion.Location = new System.Drawing.Point(53, 138);
+            this.cbCapacidadHabitacion.MaxDropDownItems = 4;
+            this.cbCapacidadHabitacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbCapacidadHabitacion.Name = "cbCapacidadHabitacion";
+            this.cbCapacidadHabitacion.Size = new System.Drawing.Size(121, 49);
+            this.cbCapacidadHabitacion.StartIndex = 0;
+            this.cbCapacidadHabitacion.TabIndex = 2;
+            // 
+            // cbTipoHabitacion
+            // 
+            this.cbTipoHabitacion.AutoResize = false;
+            this.cbTipoHabitacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbTipoHabitacion.Depth = 0;
+            this.cbTipoHabitacion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbTipoHabitacion.DropDownHeight = 174;
+            this.cbTipoHabitacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoHabitacion.DropDownWidth = 121;
+            this.cbTipoHabitacion.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbTipoHabitacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbTipoHabitacion.FormattingEnabled = true;
+            this.cbTipoHabitacion.Hint = "Tipo";
+            this.cbTipoHabitacion.IntegralHeight = false;
+            this.cbTipoHabitacion.ItemHeight = 43;
+            this.cbTipoHabitacion.Items.AddRange(new object[] {
+            "Sencilla",
+            "Doble",
+            "Matrimoniales",
+            "Suite",
+            "Junior Suite",
+            "Presidencial"});
+            this.cbTipoHabitacion.Location = new System.Drawing.Point(251, 54);
+            this.cbTipoHabitacion.MaxDropDownItems = 4;
+            this.cbTipoHabitacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbTipoHabitacion.Name = "cbTipoHabitacion";
+            this.cbTipoHabitacion.Size = new System.Drawing.Size(121, 49);
+            this.cbTipoHabitacion.StartIndex = 0;
+            this.cbTipoHabitacion.TabIndex = 3;
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.AnimateReadOnly = false;
+            this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrecio.Depth = 0;
+            this.txtPrecio.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrecio.Hint = "₡";
+            this.txtPrecio.LeadingIcon = null;
+            this.txtPrecio.Location = new System.Drawing.Point(251, 139);
+            this.txtPrecio.MaxLength = 50;
+            this.txtPrecio.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPrecio.Multiline = false;
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(121, 50);
+            this.txtPrecio.TabIndex = 4;
+            this.txtPrecio.Text = "";
+            this.txtPrecio.TrailingIcon = null;
+            // 
+            // cbNumHotel
+            // 
+            this.cbNumHotel.AutoResize = false;
+            this.cbNumHotel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbNumHotel.Depth = 0;
+            this.cbNumHotel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbNumHotel.DropDownHeight = 174;
+            this.cbNumHotel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNumHotel.DropDownWidth = 121;
+            this.cbNumHotel.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbNumHotel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbNumHotel.FormattingEnabled = true;
+            this.cbNumHotel.Hint = "N° Hotel";
+            this.cbNumHotel.IntegralHeight = false;
+            this.cbNumHotel.ItemHeight = 43;
+            this.cbNumHotel.Items.AddRange(new object[] {
+            "1"});
+            this.cbNumHotel.Location = new System.Drawing.Point(423, 87);
+            this.cbNumHotel.MaxDropDownItems = 4;
+            this.cbNumHotel.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbNumHotel.Name = "cbNumHotel";
+            this.cbNumHotel.Size = new System.Drawing.Size(121, 49);
+            this.cbNumHotel.StartIndex = 0;
+            this.cbNumHotel.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnAgregarHabitacion);
+            this.panel2.Location = new System.Drawing.Point(565, 17);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(139, 197);
+            this.panel2.TabIndex = 6;
+            // 
+            // btnAgregarHabitacion
+            // 
+            this.btnAgregarHabitacion.AutoSize = false;
+            this.btnAgregarHabitacion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAgregarHabitacion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAgregarHabitacion.Depth = 0;
+            this.btnAgregarHabitacion.HighEmphasis = true;
+            this.btnAgregarHabitacion.Icon = null;
+            this.btnAgregarHabitacion.Location = new System.Drawing.Point(19, 9);
+            this.btnAgregarHabitacion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAgregarHabitacion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAgregarHabitacion.Name = "btnAgregarHabitacion";
+            this.btnAgregarHabitacion.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAgregarHabitacion.Size = new System.Drawing.Size(99, 36);
+            this.btnAgregarHabitacion.TabIndex = 0;
+            this.btnAgregarHabitacion.Text = "Agregar";
+            this.btnAgregarHabitacion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAgregarHabitacion.UseAccentColor = false;
+            this.btnAgregarHabitacion.UseVisualStyleBackColor = true;
+            this.btnAgregarHabitacion.Click += new System.EventHandler(this.btnAgregarHabitacion_Click);
+            // 
+            // dtHabitaciones
+            // 
+            this.dtHabitaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtHabitaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12});
+            this.dtHabitaciones.Location = new System.Drawing.Point(55, 236);
+            this.dtHabitaciones.Name = "dtHabitaciones";
+            this.dtHabitaciones.Size = new System.Drawing.Size(649, 150);
+            this.dtHabitaciones.TabIndex = 7;
+            // 
+            // lblMsjHabitacion
+            // 
+            this.lblMsjHabitacion.Location = new System.Drawing.Point(296, 401);
+            this.lblMsjHabitacion.Name = "lblMsjHabitacion";
+            this.lblMsjHabitacion.Size = new System.Drawing.Size(122, 35);
+            this.lblMsjHabitacion.TabIndex = 8;
+            this.lblMsjHabitacion.Text = "...";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Id";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Número";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Tipo";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Capacidad";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Precio";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "N° Hotel";
+            this.Column12.Name = "Column12";
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 590);
-            this.Controls.Add(this.materialTabControl1);
-            this.DrawerTabControl = this.materialTabControl1;
+            this.Controls.Add(this.lbl_IdHabitacion);
+            this.DrawerTabControl = this.lbl_IdHabitacion;
             this.Name = "Principal";
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);
-            this.materialTabControl1.ResumeLayout(false);
+            this.lbl_IdHabitacion.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtHoteles)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.materialCard2.ResumeLayout(false);
+            this.materialCard2.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtHabitaciones)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
+        private MaterialSkin.Controls.MaterialTabControl lbl_IdHabitacion;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -486,5 +771,22 @@
         private MaterialSkin.Controls.MaterialButton btnAgregarHotel;
         private MaterialSkin.Controls.MaterialButton btnEliminar;
         private System.Windows.Forms.Label lblMsj;
+        private MaterialSkin.Controls.MaterialCard materialCard2;
+        private MaterialSkin.Controls.MaterialLabel lblIDhABITACION;
+        private MaterialSkin.Controls.MaterialComboBox cbNumHotel;
+        private MaterialSkin.Controls.MaterialTextBox txtPrecio;
+        private MaterialSkin.Controls.MaterialComboBox cbTipoHabitacion;
+        private MaterialSkin.Controls.MaterialComboBox cbCapacidadHabitacion;
+        private MaterialSkin.Controls.MaterialComboBox cbNumeroHabitacion;
+        private System.Windows.Forms.DataGridView dtHabitaciones;
+        private System.Windows.Forms.Panel panel2;
+        private MaterialSkin.Controls.MaterialButton btnAgregarHabitacion;
+        private System.Windows.Forms.Label lblMsjHabitacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
     }
 }

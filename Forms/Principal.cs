@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+﻿using Evaluación1_Hotel.Clases;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,12 @@ namespace Evaluación1_Hotel.Forms
 {
     public partial class Principal : MaterialForm
     {
-        //creamos una instancia de hotel
+        //creamos las instancias
         ClassHotel Hotel = new ClassHotel();
-        //creamos una lista de tipo hotel
+        ClassHabitacion habitacion = new ClassHabitacion();
+        //creamos una las listas
         List<ClassHotel> hoteles = new List<ClassHotel>();
+        List<ClassHabitacion> habitaciones = new List<ClassHabitacion>();
         int cont = 1;
 
         public Principal()
@@ -34,23 +37,11 @@ namespace Evaluación1_Hotel.Forms
             );
 
         }
-        /// <summary>
-        /// Funcion para establecer los valores a la clase
-        /// </summary>
-        public void establecerValore()
-        {
-            Hotel.Id = 0;
-            Hotel.Nombre = txtNombre.Text;
-            Hotel.Direccion = txtDireccion.Text;
-            Hotel.Ciudad = txtCiudad.Text;
-            Hotel.Pais = txtxPais.Text;
-            Hotel.Estrellas = SliderStars.Value;
-        }
+
         /// <summary>
         /// agregar los hoteles a la lista
         /// </summary>
-
-        public void agregarHotelesList()
+        public void agregarHotelList()
         {
             //agrergamos los animales a la lista
             ClassHotel guardarHotel = new ClassHotel(
@@ -58,6 +49,23 @@ namespace Evaluación1_Hotel.Forms
                 );
 
             hoteles.Add(guardarHotel);
+
+           
+        }
+        public void agregarHabitacionList()
+        {
+            //agreagmos una habitacion
+            ClassHabitacion guardarHabitacion = new ClassHabitacion(
+                0,
+                Convert.ToInt32( cbNumeroHabitacion.SelectedItem),
+               cbTipoHabitacion.SelectedItem.ToString(),
+              
+                Convert.ToInt32( cbCapacidadHabitacion.SelectedItem),
+                Convert.ToDouble(txtPrecio.Text),
+               
+               Convert.ToInt32( cbNumHotel.SelectedItem)
+                );
+            habitaciones.Add(guardarHabitacion);
         }
         /// <summary>
         /// Mostramos los hoteles en el datagrid
@@ -70,7 +78,17 @@ namespace Evaluación1_Hotel.Forms
             {
                 dtHoteles.Rows.Add(hoteles[i].Id, hoteles[i].Nombre, hoteles[i].Direccion, hoteles[i].Ciudad, hoteles[i].Pais, hoteles[i].Estrellas );
             }
+
             
+            
+        }
+        public void mostrarHabitaciones()
+        {
+            dtHabitaciones.Rows.Clear();
+            for (int i = 0; i < habitaciones.Count; i++)
+            {
+                dtHabitaciones.Rows.Add(habitaciones[i].Id, habitaciones[i].Numero, habitaciones[i].Tipo, habitaciones[i].Capacidad, habitaciones[i].PrecioPoNoche, habitaciones[i].HotelId);
+            }
         }
 
         public void limpiar()
@@ -97,7 +115,7 @@ namespace Evaluación1_Hotel.Forms
             }else
             {
                 //agregamos hoteles
-                agregarHotelesList();
+                agregarHotelList();
                 // mostrar hoteles al datagried
                 mostrarHoteles();
                 limpiar();
@@ -106,6 +124,14 @@ namespace Evaluación1_Hotel.Forms
             }
 
            
+        }
+
+        private void btnAgregarHabitacion_Click(object sender, EventArgs e)
+        {
+            agregarHabitacionList();
+            mostrarHabitaciones();
+
+            lblIDhABITACION.Text = "N°: " + cont; 
         }
     }
 }
