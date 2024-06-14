@@ -52,7 +52,9 @@
   <ItemGroup>
     <Compile Include="Clases\ClassCliente.cs" />
     <Compile Include="Clases\ClassEmpleado.cs" />
+    <Compile Include="Clases\ClassFactura.cs" />
     <Compile Include="Clases\ClassHabitacion.cs" />
+    <Compile Include="Clases\ClassPago.cs" />
     <Compile Include="Clases\ClassReservacion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
