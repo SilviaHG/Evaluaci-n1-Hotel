@@ -10,14 +10,16 @@ namespace Evaluación1_Hotel.Clases
     {
 
         public int PagoId { get; set; }
+        public int Reservacion_Pagos { get; set; }
         public int MontoPago { get; set; }
         public string FechaPago { get; set; }
         public string MetodoPago { get; set; }
         public ClassPago() { }
 
-        public ClassPago(int pagoId, int montoPago, string fechaPago, string metodoPago)
+        public ClassPago(int pagoId, int ReservacionPago, int montoPago, string fechaPago, string metodoPago)
         {
             PagoId = pagoId;
+            Reservacion_Pagos = ReservacionPago;
             MontoPago = montoPago;
             FechaPago = fechaPago;
             MetodoPago = metodoPago;

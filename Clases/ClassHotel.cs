@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Evaluación1_Hotel.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,12 +17,13 @@ namespace Evaluación1_Hotel.Forms
         public string Pais { get; set; }
         public int Estrellas { get; set; }
         // Habitaciones<list>
+        public List<ClassHabitacion> HabitacionesList { get; set; }
 
         //constructor 
         public ClassHotel() { }
 
         //constructor lleno 
-        public ClassHotel(int Id_p, string Nombre_p, string Direccion_p, string ciudad_p, string pais_p, int stars_p )
+        public ClassHotel(int Id_p, string Nombre_p, string Direccion_p, string ciudad_p, string pais_p, int stars_p, List<ClassHabitacion> hab = null )
         {
             this.Pais = pais_p;
             this.Id = Id_p;
@@ -29,6 +31,7 @@ namespace Evaluación1_Hotel.Forms
             this.Direccion = Direccion_p;
             this.Ciudad = ciudad_p;
             this.Estrellas = stars_p;
+            this.HabitacionesList = hab;
         }
 
         //funcion para obtener el hotel completo

@@ -11,7 +11,7 @@ namespace Evaluación1_Hotel.Clases
         // habitacion atributos
 
         public int Id { get; set;}
-        public int Numero { get; set; }
+        public string Numero { get; set; }
         public string Tipo { get; set; }
         public int Capacidad { get; set; }
         public double PrecioPoNoche { get; set; }
@@ -19,7 +19,7 @@ namespace Evaluación1_Hotel.Clases
 
         public ClassHabitacion() { }
 
-        public ClassHabitacion(int id_p, int numero_p, string tipo_p, int capacidad_p, double precio_p, int HotelId_p)
+        public ClassHabitacion(int id_p, string numero_p, string tipo_p, int capacidad_p, double precio_p, int HotelId_p)
         {
             this.Id = id_p;
             this.Numero = numero_p;

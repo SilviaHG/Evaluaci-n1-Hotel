@@ -13,7 +13,7 @@ namespace Evaluación1_Hotel.Clases
         public int ReservaID_Factura { get; set; }
         public int Cliente_Factura { get; set; }
         public int Empleado_Factura { get; set; }
-        public int MontoTotal_Fcatura { get; set; }
+        public int MontoTotal_Factura { get; set; }
         public string FechaEmision_Factura { get; set; }
         public ClassFactura() { }
 
@@ -23,7 +23,7 @@ namespace Evaluación1_Hotel.Clases
             ReservaID_Factura = reservaID_Factura;
             Cliente_Factura = cliente_Factura;
             Empleado_Factura = empleado_Factura;
-            MontoTotal_Fcatura = montoTotal_Fcatura;
+            MontoTotal_Factura = montoTotal_Fcatura;
             FechaEmision_Factura = fechaEmision_Factura;
         }
     }

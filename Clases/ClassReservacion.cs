@@ -10,14 +10,14 @@ namespace Evaluación1_Hotel.Clases
     {
         public int ReservaId { get; set; }
         public string ClienteId { get; set; }
-        public int Habitacion { get; set; }
+        public string Habitacion { get; set; }
         public string FInicio { get; set; }
         public string FFin { get; set; }
         public string Estado { get; set; }
 
         public ClassReservacion() { }
 
-        public ClassReservacion( int Reservacionid_p, string cliente_p, int habitacion_p, string inicio_p, string fin_p, string estado_p ) 
+        public ClassReservacion( int Reservacionid_p, string cliente_p, string habitacion_p, string inicio_p, string fin_p, string estado_p ) 
         {
             this.ReservaId = Reservacionid_p;
             this.ClienteId = cliente_p;

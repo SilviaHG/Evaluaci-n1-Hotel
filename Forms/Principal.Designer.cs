@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.cbHabitacionesHotel = new MaterialSkin.Controls.MaterialComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblMsj = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,6 +49,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HabitacionesH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblID = new MaterialSkin.Controls.MaterialLabel();
             this.SliderStars = new MaterialSkin.Controls.MaterialSlider();
             this.txtxPais = new MaterialSkin.Controls.MaterialTextBox2();
@@ -96,6 +98,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
+            this.dtC = new System.Windows.Forms.DataGridView();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMsjCliente = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAgregarCliente = new MaterialSkin.Controls.MaterialButton();
@@ -108,58 +117,24 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dtC = new System.Windows.Forms.DataGridView();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCedEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtNombreEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtApellidoEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
-            this.cbPosicion = new MaterialSkin.Controls.MaterialComboBox();
-            this.txtEmailEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtTelEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
-            this.dtEmpleado = new System.Windows.Forms.DataGridView();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnAgregarEmpleado = new MaterialSkin.Controls.MaterialButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblMsjEmpleado = new System.Windows.Forms.Label();
-            this.lblNumPago = new System.Windows.Forms.Label();
-            this.cbReservaPagos = new MaterialSkin.Controls.MaterialComboBox();
-            this.txtMontoPago = new MaterialSkin.Controls.MaterialTextBox2();
-            this.dateTimePagos = new System.Windows.Forms.DateTimePicker();
-            this.cbMetodosPago = new MaterialSkin.Controls.MaterialComboBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.btnAgregarPago = new MaterialSkin.Controls.MaterialButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblMsjPago = new System.Windows.Forms.Label();
+            this.dtPagos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblMsjPago = new System.Windows.Forms.Label();
-            this.lblNumFactura = new System.Windows.Forms.Label();
-            this.cbReservacionFactura = new MaterialSkin.Controls.MaterialComboBox();
-            this.cbClienteFacturacion = new MaterialSkin.Controls.MaterialComboBox();
-            this.cbEmpleadoFacturacion = new MaterialSkin.Controls.MaterialComboBox();
-            this.txtMontoFacturacion = new MaterialSkin.Controls.MaterialTextBox2();
-            this.dateTimeFechaFactura = new System.Windows.Forms.DateTimePicker();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btnAgregarFactura = new MaterialSkin.Controls.MaterialButton();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnAgregarPago = new MaterialSkin.Controls.MaterialButton();
+            this.cbMetodosPago = new MaterialSkin.Controls.MaterialComboBox();
+            this.dateTimePagos = new System.Windows.Forms.DateTimePicker();
+            this.txtMontoPago = new MaterialSkin.Controls.MaterialTextBox2();
+            this.cbReservaPagos = new MaterialSkin.Controls.MaterialComboBox();
+            this.lblNumPago = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
+            this.lblMsjFactura = new System.Windows.Forms.Label();
             this.dtFactura = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -167,7 +142,37 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblMsjFactura = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnAgregarFactura = new MaterialSkin.Controls.MaterialButton();
+            this.dateTimeFechaFactura = new System.Windows.Forms.DateTimePicker();
+            this.txtMontoFacturacion = new MaterialSkin.Controls.MaterialTextBox2();
+            this.cbEmpleadoFacturacion = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbClienteFacturacion = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbReservacionFactura = new MaterialSkin.Controls.MaterialComboBox();
+            this.lblNumFactura = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
+            this.lblMsjEmpleado = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnAgregarEmpleado = new MaterialSkin.Controls.MaterialButton();
+            this.dtEmpleado = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTelEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txtEmailEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
+            this.cbPosicion = new MaterialSkin.Controls.MaterialComboBox();
+            this.txtApellidoEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txtNombreEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txtCedEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtxTipoHReservacion = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txtCapacidadHReservacion = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txtMontoHRservacion = new MaterialSkin.Controls.MaterialTextBox2();
             this.lbl_IdHabitacion.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -185,20 +190,20 @@
             this.panel4.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.materialCard4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtC)).BeginInit();
             this.panel5.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.materialCard5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPagos)).BeginInit();
+            this.panel7.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.materialCard6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFactura)).BeginInit();
+            this.panel8.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.materialCard7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtEmpleado)).BeginInit();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_IdHabitacion
@@ -218,7 +223,7 @@
             this.lbl_IdHabitacion.Multiline = true;
             this.lbl_IdHabitacion.Name = "lbl_IdHabitacion";
             this.lbl_IdHabitacion.SelectedIndex = 0;
-            this.lbl_IdHabitacion.Size = new System.Drawing.Size(772, 525);
+            this.lbl_IdHabitacion.Size = new System.Drawing.Size(772, 630);
             this.lbl_IdHabitacion.TabIndex = 1;
             // 
             // tabPage8
@@ -273,6 +278,7 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.cbHabitacionesHotel);
             this.materialCard1.Controls.Add(this.label3);
             this.materialCard1.Controls.Add(this.lblMsj);
             this.materialCard1.Controls.Add(this.panel1);
@@ -293,6 +299,31 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(758, 493);
             this.materialCard1.TabIndex = 0;
+            // 
+            // cbHabitacionesHotel
+            // 
+            this.cbHabitacionesHotel.AutoResize = false;
+            this.cbHabitacionesHotel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbHabitacionesHotel.Depth = 0;
+            this.cbHabitacionesHotel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbHabitacionesHotel.DropDownHeight = 174;
+            this.cbHabitacionesHotel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHabitacionesHotel.DropDownWidth = 121;
+            this.cbHabitacionesHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbHabitacionesHotel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbHabitacionesHotel.FormattingEnabled = true;
+            this.cbHabitacionesHotel.Hint = "Habitaciones";
+            this.cbHabitacionesHotel.IntegralHeight = false;
+            this.cbHabitacionesHotel.ItemHeight = 43;
+            this.cbHabitacionesHotel.Items.AddRange(new object[] {
+            "0"});
+            this.cbHabitacionesHotel.Location = new System.Drawing.Point(319, 228);
+            this.cbHabitacionesHotel.MaxDropDownItems = 4;
+            this.cbHabitacionesHotel.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbHabitacionesHotel.Name = "cbHabitacionesHotel";
+            this.cbHabitacionesHotel.Size = new System.Drawing.Size(250, 49);
+            this.cbHabitacionesHotel.StartIndex = 0;
+            this.cbHabitacionesHotel.TabIndex = 13;
             // 
             // label3
             // 
@@ -391,10 +422,11 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6});
-            this.dtHoteles.Location = new System.Drawing.Point(52, 287);
+            this.Column6,
+            this.HabitacionesH});
+            this.dtHoteles.Location = new System.Drawing.Point(9, 283);
             this.dtHoteles.Name = "dtHoteles";
-            this.dtHoteles.Size = new System.Drawing.Size(637, 150);
+            this.dtHoteles.Size = new System.Drawing.Size(732, 150);
             this.dtHoteles.TabIndex = 6;
             // 
             // Column1
@@ -427,6 +459,11 @@
             this.Column6.HeaderText = "Estrellas";
             this.Column6.Name = "Column6";
             // 
+            // HabitacionesH
+            // 
+            this.HabitacionesH.HeaderText = "Habitaciones";
+            this.HabitacionesH.Name = "HabitacionesH";
+            // 
             // lblID
             // 
             this.lblID.AutoSize = true;
@@ -443,7 +480,7 @@
             // 
             this.SliderStars.Depth = 0;
             this.SliderStars.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.SliderStars.Location = new System.Drawing.Point(319, 201);
+            this.SliderStars.Location = new System.Drawing.Point(319, 161);
             this.SliderStars.MouseState = MaterialSkin.MouseState.HOVER;
             this.SliderStars.Name = "SliderStars";
             this.SliderStars.RangeMax = 5;
@@ -463,7 +500,7 @@
             this.txtxPais.HideSelection = true;
             this.txtxPais.Hint = "País";
             this.txtxPais.LeadingIcon = null;
-            this.txtxPais.Location = new System.Drawing.Point(319, 119);
+            this.txtxPais.Location = new System.Drawing.Point(319, 84);
             this.txtxPais.MaxLength = 32767;
             this.txtxPais.MouseState = MaterialSkin.MouseState.OUT;
             this.txtxPais.Name = "txtxPais";
@@ -492,7 +529,7 @@
             this.txtCiudad.HideSelection = true;
             this.txtCiudad.Hint = "Ciudad";
             this.txtCiudad.LeadingIcon = null;
-            this.txtCiudad.Location = new System.Drawing.Point(319, 50);
+            this.txtCiudad.Location = new System.Drawing.Point(43, 216);
             this.txtCiudad.MaxLength = 32767;
             this.txtCiudad.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCiudad.Name = "txtCiudad";
@@ -521,7 +558,7 @@
             this.txtDireccion.HideSelection = true;
             this.txtDireccion.Hint = "Dirección";
             this.txtDireccion.LeadingIcon = null;
-            this.txtDireccion.Location = new System.Drawing.Point(43, 193);
+            this.txtDireccion.Location = new System.Drawing.Point(43, 153);
             this.txtDireccion.MaxLength = 32767;
             this.txtDireccion.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDireccion.Name = "txtDireccion";
@@ -550,7 +587,7 @@
             this.txtNombre.HideSelection = true;
             this.txtNombre.Hint = "Nombre";
             this.txtNombre.LeadingIcon = null;
-            this.txtNombre.Location = new System.Drawing.Point(43, 119);
+            this.txtNombre.Location = new System.Drawing.Point(43, 84);
             this.txtNombre.MaxLength = 32767;
             this.txtNombre.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNombre.Name = "txtNombre";
@@ -854,7 +891,7 @@
             this.tabPage3.Controls.Add(this.materialCard3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(764, 499);
+            this.tabPage3.Size = new System.Drawing.Size(764, 604);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Reserva";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -862,6 +899,9 @@
             // materialCard3
             // 
             this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard3.Controls.Add(this.txtMontoHRservacion);
+            this.materialCard3.Controls.Add(this.txtCapacidadHReservacion);
+            this.materialCard3.Controls.Add(this.txtxTipoHReservacion);
             this.materialCard3.Controls.Add(this.dtRersevacion);
             this.materialCard3.Controls.Add(this.lblMsjReserevacion);
             this.materialCard3.Controls.Add(this.panel4);
@@ -882,7 +922,7 @@
             this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
             this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard3.Size = new System.Drawing.Size(764, 499);
+            this.materialCard3.Size = new System.Drawing.Size(764, 604);
             this.materialCard3.TabIndex = 0;
             // 
             // dtRersevacion
@@ -896,7 +936,7 @@
             this.Column13,
             this.Column14,
             this.Column15});
-            this.dtRersevacion.Location = new System.Drawing.Point(22, 283);
+            this.dtRersevacion.Location = new System.Drawing.Point(22, 401);
             this.dtRersevacion.Name = "dtRersevacion";
             this.dtRersevacion.Size = new System.Drawing.Size(694, 150);
             this.dtRersevacion.TabIndex = 11;
@@ -933,7 +973,7 @@
             // 
             // lblMsjReserevacion
             // 
-            this.lblMsjReserevacion.Location = new System.Drawing.Point(193, 447);
+            this.lblMsjReserevacion.Location = new System.Drawing.Point(193, 565);
             this.lblMsjReserevacion.Name = "lblMsjReserevacion";
             this.lblMsjReserevacion.Size = new System.Drawing.Size(383, 23);
             this.lblMsjReserevacion.TabIndex = 10;
@@ -991,7 +1031,7 @@
             "Ninguno",
             "Activo",
             "Inactivo"});
-            this.cbEstado.Location = new System.Drawing.Point(368, 70);
+            this.cbEstado.Location = new System.Drawing.Point(90, 146);
             this.cbEstado.MaxDropDownItems = 4;
             this.cbEstado.MouseState = MaterialSkin.MouseState.OUT;
             this.cbEstado.Name = "cbEstado";
@@ -1004,7 +1044,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(164, 200);
+            this.materialLabel2.Location = new System.Drawing.Point(90, 320);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(70, 19);
@@ -1016,7 +1056,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(164, 132);
+            this.materialLabel1.Location = new System.Drawing.Point(90, 252);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(86, 19);
@@ -1025,14 +1065,14 @@
             // 
             // dateTimeFin
             // 
-            this.dateTimeFin.Location = new System.Drawing.Point(164, 232);
+            this.dateTimeFin.Location = new System.Drawing.Point(90, 352);
             this.dateTimeFin.Name = "dateTimeFin";
             this.dateTimeFin.Size = new System.Drawing.Size(258, 20);
             this.dateTimeFin.TabIndex = 5;
             // 
             // dateTimeInicio
             // 
-            this.dateTimeInicio.Location = new System.Drawing.Point(164, 156);
+            this.dateTimeInicio.Location = new System.Drawing.Point(90, 276);
             this.dateTimeInicio.Name = "dateTimeInicio";
             this.dateTimeInicio.Size = new System.Drawing.Size(258, 20);
             this.dateTimeInicio.TabIndex = 4;
@@ -1067,6 +1107,7 @@
             this.cbHabitacion.Size = new System.Drawing.Size(121, 49);
             this.cbHabitacion.StartIndex = 0;
             this.cbHabitacion.TabIndex = 3;
+            this.cbHabitacion.SelectedIndexChanged += new System.EventHandler(this.cbHabitacion_SelectedIndexChanged);
             // 
             // cbClientes
             // 
@@ -1146,6 +1187,52 @@
             this.materialCard4.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard4.Size = new System.Drawing.Size(764, 499);
             this.materialCard4.TabIndex = 0;
+            // 
+            // dtC
+            // 
+            this.dtC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20,
+            this.Column21});
+            this.dtC.Location = new System.Drawing.Point(46, 240);
+            this.dtC.Name = "dtC";
+            this.dtC.Size = new System.Drawing.Size(688, 150);
+            this.dtC.TabIndex = 10;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "Cédula";
+            this.Column16.Name = "Column16";
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "Nombre";
+            this.Column17.Name = "Column17";
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "Apellidos";
+            this.Column18.Name = "Column18";
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "Email";
+            this.Column19.Name = "Column19";
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "Teléfono";
+            this.Column20.Name = "Column20";
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "Dirección";
+            this.Column21.Name = "Column21";
             // 
             // lblMsjCliente
             // 
@@ -1382,7 +1469,7 @@
             // 
             this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard5.Controls.Add(this.lblMsjPago);
-            this.materialCard5.Controls.Add(this.dataGridView1);
+            this.materialCard5.Controls.Add(this.dtPagos);
             this.materialCard5.Controls.Add(this.panel7);
             this.materialCard5.Controls.Add(this.cbMetodosPago);
             this.materialCard5.Controls.Add(this.dateTimePagos);
@@ -1400,6 +1487,181 @@
             this.materialCard5.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard5.Size = new System.Drawing.Size(764, 499);
             this.materialCard5.TabIndex = 0;
+            // 
+            // lblMsjPago
+            // 
+            this.lblMsjPago.Location = new System.Drawing.Point(228, 427);
+            this.lblMsjPago.Name = "lblMsjPago";
+            this.lblMsjPago.Size = new System.Drawing.Size(326, 23);
+            this.lblMsjPago.TabIndex = 8;
+            this.lblMsjPago.Text = "...";
+            // 
+            // dtPagos
+            // 
+            this.dtPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
+            this.dtPagos.Location = new System.Drawing.Point(73, 255);
+            this.dtPagos.Name = "dtPagos";
+            this.dtPagos.Size = new System.Drawing.Size(623, 150);
+            this.dtPagos.TabIndex = 7;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "N°";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Reservación";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Método de Pago";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Monto";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "Fecha";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.btnAgregarPago);
+            this.panel7.Location = new System.Drawing.Point(532, 52);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(164, 157);
+            this.panel7.TabIndex = 6;
+            // 
+            // btnAgregarPago
+            // 
+            this.btnAgregarPago.AutoSize = false;
+            this.btnAgregarPago.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAgregarPago.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAgregarPago.Depth = 0;
+            this.btnAgregarPago.HighEmphasis = true;
+            this.btnAgregarPago.Icon = null;
+            this.btnAgregarPago.Location = new System.Drawing.Point(45, 32);
+            this.btnAgregarPago.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAgregarPago.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAgregarPago.Name = "btnAgregarPago";
+            this.btnAgregarPago.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAgregarPago.Size = new System.Drawing.Size(75, 36);
+            this.btnAgregarPago.TabIndex = 0;
+            this.btnAgregarPago.Text = "Agregar";
+            this.btnAgregarPago.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAgregarPago.UseAccentColor = false;
+            this.btnAgregarPago.UseVisualStyleBackColor = true;
+            this.btnAgregarPago.Click += new System.EventHandler(this.btnAgregarPago_Click);
+            // 
+            // cbMetodosPago
+            // 
+            this.cbMetodosPago.AutoResize = false;
+            this.cbMetodosPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbMetodosPago.Depth = 0;
+            this.cbMetodosPago.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbMetodosPago.DropDownHeight = 174;
+            this.cbMetodosPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMetodosPago.DropDownWidth = 121;
+            this.cbMetodosPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbMetodosPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbMetodosPago.FormattingEnabled = true;
+            this.cbMetodosPago.Hint = "Métodos de Pago";
+            this.cbMetodosPago.IntegralHeight = false;
+            this.cbMetodosPago.ItemHeight = 43;
+            this.cbMetodosPago.Items.AddRange(new object[] {
+            "Ninguno",
+            "Efectivo",
+            "Tarjeta",
+            "Sinpe Móvil"});
+            this.cbMetodosPago.Location = new System.Drawing.Point(285, 160);
+            this.cbMetodosPago.MaxDropDownItems = 4;
+            this.cbMetodosPago.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbMetodosPago.Name = "cbMetodosPago";
+            this.cbMetodosPago.Size = new System.Drawing.Size(194, 49);
+            this.cbMetodosPago.StartIndex = 0;
+            this.cbMetodosPago.TabIndex = 5;
+            // 
+            // dateTimePagos
+            // 
+            this.dateTimePagos.Location = new System.Drawing.Point(73, 91);
+            this.dateTimePagos.Name = "dateTimePagos";
+            this.dateTimePagos.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePagos.TabIndex = 4;
+            // 
+            // txtMontoPago
+            // 
+            this.txtMontoPago.AnimateReadOnly = false;
+            this.txtMontoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtMontoPago.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtMontoPago.Depth = 0;
+            this.txtMontoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMontoPago.HideSelection = true;
+            this.txtMontoPago.Hint = "₡";
+            this.txtMontoPago.LeadingIcon = null;
+            this.txtMontoPago.Location = new System.Drawing.Point(285, 82);
+            this.txtMontoPago.MaxLength = 32767;
+            this.txtMontoPago.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtMontoPago.Name = "txtMontoPago";
+            this.txtMontoPago.PasswordChar = '\0';
+            this.txtMontoPago.PrefixSuffixText = null;
+            this.txtMontoPago.ReadOnly = false;
+            this.txtMontoPago.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtMontoPago.SelectedText = "";
+            this.txtMontoPago.SelectionLength = 0;
+            this.txtMontoPago.SelectionStart = 0;
+            this.txtMontoPago.ShortcutsEnabled = true;
+            this.txtMontoPago.Size = new System.Drawing.Size(194, 48);
+            this.txtMontoPago.TabIndex = 3;
+            this.txtMontoPago.TabStop = false;
+            this.txtMontoPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMontoPago.TrailingIcon = null;
+            this.txtMontoPago.UseSystemPasswordChar = false;
+            // 
+            // cbReservaPagos
+            // 
+            this.cbReservaPagos.AutoResize = false;
+            this.cbReservaPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbReservaPagos.Depth = 0;
+            this.cbReservaPagos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbReservaPagos.DropDownHeight = 174;
+            this.cbReservaPagos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReservaPagos.DropDownWidth = 121;
+            this.cbReservaPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbReservaPagos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbReservaPagos.FormattingEnabled = true;
+            this.cbReservaPagos.Hint = "Reservación";
+            this.cbReservaPagos.IntegralHeight = false;
+            this.cbReservaPagos.ItemHeight = 43;
+            this.cbReservaPagos.Items.AddRange(new object[] {
+            "0"});
+            this.cbReservaPagos.Location = new System.Drawing.Point(73, 160);
+            this.cbReservaPagos.MaxDropDownItems = 4;
+            this.cbReservaPagos.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbReservaPagos.Name = "cbReservaPagos";
+            this.cbReservaPagos.Size = new System.Drawing.Size(200, 49);
+            this.cbReservaPagos.StartIndex = 0;
+            this.cbReservaPagos.TabIndex = 2;
+            // 
+            // lblNumPago
+            // 
+            this.lblNumPago.Location = new System.Drawing.Point(84, 52);
+            this.lblNumPago.Name = "lblNumPago";
+            this.lblNumPago.Size = new System.Drawing.Size(100, 23);
+            this.lblNumPago.TabIndex = 1;
+            this.lblNumPago.Text = "N°";
             // 
             // label7
             // 
@@ -1444,675 +1706,13 @@
             this.materialCard6.Size = new System.Drawing.Size(764, 499);
             this.materialCard6.TabIndex = 0;
             // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(28, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 23);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Facturación";
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.materialCard7);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(764, 499);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Empleado";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // materialCard7
-            // 
-            this.materialCard7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard7.Controls.Add(this.lblMsjEmpleado);
-            this.materialCard7.Controls.Add(this.panel6);
-            this.materialCard7.Controls.Add(this.dtEmpleado);
-            this.materialCard7.Controls.Add(this.txtTelEmpleado);
-            this.materialCard7.Controls.Add(this.txtEmailEmpleado);
-            this.materialCard7.Controls.Add(this.cbPosicion);
-            this.materialCard7.Controls.Add(this.txtApellidoEmpleado);
-            this.materialCard7.Controls.Add(this.txtNombreEmpleado);
-            this.materialCard7.Controls.Add(this.txtCedEmpleado);
-            this.materialCard7.Controls.Add(this.label9);
-            this.materialCard7.Depth = 0;
-            this.materialCard7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialCard7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard7.Location = new System.Drawing.Point(0, 0);
-            this.materialCard7.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard7.Name = "materialCard7";
-            this.materialCard7.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard7.Size = new System.Drawing.Size(764, 499);
-            this.materialCard7.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(18, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(197, 23);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Agregar Empleado";
-            // 
-            // dtC
-            // 
-            this.dtC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column20,
-            this.Column21});
-            this.dtC.Location = new System.Drawing.Point(46, 240);
-            this.dtC.Name = "dtC";
-            this.dtC.Size = new System.Drawing.Size(688, 150);
-            this.dtC.TabIndex = 10;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "Cédula";
-            this.Column16.Name = "Column16";
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "Nombre";
-            this.Column17.Name = "Column17";
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "Apellidos";
-            this.Column18.Name = "Column18";
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "Email";
-            this.Column19.Name = "Column19";
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "Teléfono";
-            this.Column20.Name = "Column20";
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "Dirección";
-            this.Column21.Name = "Column21";
-            // 
-            // txtCedEmpleado
-            // 
-            this.txtCedEmpleado.AnimateReadOnly = false;
-            this.txtCedEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtCedEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtCedEmpleado.Depth = 0;
-            this.txtCedEmpleado.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCedEmpleado.HideSelection = true;
-            this.txtCedEmpleado.Hint = "Cédula";
-            this.txtCedEmpleado.LeadingIcon = null;
-            this.txtCedEmpleado.Location = new System.Drawing.Point(36, 56);
-            this.txtCedEmpleado.MaxLength = 32767;
-            this.txtCedEmpleado.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtCedEmpleado.Name = "txtCedEmpleado";
-            this.txtCedEmpleado.PasswordChar = '\0';
-            this.txtCedEmpleado.PrefixSuffixText = null;
-            this.txtCedEmpleado.ReadOnly = false;
-            this.txtCedEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtCedEmpleado.SelectedText = "";
-            this.txtCedEmpleado.SelectionLength = 0;
-            this.txtCedEmpleado.SelectionStart = 0;
-            this.txtCedEmpleado.ShortcutsEnabled = true;
-            this.txtCedEmpleado.Size = new System.Drawing.Size(250, 48);
-            this.txtCedEmpleado.TabIndex = 1;
-            this.txtCedEmpleado.TabStop = false;
-            this.txtCedEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtCedEmpleado.TrailingIcon = null;
-            this.txtCedEmpleado.UseSystemPasswordChar = false;
-            // 
-            // txtNombreEmpleado
-            // 
-            this.txtNombreEmpleado.AnimateReadOnly = false;
-            this.txtNombreEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtNombreEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtNombreEmpleado.Depth = 0;
-            this.txtNombreEmpleado.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtNombreEmpleado.HideSelection = true;
-            this.txtNombreEmpleado.Hint = "Nombre";
-            this.txtNombreEmpleado.LeadingIcon = null;
-            this.txtNombreEmpleado.Location = new System.Drawing.Point(36, 127);
-            this.txtNombreEmpleado.MaxLength = 32767;
-            this.txtNombreEmpleado.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtNombreEmpleado.Name = "txtNombreEmpleado";
-            this.txtNombreEmpleado.PasswordChar = '\0';
-            this.txtNombreEmpleado.PrefixSuffixText = null;
-            this.txtNombreEmpleado.ReadOnly = false;
-            this.txtNombreEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtNombreEmpleado.SelectedText = "";
-            this.txtNombreEmpleado.SelectionLength = 0;
-            this.txtNombreEmpleado.SelectionStart = 0;
-            this.txtNombreEmpleado.ShortcutsEnabled = true;
-            this.txtNombreEmpleado.Size = new System.Drawing.Size(250, 48);
-            this.txtNombreEmpleado.TabIndex = 2;
-            this.txtNombreEmpleado.TabStop = false;
-            this.txtNombreEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNombreEmpleado.TrailingIcon = null;
-            this.txtNombreEmpleado.UseSystemPasswordChar = false;
-            // 
-            // txtApellidoEmpleado
-            // 
-            this.txtApellidoEmpleado.AnimateReadOnly = false;
-            this.txtApellidoEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtApellidoEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtApellidoEmpleado.Depth = 0;
-            this.txtApellidoEmpleado.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtApellidoEmpleado.HideSelection = true;
-            this.txtApellidoEmpleado.Hint = "Apellido";
-            this.txtApellidoEmpleado.LeadingIcon = null;
-            this.txtApellidoEmpleado.Location = new System.Drawing.Point(36, 208);
-            this.txtApellidoEmpleado.MaxLength = 32767;
-            this.txtApellidoEmpleado.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtApellidoEmpleado.Name = "txtApellidoEmpleado";
-            this.txtApellidoEmpleado.PasswordChar = '\0';
-            this.txtApellidoEmpleado.PrefixSuffixText = null;
-            this.txtApellidoEmpleado.ReadOnly = false;
-            this.txtApellidoEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtApellidoEmpleado.SelectedText = "";
-            this.txtApellidoEmpleado.SelectionLength = 0;
-            this.txtApellidoEmpleado.SelectionStart = 0;
-            this.txtApellidoEmpleado.ShortcutsEnabled = true;
-            this.txtApellidoEmpleado.Size = new System.Drawing.Size(250, 48);
-            this.txtApellidoEmpleado.TabIndex = 3;
-            this.txtApellidoEmpleado.TabStop = false;
-            this.txtApellidoEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtApellidoEmpleado.TrailingIcon = null;
-            this.txtApellidoEmpleado.UseSystemPasswordChar = false;
-            // 
-            // cbPosicion
-            // 
-            this.cbPosicion.AutoResize = false;
-            this.cbPosicion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbPosicion.Depth = 0;
-            this.cbPosicion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbPosicion.DropDownHeight = 174;
-            this.cbPosicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPosicion.DropDownWidth = 121;
-            this.cbPosicion.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbPosicion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbPosicion.FormattingEnabled = true;
-            this.cbPosicion.Hint = "Posición";
-            this.cbPosicion.IntegralHeight = false;
-            this.cbPosicion.ItemHeight = 43;
-            this.cbPosicion.Items.AddRange(new object[] {
-            "Ninguno",
-            "Administrado",
-            "TI",
-            "Recursos Humanos",
-            "Resepcionista"});
-            this.cbPosicion.Location = new System.Drawing.Point(328, 56);
-            this.cbPosicion.MaxDropDownItems = 4;
-            this.cbPosicion.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbPosicion.Name = "cbPosicion";
-            this.cbPosicion.Size = new System.Drawing.Size(121, 49);
-            this.cbPosicion.StartIndex = 0;
-            this.cbPosicion.TabIndex = 4;
-            // 
-            // txtEmailEmpleado
-            // 
-            this.txtEmailEmpleado.AnimateReadOnly = false;
-            this.txtEmailEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtEmailEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtEmailEmpleado.Depth = 0;
-            this.txtEmailEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtEmailEmpleado.HideSelection = true;
-            this.txtEmailEmpleado.Hint = "Email";
-            this.txtEmailEmpleado.LeadingIcon = null;
-            this.txtEmailEmpleado.Location = new System.Drawing.Point(328, 127);
-            this.txtEmailEmpleado.MaxLength = 32767;
-            this.txtEmailEmpleado.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtEmailEmpleado.Name = "txtEmailEmpleado";
-            this.txtEmailEmpleado.PasswordChar = '\0';
-            this.txtEmailEmpleado.PrefixSuffixText = null;
-            this.txtEmailEmpleado.ReadOnly = false;
-            this.txtEmailEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtEmailEmpleado.SelectedText = "";
-            this.txtEmailEmpleado.SelectionLength = 0;
-            this.txtEmailEmpleado.SelectionStart = 0;
-            this.txtEmailEmpleado.ShortcutsEnabled = true;
-            this.txtEmailEmpleado.Size = new System.Drawing.Size(250, 48);
-            this.txtEmailEmpleado.TabIndex = 5;
-            this.txtEmailEmpleado.TabStop = false;
-            this.txtEmailEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtEmailEmpleado.TrailingIcon = null;
-            this.txtEmailEmpleado.UseSystemPasswordChar = false;
-            // 
-            // txtTelEmpleado
-            // 
-            this.txtTelEmpleado.AnimateReadOnly = false;
-            this.txtTelEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtTelEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtTelEmpleado.Depth = 0;
-            this.txtTelEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtTelEmpleado.HideSelection = true;
-            this.txtTelEmpleado.Hint = "Teléfono";
-            this.txtTelEmpleado.LeadingIcon = null;
-            this.txtTelEmpleado.Location = new System.Drawing.Point(328, 208);
-            this.txtTelEmpleado.MaxLength = 32767;
-            this.txtTelEmpleado.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtTelEmpleado.Name = "txtTelEmpleado";
-            this.txtTelEmpleado.PasswordChar = '\0';
-            this.txtTelEmpleado.PrefixSuffixText = null;
-            this.txtTelEmpleado.ReadOnly = false;
-            this.txtTelEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTelEmpleado.SelectedText = "";
-            this.txtTelEmpleado.SelectionLength = 0;
-            this.txtTelEmpleado.SelectionStart = 0;
-            this.txtTelEmpleado.ShortcutsEnabled = true;
-            this.txtTelEmpleado.Size = new System.Drawing.Size(250, 48);
-            this.txtTelEmpleado.TabIndex = 6;
-            this.txtTelEmpleado.TabStop = false;
-            this.txtTelEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtTelEmpleado.TrailingIcon = null;
-            this.txtTelEmpleado.UseSystemPasswordChar = false;
-            // 
-            // dtEmpleado
-            // 
-            this.dtEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.dtEmpleado.Location = new System.Drawing.Point(36, 291);
-            this.dtEmpleado.Name = "dtEmpleado";
-            this.dtEmpleado.Size = new System.Drawing.Size(699, 150);
-            this.dtEmpleado.TabIndex = 7;
-            // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.btnAgregarEmpleado);
-            this.panel6.Location = new System.Drawing.Point(599, 56);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(136, 200);
-            this.panel6.TabIndex = 8;
-            // 
-            // btnAgregarEmpleado
-            // 
-            this.btnAgregarEmpleado.AutoSize = false;
-            this.btnAgregarEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAgregarEmpleado.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnAgregarEmpleado.Depth = 0;
-            this.btnAgregarEmpleado.HighEmphasis = true;
-            this.btnAgregarEmpleado.Icon = null;
-            this.btnAgregarEmpleado.Location = new System.Drawing.Point(11, 17);
-            this.btnAgregarEmpleado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnAgregarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAgregarEmpleado.Name = "btnAgregarEmpleado";
-            this.btnAgregarEmpleado.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnAgregarEmpleado.Size = new System.Drawing.Size(111, 36);
-            this.btnAgregarEmpleado.TabIndex = 0;
-            this.btnAgregarEmpleado.Text = "Agregar";
-            this.btnAgregarEmpleado.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnAgregarEmpleado.UseAccentColor = false;
-            this.btnAgregarEmpleado.UseVisualStyleBackColor = true;
-            this.btnAgregarEmpleado.Click += new System.EventHandler(this.btnAgregarEmpleado_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Cédula";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Apellidos";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Posición";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Teléfono";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // lblMsjEmpleado
-            // 
-            this.lblMsjEmpleado.Location = new System.Drawing.Point(296, 453);
-            this.lblMsjEmpleado.Name = "lblMsjEmpleado";
-            this.lblMsjEmpleado.Size = new System.Drawing.Size(282, 23);
-            this.lblMsjEmpleado.TabIndex = 9;
-            this.lblMsjEmpleado.Text = "...";
-            // 
-            // lblNumPago
-            // 
-            this.lblNumPago.Location = new System.Drawing.Point(84, 52);
-            this.lblNumPago.Name = "lblNumPago";
-            this.lblNumPago.Size = new System.Drawing.Size(100, 23);
-            this.lblNumPago.TabIndex = 1;
-            this.lblNumPago.Text = "N°";
-            // 
-            // cbReservaPagos
-            // 
-            this.cbReservaPagos.AutoResize = false;
-            this.cbReservaPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbReservaPagos.Depth = 0;
-            this.cbReservaPagos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbReservaPagos.DropDownHeight = 174;
-            this.cbReservaPagos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReservaPagos.DropDownWidth = 121;
-            this.cbReservaPagos.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbReservaPagos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbReservaPagos.FormattingEnabled = true;
-            this.cbReservaPagos.Hint = "Reservación";
-            this.cbReservaPagos.IntegralHeight = false;
-            this.cbReservaPagos.ItemHeight = 43;
-            this.cbReservaPagos.Location = new System.Drawing.Point(73, 160);
-            this.cbReservaPagos.MaxDropDownItems = 4;
-            this.cbReservaPagos.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbReservaPagos.Name = "cbReservaPagos";
-            this.cbReservaPagos.Size = new System.Drawing.Size(200, 49);
-            this.cbReservaPagos.StartIndex = 0;
-            this.cbReservaPagos.TabIndex = 2;
-            // 
-            // txtMontoPago
-            // 
-            this.txtMontoPago.AnimateReadOnly = false;
-            this.txtMontoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtMontoPago.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtMontoPago.Depth = 0;
-            this.txtMontoPago.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtMontoPago.HideSelection = true;
-            this.txtMontoPago.Hint = "₡";
-            this.txtMontoPago.LeadingIcon = null;
-            this.txtMontoPago.Location = new System.Drawing.Point(285, 82);
-            this.txtMontoPago.MaxLength = 32767;
-            this.txtMontoPago.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtMontoPago.Name = "txtMontoPago";
-            this.txtMontoPago.PasswordChar = '\0';
-            this.txtMontoPago.PrefixSuffixText = null;
-            this.txtMontoPago.ReadOnly = false;
-            this.txtMontoPago.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtMontoPago.SelectedText = "";
-            this.txtMontoPago.SelectionLength = 0;
-            this.txtMontoPago.SelectionStart = 0;
-            this.txtMontoPago.ShortcutsEnabled = true;
-            this.txtMontoPago.Size = new System.Drawing.Size(194, 48);
-            this.txtMontoPago.TabIndex = 3;
-            this.txtMontoPago.TabStop = false;
-            this.txtMontoPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtMontoPago.TrailingIcon = null;
-            this.txtMontoPago.UseSystemPasswordChar = false;
-            // 
-            // dateTimePagos
-            // 
-            this.dateTimePagos.Location = new System.Drawing.Point(73, 91);
-            this.dateTimePagos.Name = "dateTimePagos";
-            this.dateTimePagos.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePagos.TabIndex = 4;
-            // 
-            // cbMetodosPago
-            // 
-            this.cbMetodosPago.AutoResize = false;
-            this.cbMetodosPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbMetodosPago.Depth = 0;
-            this.cbMetodosPago.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbMetodosPago.DropDownHeight = 174;
-            this.cbMetodosPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMetodosPago.DropDownWidth = 121;
-            this.cbMetodosPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbMetodosPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbMetodosPago.FormattingEnabled = true;
-            this.cbMetodosPago.Hint = "Métodos de Pago";
-            this.cbMetodosPago.IntegralHeight = false;
-            this.cbMetodosPago.ItemHeight = 43;
-            this.cbMetodosPago.Items.AddRange(new object[] {
-            "Ninguno",
-            "Efectivo",
-            "Tarjeta",
-            "Sinpe Móvil"});
-            this.cbMetodosPago.Location = new System.Drawing.Point(285, 160);
-            this.cbMetodosPago.MaxDropDownItems = 4;
-            this.cbMetodosPago.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbMetodosPago.Name = "cbMetodosPago";
-            this.cbMetodosPago.Size = new System.Drawing.Size(194, 49);
-            this.cbMetodosPago.StartIndex = 0;
-            this.cbMetodosPago.TabIndex = 5;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.btnAgregarPago);
-            this.panel7.Location = new System.Drawing.Point(532, 52);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(164, 157);
-            this.panel7.TabIndex = 6;
-            // 
-            // btnAgregarPago
-            // 
-            this.btnAgregarPago.AutoSize = false;
-            this.btnAgregarPago.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAgregarPago.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnAgregarPago.Depth = 0;
-            this.btnAgregarPago.HighEmphasis = true;
-            this.btnAgregarPago.Icon = null;
-            this.btnAgregarPago.Location = new System.Drawing.Point(45, 32);
-            this.btnAgregarPago.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnAgregarPago.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAgregarPago.Name = "btnAgregarPago";
-            this.btnAgregarPago.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnAgregarPago.Size = new System.Drawing.Size(75, 36);
-            this.btnAgregarPago.TabIndex = 0;
-            this.btnAgregarPago.Text = "Agregar";
-            this.btnAgregarPago.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnAgregarPago.UseAccentColor = false;
-            this.btnAgregarPago.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
-            this.dataGridView1.Location = new System.Drawing.Point(73, 255);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(623, 150);
-            this.dataGridView1.TabIndex = 7;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "N°";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Reservación";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Método de Pago";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "Monto";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "Fecha";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // lblMsjPago
-            // 
-            this.lblMsjPago.Location = new System.Drawing.Point(228, 427);
-            this.lblMsjPago.Name = "lblMsjPago";
-            this.lblMsjPago.Size = new System.Drawing.Size(326, 23);
-            this.lblMsjPago.TabIndex = 8;
-            this.lblMsjPago.Text = "...";
-            // 
-            // lblNumFactura
-            // 
-            this.lblNumFactura.Location = new System.Drawing.Point(75, 58);
-            this.lblNumFactura.Name = "lblNumFactura";
-            this.lblNumFactura.Size = new System.Drawing.Size(100, 23);
-            this.lblNumFactura.TabIndex = 1;
-            this.lblNumFactura.Text = "N°";
-            // 
-            // cbReservacionFactura
-            // 
-            this.cbReservacionFactura.AutoResize = false;
-            this.cbReservacionFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbReservacionFactura.Depth = 0;
-            this.cbReservacionFactura.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbReservacionFactura.DropDownHeight = 174;
-            this.cbReservacionFactura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReservacionFactura.DropDownWidth = 121;
-            this.cbReservacionFactura.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbReservacionFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbReservacionFactura.FormattingEnabled = true;
-            this.cbReservacionFactura.Hint = "N° Reservación";
-            this.cbReservacionFactura.IntegralHeight = false;
-            this.cbReservacionFactura.ItemHeight = 43;
-            this.cbReservacionFactura.Location = new System.Drawing.Point(32, 84);
-            this.cbReservacionFactura.MaxDropDownItems = 4;
-            this.cbReservacionFactura.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbReservacionFactura.Name = "cbReservacionFactura";
-            this.cbReservacionFactura.Size = new System.Drawing.Size(143, 49);
-            this.cbReservacionFactura.StartIndex = 0;
-            this.cbReservacionFactura.TabIndex = 2;
-            // 
-            // cbClienteFacturacion
-            // 
-            this.cbClienteFacturacion.AutoResize = false;
-            this.cbClienteFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbClienteFacturacion.Depth = 0;
-            this.cbClienteFacturacion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbClienteFacturacion.DropDownHeight = 174;
-            this.cbClienteFacturacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbClienteFacturacion.DropDownWidth = 121;
-            this.cbClienteFacturacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbClienteFacturacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbClienteFacturacion.FormattingEnabled = true;
-            this.cbClienteFacturacion.Hint = "N° Cliente";
-            this.cbClienteFacturacion.IntegralHeight = false;
-            this.cbClienteFacturacion.ItemHeight = 43;
-            this.cbClienteFacturacion.Location = new System.Drawing.Point(181, 84);
-            this.cbClienteFacturacion.MaxDropDownItems = 4;
-            this.cbClienteFacturacion.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbClienteFacturacion.Name = "cbClienteFacturacion";
-            this.cbClienteFacturacion.Size = new System.Drawing.Size(143, 49);
-            this.cbClienteFacturacion.StartIndex = 0;
-            this.cbClienteFacturacion.TabIndex = 3;
-            // 
-            // cbEmpleadoFacturacion
-            // 
-            this.cbEmpleadoFacturacion.AutoResize = false;
-            this.cbEmpleadoFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbEmpleadoFacturacion.Depth = 0;
-            this.cbEmpleadoFacturacion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbEmpleadoFacturacion.DropDownHeight = 174;
-            this.cbEmpleadoFacturacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEmpleadoFacturacion.DropDownWidth = 121;
-            this.cbEmpleadoFacturacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbEmpleadoFacturacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbEmpleadoFacturacion.FormattingEnabled = true;
-            this.cbEmpleadoFacturacion.Hint = "Empleado";
-            this.cbEmpleadoFacturacion.IntegralHeight = false;
-            this.cbEmpleadoFacturacion.ItemHeight = 43;
-            this.cbEmpleadoFacturacion.Location = new System.Drawing.Point(330, 84);
-            this.cbEmpleadoFacturacion.MaxDropDownItems = 4;
-            this.cbEmpleadoFacturacion.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbEmpleadoFacturacion.Name = "cbEmpleadoFacturacion";
-            this.cbEmpleadoFacturacion.Size = new System.Drawing.Size(143, 49);
-            this.cbEmpleadoFacturacion.StartIndex = 0;
-            this.cbEmpleadoFacturacion.TabIndex = 4;
-            // 
-            // txtMontoFacturacion
-            // 
-            this.txtMontoFacturacion.AnimateReadOnly = false;
-            this.txtMontoFacturacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtMontoFacturacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtMontoFacturacion.Depth = 0;
-            this.txtMontoFacturacion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtMontoFacturacion.HideSelection = true;
-            this.txtMontoFacturacion.Hint = "₡";
-            this.txtMontoFacturacion.LeadingIcon = null;
-            this.txtMontoFacturacion.Location = new System.Drawing.Point(32, 156);
-            this.txtMontoFacturacion.MaxLength = 32767;
-            this.txtMontoFacturacion.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtMontoFacturacion.Name = "txtMontoFacturacion";
-            this.txtMontoFacturacion.PasswordChar = '\0';
-            this.txtMontoFacturacion.PrefixSuffixText = null;
-            this.txtMontoFacturacion.ReadOnly = false;
-            this.txtMontoFacturacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtMontoFacturacion.SelectedText = "";
-            this.txtMontoFacturacion.SelectionLength = 0;
-            this.txtMontoFacturacion.SelectionStart = 0;
-            this.txtMontoFacturacion.ShortcutsEnabled = true;
-            this.txtMontoFacturacion.Size = new System.Drawing.Size(194, 48);
-            this.txtMontoFacturacion.TabIndex = 5;
-            this.txtMontoFacturacion.TabStop = false;
-            this.txtMontoFacturacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtMontoFacturacion.TrailingIcon = null;
-            this.txtMontoFacturacion.UseSystemPasswordChar = false;
-            // 
-            // dateTimeFechaFactura
-            // 
-            this.dateTimeFechaFactura.Location = new System.Drawing.Point(249, 169);
-            this.dateTimeFechaFactura.Name = "dateTimeFechaFactura";
-            this.dateTimeFechaFactura.Size = new System.Drawing.Size(224, 20);
-            this.dateTimeFechaFactura.TabIndex = 6;
-            // 
-            // panel8
-            // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel8.Controls.Add(this.btnAgregarFactura);
-            this.panel8.Location = new System.Drawing.Point(513, 58);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(167, 146);
-            this.panel8.TabIndex = 7;
-            // 
-            // btnAgregarFactura
-            // 
-            this.btnAgregarFactura.AutoSize = false;
-            this.btnAgregarFactura.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAgregarFactura.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnAgregarFactura.Depth = 0;
-            this.btnAgregarFactura.HighEmphasis = true;
-            this.btnAgregarFactura.Icon = null;
-            this.btnAgregarFactura.Location = new System.Drawing.Point(29, 24);
-            this.btnAgregarFactura.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnAgregarFactura.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAgregarFactura.Name = "btnAgregarFactura";
-            this.btnAgregarFactura.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnAgregarFactura.Size = new System.Drawing.Size(103, 36);
-            this.btnAgregarFactura.TabIndex = 0;
-            this.btnAgregarFactura.Text = "Agregar";
-            this.btnAgregarFactura.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnAgregarFactura.UseAccentColor = false;
-            this.btnAgregarFactura.UseVisualStyleBackColor = true;
+            // lblMsjFactura
+            // 
+            this.lblMsjFactura.Location = new System.Drawing.Point(234, 423);
+            this.lblMsjFactura.Name = "lblMsjFactura";
+            this.lblMsjFactura.Size = new System.Drawing.Size(270, 23);
+            this.lblMsjFactura.TabIndex = 9;
+            this.lblMsjFactura.Text = "...";
             // 
             // dtFactura
             // 
@@ -2160,19 +1760,566 @@
             this.dataGridViewTextBoxColumn17.HeaderText = "Fecha";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             // 
-            // lblMsjFactura
+            // panel8
             // 
-            this.lblMsjFactura.Location = new System.Drawing.Point(234, 423);
-            this.lblMsjFactura.Name = "lblMsjFactura";
-            this.lblMsjFactura.Size = new System.Drawing.Size(270, 23);
-            this.lblMsjFactura.TabIndex = 9;
-            this.lblMsjFactura.Text = "...";
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.btnAgregarFactura);
+            this.panel8.Location = new System.Drawing.Point(513, 58);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(167, 146);
+            this.panel8.TabIndex = 7;
+            // 
+            // btnAgregarFactura
+            // 
+            this.btnAgregarFactura.AutoSize = false;
+            this.btnAgregarFactura.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAgregarFactura.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAgregarFactura.Depth = 0;
+            this.btnAgregarFactura.HighEmphasis = true;
+            this.btnAgregarFactura.Icon = null;
+            this.btnAgregarFactura.Location = new System.Drawing.Point(29, 24);
+            this.btnAgregarFactura.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAgregarFactura.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAgregarFactura.Name = "btnAgregarFactura";
+            this.btnAgregarFactura.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAgregarFactura.Size = new System.Drawing.Size(103, 36);
+            this.btnAgregarFactura.TabIndex = 0;
+            this.btnAgregarFactura.Text = "Agregar";
+            this.btnAgregarFactura.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAgregarFactura.UseAccentColor = false;
+            this.btnAgregarFactura.UseVisualStyleBackColor = true;
+            this.btnAgregarFactura.Click += new System.EventHandler(this.btnAgregarFactura_Click);
+            // 
+            // dateTimeFechaFactura
+            // 
+            this.dateTimeFechaFactura.Location = new System.Drawing.Point(249, 169);
+            this.dateTimeFechaFactura.Name = "dateTimeFechaFactura";
+            this.dateTimeFechaFactura.Size = new System.Drawing.Size(224, 20);
+            this.dateTimeFechaFactura.TabIndex = 6;
+            // 
+            // txtMontoFacturacion
+            // 
+            this.txtMontoFacturacion.AnimateReadOnly = false;
+            this.txtMontoFacturacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtMontoFacturacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtMontoFacturacion.Depth = 0;
+            this.txtMontoFacturacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMontoFacturacion.HideSelection = true;
+            this.txtMontoFacturacion.Hint = "₡";
+            this.txtMontoFacturacion.LeadingIcon = null;
+            this.txtMontoFacturacion.Location = new System.Drawing.Point(32, 156);
+            this.txtMontoFacturacion.MaxLength = 32767;
+            this.txtMontoFacturacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtMontoFacturacion.Name = "txtMontoFacturacion";
+            this.txtMontoFacturacion.PasswordChar = '\0';
+            this.txtMontoFacturacion.PrefixSuffixText = null;
+            this.txtMontoFacturacion.ReadOnly = false;
+            this.txtMontoFacturacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtMontoFacturacion.SelectedText = "";
+            this.txtMontoFacturacion.SelectionLength = 0;
+            this.txtMontoFacturacion.SelectionStart = 0;
+            this.txtMontoFacturacion.ShortcutsEnabled = true;
+            this.txtMontoFacturacion.Size = new System.Drawing.Size(194, 48);
+            this.txtMontoFacturacion.TabIndex = 5;
+            this.txtMontoFacturacion.TabStop = false;
+            this.txtMontoFacturacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMontoFacturacion.TrailingIcon = null;
+            this.txtMontoFacturacion.UseSystemPasswordChar = false;
+            // 
+            // cbEmpleadoFacturacion
+            // 
+            this.cbEmpleadoFacturacion.AutoResize = false;
+            this.cbEmpleadoFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbEmpleadoFacturacion.Depth = 0;
+            this.cbEmpleadoFacturacion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbEmpleadoFacturacion.DropDownHeight = 174;
+            this.cbEmpleadoFacturacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEmpleadoFacturacion.DropDownWidth = 121;
+            this.cbEmpleadoFacturacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbEmpleadoFacturacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbEmpleadoFacturacion.FormattingEnabled = true;
+            this.cbEmpleadoFacturacion.Hint = "Empleado";
+            this.cbEmpleadoFacturacion.IntegralHeight = false;
+            this.cbEmpleadoFacturacion.ItemHeight = 43;
+            this.cbEmpleadoFacturacion.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3"});
+            this.cbEmpleadoFacturacion.Location = new System.Drawing.Point(330, 84);
+            this.cbEmpleadoFacturacion.MaxDropDownItems = 4;
+            this.cbEmpleadoFacturacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbEmpleadoFacturacion.Name = "cbEmpleadoFacturacion";
+            this.cbEmpleadoFacturacion.Size = new System.Drawing.Size(143, 49);
+            this.cbEmpleadoFacturacion.StartIndex = 0;
+            this.cbEmpleadoFacturacion.TabIndex = 4;
+            // 
+            // cbClienteFacturacion
+            // 
+            this.cbClienteFacturacion.AutoResize = false;
+            this.cbClienteFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbClienteFacturacion.Depth = 0;
+            this.cbClienteFacturacion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbClienteFacturacion.DropDownHeight = 174;
+            this.cbClienteFacturacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClienteFacturacion.DropDownWidth = 121;
+            this.cbClienteFacturacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbClienteFacturacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbClienteFacturacion.FormattingEnabled = true;
+            this.cbClienteFacturacion.Hint = "N° Cliente";
+            this.cbClienteFacturacion.IntegralHeight = false;
+            this.cbClienteFacturacion.ItemHeight = 43;
+            this.cbClienteFacturacion.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3"});
+            this.cbClienteFacturacion.Location = new System.Drawing.Point(181, 84);
+            this.cbClienteFacturacion.MaxDropDownItems = 4;
+            this.cbClienteFacturacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbClienteFacturacion.Name = "cbClienteFacturacion";
+            this.cbClienteFacturacion.Size = new System.Drawing.Size(143, 49);
+            this.cbClienteFacturacion.StartIndex = 0;
+            this.cbClienteFacturacion.TabIndex = 3;
+            // 
+            // cbReservacionFactura
+            // 
+            this.cbReservacionFactura.AutoResize = false;
+            this.cbReservacionFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbReservacionFactura.Depth = 0;
+            this.cbReservacionFactura.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbReservacionFactura.DropDownHeight = 174;
+            this.cbReservacionFactura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReservacionFactura.DropDownWidth = 121;
+            this.cbReservacionFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbReservacionFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbReservacionFactura.FormattingEnabled = true;
+            this.cbReservacionFactura.Hint = "N° Reservación";
+            this.cbReservacionFactura.IntegralHeight = false;
+            this.cbReservacionFactura.ItemHeight = 43;
+            this.cbReservacionFactura.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3"});
+            this.cbReservacionFactura.Location = new System.Drawing.Point(32, 84);
+            this.cbReservacionFactura.MaxDropDownItems = 4;
+            this.cbReservacionFactura.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbReservacionFactura.Name = "cbReservacionFactura";
+            this.cbReservacionFactura.Size = new System.Drawing.Size(143, 49);
+            this.cbReservacionFactura.StartIndex = 0;
+            this.cbReservacionFactura.TabIndex = 2;
+            // 
+            // lblNumFactura
+            // 
+            this.lblNumFactura.Location = new System.Drawing.Point(75, 58);
+            this.lblNumFactura.Name = "lblNumFactura";
+            this.lblNumFactura.Size = new System.Drawing.Size(100, 23);
+            this.lblNumFactura.TabIndex = 1;
+            this.lblNumFactura.Text = "N°";
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(28, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(122, 23);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Facturación";
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.materialCard7);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(764, 499);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Empleado";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // materialCard7
+            // 
+            this.materialCard7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard7.Controls.Add(this.lblMsjEmpleado);
+            this.materialCard7.Controls.Add(this.panel6);
+            this.materialCard7.Controls.Add(this.dtEmpleado);
+            this.materialCard7.Controls.Add(this.txtTelEmpleado);
+            this.materialCard7.Controls.Add(this.txtEmailEmpleado);
+            this.materialCard7.Controls.Add(this.cbPosicion);
+            this.materialCard7.Controls.Add(this.txtApellidoEmpleado);
+            this.materialCard7.Controls.Add(this.txtNombreEmpleado);
+            this.materialCard7.Controls.Add(this.txtCedEmpleado);
+            this.materialCard7.Controls.Add(this.label9);
+            this.materialCard7.Depth = 0;
+            this.materialCard7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialCard7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard7.Location = new System.Drawing.Point(0, 0);
+            this.materialCard7.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard7.Name = "materialCard7";
+            this.materialCard7.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard7.Size = new System.Drawing.Size(764, 499);
+            this.materialCard7.TabIndex = 0;
+            // 
+            // lblMsjEmpleado
+            // 
+            this.lblMsjEmpleado.Location = new System.Drawing.Point(296, 453);
+            this.lblMsjEmpleado.Name = "lblMsjEmpleado";
+            this.lblMsjEmpleado.Size = new System.Drawing.Size(282, 23);
+            this.lblMsjEmpleado.TabIndex = 9;
+            this.lblMsjEmpleado.Text = "...";
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.btnAgregarEmpleado);
+            this.panel6.Location = new System.Drawing.Point(599, 56);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(136, 200);
+            this.panel6.TabIndex = 8;
+            // 
+            // btnAgregarEmpleado
+            // 
+            this.btnAgregarEmpleado.AutoSize = false;
+            this.btnAgregarEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAgregarEmpleado.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAgregarEmpleado.Depth = 0;
+            this.btnAgregarEmpleado.HighEmphasis = true;
+            this.btnAgregarEmpleado.Icon = null;
+            this.btnAgregarEmpleado.Location = new System.Drawing.Point(11, 17);
+            this.btnAgregarEmpleado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAgregarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAgregarEmpleado.Name = "btnAgregarEmpleado";
+            this.btnAgregarEmpleado.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAgregarEmpleado.Size = new System.Drawing.Size(111, 36);
+            this.btnAgregarEmpleado.TabIndex = 0;
+            this.btnAgregarEmpleado.Text = "Agregar";
+            this.btnAgregarEmpleado.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAgregarEmpleado.UseAccentColor = false;
+            this.btnAgregarEmpleado.UseVisualStyleBackColor = true;
+            this.btnAgregarEmpleado.Click += new System.EventHandler(this.btnAgregarEmpleado_Click);
+            // 
+            // dtEmpleado
+            // 
+            this.dtEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.dtEmpleado.Location = new System.Drawing.Point(36, 291);
+            this.dtEmpleado.Name = "dtEmpleado";
+            this.dtEmpleado.Size = new System.Drawing.Size(699, 150);
+            this.dtEmpleado.TabIndex = 7;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Cédula";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Apellidos";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Posición";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Teléfono";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // txtTelEmpleado
+            // 
+            this.txtTelEmpleado.AnimateReadOnly = false;
+            this.txtTelEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtTelEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtTelEmpleado.Depth = 0;
+            this.txtTelEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTelEmpleado.HideSelection = true;
+            this.txtTelEmpleado.Hint = "Teléfono";
+            this.txtTelEmpleado.LeadingIcon = null;
+            this.txtTelEmpleado.Location = new System.Drawing.Point(328, 208);
+            this.txtTelEmpleado.MaxLength = 32767;
+            this.txtTelEmpleado.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtTelEmpleado.Name = "txtTelEmpleado";
+            this.txtTelEmpleado.PasswordChar = '\0';
+            this.txtTelEmpleado.PrefixSuffixText = null;
+            this.txtTelEmpleado.ReadOnly = false;
+            this.txtTelEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTelEmpleado.SelectedText = "";
+            this.txtTelEmpleado.SelectionLength = 0;
+            this.txtTelEmpleado.SelectionStart = 0;
+            this.txtTelEmpleado.ShortcutsEnabled = true;
+            this.txtTelEmpleado.Size = new System.Drawing.Size(250, 48);
+            this.txtTelEmpleado.TabIndex = 6;
+            this.txtTelEmpleado.TabStop = false;
+            this.txtTelEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTelEmpleado.TrailingIcon = null;
+            this.txtTelEmpleado.UseSystemPasswordChar = false;
+            // 
+            // txtEmailEmpleado
+            // 
+            this.txtEmailEmpleado.AnimateReadOnly = false;
+            this.txtEmailEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtEmailEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtEmailEmpleado.Depth = 0;
+            this.txtEmailEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtEmailEmpleado.HideSelection = true;
+            this.txtEmailEmpleado.Hint = "Email";
+            this.txtEmailEmpleado.LeadingIcon = null;
+            this.txtEmailEmpleado.Location = new System.Drawing.Point(328, 127);
+            this.txtEmailEmpleado.MaxLength = 32767;
+            this.txtEmailEmpleado.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtEmailEmpleado.Name = "txtEmailEmpleado";
+            this.txtEmailEmpleado.PasswordChar = '\0';
+            this.txtEmailEmpleado.PrefixSuffixText = null;
+            this.txtEmailEmpleado.ReadOnly = false;
+            this.txtEmailEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtEmailEmpleado.SelectedText = "";
+            this.txtEmailEmpleado.SelectionLength = 0;
+            this.txtEmailEmpleado.SelectionStart = 0;
+            this.txtEmailEmpleado.ShortcutsEnabled = true;
+            this.txtEmailEmpleado.Size = new System.Drawing.Size(250, 48);
+            this.txtEmailEmpleado.TabIndex = 5;
+            this.txtEmailEmpleado.TabStop = false;
+            this.txtEmailEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtEmailEmpleado.TrailingIcon = null;
+            this.txtEmailEmpleado.UseSystemPasswordChar = false;
+            // 
+            // cbPosicion
+            // 
+            this.cbPosicion.AutoResize = false;
+            this.cbPosicion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbPosicion.Depth = 0;
+            this.cbPosicion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbPosicion.DropDownHeight = 174;
+            this.cbPosicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPosicion.DropDownWidth = 121;
+            this.cbPosicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbPosicion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbPosicion.FormattingEnabled = true;
+            this.cbPosicion.Hint = "Posición";
+            this.cbPosicion.IntegralHeight = false;
+            this.cbPosicion.ItemHeight = 43;
+            this.cbPosicion.Items.AddRange(new object[] {
+            "Ninguno",
+            "Administrado",
+            "TI",
+            "Recursos Humanos",
+            "Resepcionista"});
+            this.cbPosicion.Location = new System.Drawing.Point(328, 56);
+            this.cbPosicion.MaxDropDownItems = 4;
+            this.cbPosicion.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbPosicion.Name = "cbPosicion";
+            this.cbPosicion.Size = new System.Drawing.Size(121, 49);
+            this.cbPosicion.StartIndex = 0;
+            this.cbPosicion.TabIndex = 4;
+            // 
+            // txtApellidoEmpleado
+            // 
+            this.txtApellidoEmpleado.AnimateReadOnly = false;
+            this.txtApellidoEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtApellidoEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtApellidoEmpleado.Depth = 0;
+            this.txtApellidoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtApellidoEmpleado.HideSelection = true;
+            this.txtApellidoEmpleado.Hint = "Apellido";
+            this.txtApellidoEmpleado.LeadingIcon = null;
+            this.txtApellidoEmpleado.Location = new System.Drawing.Point(36, 208);
+            this.txtApellidoEmpleado.MaxLength = 32767;
+            this.txtApellidoEmpleado.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtApellidoEmpleado.Name = "txtApellidoEmpleado";
+            this.txtApellidoEmpleado.PasswordChar = '\0';
+            this.txtApellidoEmpleado.PrefixSuffixText = null;
+            this.txtApellidoEmpleado.ReadOnly = false;
+            this.txtApellidoEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtApellidoEmpleado.SelectedText = "";
+            this.txtApellidoEmpleado.SelectionLength = 0;
+            this.txtApellidoEmpleado.SelectionStart = 0;
+            this.txtApellidoEmpleado.ShortcutsEnabled = true;
+            this.txtApellidoEmpleado.Size = new System.Drawing.Size(250, 48);
+            this.txtApellidoEmpleado.TabIndex = 3;
+            this.txtApellidoEmpleado.TabStop = false;
+            this.txtApellidoEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtApellidoEmpleado.TrailingIcon = null;
+            this.txtApellidoEmpleado.UseSystemPasswordChar = false;
+            // 
+            // txtNombreEmpleado
+            // 
+            this.txtNombreEmpleado.AnimateReadOnly = false;
+            this.txtNombreEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtNombreEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtNombreEmpleado.Depth = 0;
+            this.txtNombreEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNombreEmpleado.HideSelection = true;
+            this.txtNombreEmpleado.Hint = "Nombre";
+            this.txtNombreEmpleado.LeadingIcon = null;
+            this.txtNombreEmpleado.Location = new System.Drawing.Point(36, 127);
+            this.txtNombreEmpleado.MaxLength = 32767;
+            this.txtNombreEmpleado.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtNombreEmpleado.Name = "txtNombreEmpleado";
+            this.txtNombreEmpleado.PasswordChar = '\0';
+            this.txtNombreEmpleado.PrefixSuffixText = null;
+            this.txtNombreEmpleado.ReadOnly = false;
+            this.txtNombreEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtNombreEmpleado.SelectedText = "";
+            this.txtNombreEmpleado.SelectionLength = 0;
+            this.txtNombreEmpleado.SelectionStart = 0;
+            this.txtNombreEmpleado.ShortcutsEnabled = true;
+            this.txtNombreEmpleado.Size = new System.Drawing.Size(250, 48);
+            this.txtNombreEmpleado.TabIndex = 2;
+            this.txtNombreEmpleado.TabStop = false;
+            this.txtNombreEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNombreEmpleado.TrailingIcon = null;
+            this.txtNombreEmpleado.UseSystemPasswordChar = false;
+            // 
+            // txtCedEmpleado
+            // 
+            this.txtCedEmpleado.AnimateReadOnly = false;
+            this.txtCedEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtCedEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtCedEmpleado.Depth = 0;
+            this.txtCedEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCedEmpleado.HideSelection = true;
+            this.txtCedEmpleado.Hint = "Cédula";
+            this.txtCedEmpleado.LeadingIcon = null;
+            this.txtCedEmpleado.Location = new System.Drawing.Point(36, 56);
+            this.txtCedEmpleado.MaxLength = 32767;
+            this.txtCedEmpleado.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCedEmpleado.Name = "txtCedEmpleado";
+            this.txtCedEmpleado.PasswordChar = '\0';
+            this.txtCedEmpleado.PrefixSuffixText = null;
+            this.txtCedEmpleado.ReadOnly = false;
+            this.txtCedEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtCedEmpleado.SelectedText = "";
+            this.txtCedEmpleado.SelectionLength = 0;
+            this.txtCedEmpleado.SelectionStart = 0;
+            this.txtCedEmpleado.ShortcutsEnabled = true;
+            this.txtCedEmpleado.Size = new System.Drawing.Size(250, 48);
+            this.txtCedEmpleado.TabIndex = 1;
+            this.txtCedEmpleado.TabStop = false;
+            this.txtCedEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCedEmpleado.TrailingIcon = null;
+            this.txtCedEmpleado.UseSystemPasswordChar = false;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(18, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(197, 23);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Agregar Empleado";
+            // 
+            // txtxTipoHReservacion
+            // 
+            this.txtxTipoHReservacion.AnimateReadOnly = false;
+            this.txtxTipoHReservacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtxTipoHReservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtxTipoHReservacion.Depth = 0;
+            this.txtxTipoHReservacion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtxTipoHReservacion.HideSelection = true;
+            this.txtxTipoHReservacion.Hint = "Tipo Habitación";
+            this.txtxTipoHReservacion.LeadingIcon = null;
+            this.txtxTipoHReservacion.Location = new System.Drawing.Point(362, 71);
+            this.txtxTipoHReservacion.MaxLength = 32767;
+            this.txtxTipoHReservacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtxTipoHReservacion.Name = "txtxTipoHReservacion";
+            this.txtxTipoHReservacion.PasswordChar = '\0';
+            this.txtxTipoHReservacion.PrefixSuffixText = null;
+            this.txtxTipoHReservacion.ReadOnly = true;
+            this.txtxTipoHReservacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtxTipoHReservacion.SelectedText = "";
+            this.txtxTipoHReservacion.SelectionLength = 0;
+            this.txtxTipoHReservacion.SelectionStart = 0;
+            this.txtxTipoHReservacion.ShortcutsEnabled = true;
+            this.txtxTipoHReservacion.Size = new System.Drawing.Size(149, 48);
+            this.txtxTipoHReservacion.TabIndex = 12;
+            this.txtxTipoHReservacion.TabStop = false;
+            this.txtxTipoHReservacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtxTipoHReservacion.TrailingIcon = null;
+            this.txtxTipoHReservacion.UseSystemPasswordChar = false;
+            // 
+            // txtCapacidadHReservacion
+            // 
+            this.txtCapacidadHReservacion.AnimateReadOnly = false;
+            this.txtCapacidadHReservacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtCapacidadHReservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtCapacidadHReservacion.Depth = 0;
+            this.txtCapacidadHReservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCapacidadHReservacion.HideSelection = true;
+            this.txtCapacidadHReservacion.Hint = "Capacidad";
+            this.txtCapacidadHReservacion.LeadingIcon = null;
+            this.txtCapacidadHReservacion.Location = new System.Drawing.Point(234, 146);
+            this.txtCapacidadHReservacion.MaxLength = 32767;
+            this.txtCapacidadHReservacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCapacidadHReservacion.Name = "txtCapacidadHReservacion";
+            this.txtCapacidadHReservacion.PasswordChar = '\0';
+            this.txtCapacidadHReservacion.PrefixSuffixText = null;
+            this.txtCapacidadHReservacion.ReadOnly = true;
+            this.txtCapacidadHReservacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtCapacidadHReservacion.SelectedText = "";
+            this.txtCapacidadHReservacion.SelectionLength = 0;
+            this.txtCapacidadHReservacion.SelectionStart = 0;
+            this.txtCapacidadHReservacion.ShortcutsEnabled = true;
+            this.txtCapacidadHReservacion.Size = new System.Drawing.Size(121, 48);
+            this.txtCapacidadHReservacion.TabIndex = 13;
+            this.txtCapacidadHReservacion.TabStop = false;
+            this.txtCapacidadHReservacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCapacidadHReservacion.TrailingIcon = null;
+            this.txtCapacidadHReservacion.UseSystemPasswordChar = false;
+            // 
+            // txtMontoHRservacion
+            // 
+            this.txtMontoHRservacion.AnimateReadOnly = false;
+            this.txtMontoHRservacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtMontoHRservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtMontoHRservacion.Depth = 0;
+            this.txtMontoHRservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMontoHRservacion.HideSelection = true;
+            this.txtMontoHRservacion.Hint = "₡";
+            this.txtMontoHRservacion.LeadingIcon = null;
+            this.txtMontoHRservacion.Location = new System.Drawing.Point(362, 146);
+            this.txtMontoHRservacion.MaxLength = 32767;
+            this.txtMontoHRservacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtMontoHRservacion.Name = "txtMontoHRservacion";
+            this.txtMontoHRservacion.PasswordChar = '\0';
+            this.txtMontoHRservacion.PrefixSuffixText = null;
+            this.txtMontoHRservacion.ReadOnly = true;
+            this.txtMontoHRservacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtMontoHRservacion.SelectedText = "";
+            this.txtMontoHRservacion.SelectionLength = 0;
+            this.txtMontoHRservacion.SelectionStart = 0;
+            this.txtMontoHRservacion.ShortcutsEnabled = true;
+            this.txtMontoHRservacion.Size = new System.Drawing.Size(149, 48);
+            this.txtMontoHRservacion.TabIndex = 14;
+            this.txtMontoHRservacion.TabStop = false;
+            this.txtMontoHRservacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMontoHRservacion.TrailingIcon = null;
+            this.txtMontoHRservacion.UseSystemPasswordChar = false;
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 592);
+            this.ClientSize = new System.Drawing.Size(778, 697);
             this.Controls.Add(this.lbl_IdHabitacion);
             this.DrawerTabControl = this.lbl_IdHabitacion;
             this.Name = "Principal";
@@ -2199,20 +2346,20 @@
             this.panel4.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.materialCard4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtC)).EndInit();
             this.panel5.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.materialCard5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtPagos)).EndInit();
+            this.panel7.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.materialCard6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtFactura)).EndInit();
+            this.panel8.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.materialCard7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtEmpleado)).EndInit();
             this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEmpleado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2235,12 +2382,6 @@
         private MaterialSkin.Controls.MaterialLabel lblID;
         private MaterialSkin.Controls.MaterialSlider SliderStars;
         private System.Windows.Forms.DataGridView dtHoteles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialButton btnActualizar;
         private MaterialSkin.Controls.MaterialButton btnAgregarHotel;
@@ -2337,7 +2478,7 @@
         private System.Windows.Forms.Panel panel7;
         private MaterialSkin.Controls.MaterialButton btnAgregarPago;
         private System.Windows.Forms.Label lblMsjPago;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtPagos;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
@@ -2359,5 +2500,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.Panel panel8;
         private MaterialSkin.Controls.MaterialButton btnAgregarFactura;
+        private MaterialSkin.Controls.MaterialComboBox cbHabitacionesHotel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HabitacionesH;
+        private MaterialSkin.Controls.MaterialTextBox2 txtMontoHRservacion;
+        private MaterialSkin.Controls.MaterialTextBox2 txtCapacidadHReservacion;
+        private MaterialSkin.Controls.MaterialTextBox2 txtxTipoHReservacion;
     }
 }

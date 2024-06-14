@@ -16,8 +16,10 @@ namespace Evaluación1_Hotel.Forms
     public partial class Principal : MaterialForm
     {
         //creamos las instancias
-        ClassHotel Hotel = new ClassHotel();
-        ClassHabitacion habitacion = new ClassHabitacion();
+        ClassHotel Hotel = new ClassHotel(1, "Hotel Upala", "Upala", "Upala", "Costa Rica", 4);
+        ClassHabitacion classHbitacion;
+
+        //ClassHabitacion habitacion = new ClassHabitacion();
         ClassReservacion reservacion = new ClassReservacion();
         ClassCliente ClaseClientes = new ClassCliente();
         ClassPago Pago = new ClassPago();
@@ -57,21 +59,41 @@ namespace Evaluación1_Hotel.Forms
         /// </summary>
         public void agregarHotelList()
         {
-            //agrergamos los animales a la lista
-            ClassHotel guardarHotel = new ClassHotel(
-                contHotel, txtNombre.Text, txtDireccion.Text, txtCiudad.Text, txtxPais.Text, SliderStars.Value
-                );
-
-            hoteles.Add(guardarHotel);
-
-
+            //agrergamos los hoteles a la lista
+            /* ClassHotel guardarHotel = new ClassHotel(
+                 contHotel, txtNombre.Text, txtDireccion.Text, txtCiudad.Text, txtxPais.Text, SliderStars.Value,
+                 cbHabitacionesHotel.SelectedItem.ToString
+                 );
+            */
+            // hoteles.Add(guardarHotel);
         }
-
-
+        /// <summary>
+        /// creamos habitacions de forma predeterminados
+        /// </summary>
         public void agregarHabitacionList()
         {
+            Random rnd = new Random(); //numeros random
+
+            //creamos una habitacion por defecto
+            for (int i = 0; i < 4; i++)
+            {
+                classHbitacion = new ClassHabitacion(
+                    contHabitacion,
+                     $"H{i}",
+                    "Individual",
+                    Convert.ToInt32($"{rnd.Next(10)}"),
+                    Convert.ToDouble($"{rnd.Next(2500)}"),
+                    685
+                    );
+                //lo agregamos a la lista de habitaciones
+                habitaciones.Add(classHbitacion);
+            }
+
+            //
+            Hotel.HabitacionesList = habitaciones;
 
             //agreagmos una habitacion
+            /*
             ClassHabitacion guardarHabitacion = new ClassHabitacion(
                 contHabitacion,
                 Convert.ToInt32(cbNumeroHabitacion.SelectedItem),
@@ -81,6 +103,25 @@ namespace Evaluación1_Hotel.Forms
                Convert.ToInt32(cbNumHotel.SelectedItem)
                 );
             habitaciones.Add(guardarHabitacion);
+            */
+        }
+        public void CargarHabitaciones()
+        {
+            //agregamos las habitaciones a las listas
+            agregarHabitacionList();
+            //hacemos una funcion de cargar habitaciones al cbBoxDe hotel
+
+            // limpiamos el combo box para que no se dupliquen
+            cbHabitacion.Items.Clear();
+            cbHabitacion.Items.Add(0);
+            cbHabitacionesHotel.Items.Clear();
+            cbHabitacionesHotel.Items.Add(0);
+            //agregamos los hoteles al combo box de habitaciones
+            for (int i = 0; i < habitaciones.Count; i++)
+            {
+                cbHabitacionesHotel.Items.Add(habitaciones[i].Numero);
+                cbHabitacion.Items.Add(habitaciones[i].Numero);
+            }
         }
         public void agregarReservacionList()
         {
@@ -91,7 +132,7 @@ namespace Evaluación1_Hotel.Forms
             ClassReservacion guardarReservacion = new ClassReservacion(
                 contReservacion,
                 cbClientes.SelectedItem.ToString(),
-                Convert.ToInt32(cbHabitacion.SelectedItem),
+                cbHabitacion.SelectedItem.ToString(),
                 Inicio.ToString(),
                 Fin.ToString(),
                 cbEstado.SelectedItem.ToString()
@@ -112,10 +153,31 @@ namespace Evaluación1_Hotel.Forms
             CClientes.Add(guardarCliente);
         }
 
+        public void agregarPagoList()
+        {
+            DateTime fechaPago = dateTimePagos.Value;
+            //agregamos los pagos a la lista
+            ClassPago guardarPago = new ClassPago(
+                contPagos, Convert.ToInt32(cbReservaPagos.SelectedItem),
+                Convert.ToInt32(txtMontoPago.Text),
+                fechaPago.ToString(), cbMetodosPago.Text
+                );
 
-
-
-
+            Pagos.Add(guardarPago);
+        }
+        public void agregarFacturaList()
+        {
+            //capturamos la fecha
+            DateTime fechaFactura = dateTimeFechaFactura.Value;
+            //agregamos la factura a la lista
+            ClassFactura guardarFactura = new ClassFactura(
+                contFacturas, Convert.ToInt32(cbReservacionFactura.SelectedItem),
+                Convert.ToInt32(cbClienteFacturacion.SelectedItem), Convert.ToInt32(cbEmpleadoFacturacion.SelectedItem),
+                Convert.ToInt32(txtMontoFacturacion.Text),
+                fechaFactura.ToString()
+                );
+            Facturas.Add(guardarFactura);
+        }
         public void agregarEmpleado()
         {
             ClassEmpleado guardarEmpleado = new ClassEmpleado(
@@ -128,7 +190,6 @@ namespace Evaluación1_Hotel.Forms
                 );
             Empleados.Add(guardarEmpleado);
         }
-
         /// <summary>
         /// Mostramos los hoteles en el datagrid
         /// </summary>
@@ -138,7 +199,7 @@ namespace Evaluación1_Hotel.Forms
             dtHoteles.Rows.Clear();
             for (int i = 0; i < hoteles.Count; i++)
             {
-                dtHoteles.Rows.Add(hoteles[i].Id, hoteles[i].Nombre, hoteles[i].Direccion, hoteles[i].Ciudad, hoteles[i].Pais, hoteles[i].Estrellas);
+                dtHoteles.Rows.Add(hoteles[i].Id, hoteles[i].Nombre, hoteles[i].Direccion, hoteles[i].Ciudad, hoteles[i].Pais, hoteles[i].Estrellas, hoteles[i].HabitacionesList);
             }
         }
         public void mostrarHabitaciones()
@@ -150,7 +211,6 @@ namespace Evaluación1_Hotel.Forms
                 dtHabitaciones.Rows.Add(habitaciones[i].Id, habitaciones[i].Numero, habitaciones[i].Tipo, habitaciones[i].Capacidad, habitaciones[i].PrecioPoNoche, habitaciones[i].HotelId);
             }
         }
-
         public void mostrarReservaciones()
         {
             //en el data gried
@@ -160,7 +220,6 @@ namespace Evaluación1_Hotel.Forms
                 dtRersevacion.Rows.Add(Reservaciones[i].ReservaId, Reservaciones[i].ClienteId, Reservaciones[i].Habitacion, Reservaciones[i].FInicio, Reservaciones[i].FFin, Reservaciones[i].Estado);
             }
         }
-
         public void mostrarClientes()
         {
             //en el datagrid
@@ -171,8 +230,29 @@ namespace Evaluación1_Hotel.Forms
                 dtC.Rows.Add(CClientes[i].Cedula, CClientes[i].C_Nombre, CClientes[i].C_Apellidos, CClientes[i].Email, CClientes[i].Telefono, CClientes[i].Direccion);
             }
         }
-
-
+        public void mostrarPagos()
+        {
+            // agregamos al datagridview
+            dtPagos.Rows.Clear();
+            for (int i = 0; i < Pagos.Count; i++)
+            {
+                dtPagos.Rows.Add(
+                    Pagos[i].PagoId, Pagos[i].Reservacion_Pagos,
+                    Pagos[i].MetodoPago, Pagos[i].MontoPago, Pagos[i].FechaPago
+                    );
+            }
+        }
+        public void mostrarFacturas()
+        {
+            //agregamos al datagried
+            dtFactura.Rows.Clear();
+            for (int i = 0; i < Facturas.Count; i++)
+            {
+                dtFactura.Rows.Add(Facturas[i].FacturaId, Facturas[i].ReservaID_Factura, Facturas[i].Cliente_Factura,
+                    Facturas[i].Empleado_Factura, Facturas[i].MontoTotal_Factura, Facturas[i].FechaEmision_Factura
+                    );
+            }
+        }
         public void mostrarEmpleados()
         {
             dtEmpleado.Rows.Clear();
@@ -183,7 +263,6 @@ namespace Evaluación1_Hotel.Forms
                    );
             }
         }
-
         public void limpiar()
         {
             //hotel
@@ -200,7 +279,12 @@ namespace Evaluación1_Hotel.Forms
             cbNumHotel.SelectedIndex = 0;
             txtPrecio.Text = "";
 
-
+            //reservaciones
+            cbClientes.SelectedIndex = 0;
+            cbHabitacion.SelectedIndex = 0;
+            cbEstado.SelectedIndex = 0;
+            dateTimeInicio.Value = DateTime.Now;
+            dateTimeFin.Value = DateTime.Now;
 
             //clientes
             txtCedula.Text = "";
@@ -210,6 +294,12 @@ namespace Evaluación1_Hotel.Forms
             txtTel.Text = "";
             txtDireccionC.Text = "";
 
+            //pagos
+            txtMontoPago.Text = "";
+            cbReservaPagos.SelectedIndex = 0;
+            cbMetodosPago.SelectedIndex = 0;
+            dateTimePagos.Value = DateTime.Now;
+
             //empleados
             txtCedEmpleado.Text = "";
             txtApellidoEmpleado.Text = "";
@@ -217,13 +307,21 @@ namespace Evaluación1_Hotel.Forms
             txtEmailEmpleado.Text = "";
             txtTelEmpleado.Text = "";
             cbPosicion.SelectedIndex = 0;
-        }
 
+            //facturas
+            txtMontoFacturacion.Text = "";
+            cbReservacionFactura.SelectedIndex = 0;
+            cbClienteFacturacion.SelectedIndex = 0;
+            cbEmpleadoFacturacion.SelectedIndex = 0;
+            dateTimeFechaFactura.Value = DateTime.Now;
+        }
         private void Principal_Load(object sender, EventArgs e)
         {
             lblID.Text = "N°: " + contHotel;
             lblH.Text = "Nº: " + contHabitacion;
             lblNumReservacion.Text = "N°: " + contReservacion;
+            lblNumPago.Text = "N°: " + contPagos;
+            lblNumFactura.Text = "N° " + contFacturas;
             label3.ForeColor = Color.Red;
             label4.ForeColor = Color.Red;
             label5.ForeColor = Color.Red;
@@ -232,8 +330,10 @@ namespace Evaluación1_Hotel.Forms
             label8.ForeColor = Color.Red;
             label9.ForeColor = Color.Red;
 
-        }
+            //cargamos las habitaciones a los combo box
+            CargarHabitaciones();
 
+        }
         private void btnAgregarHotel_Click(object sender, EventArgs e)
         {
 
@@ -273,7 +373,6 @@ namespace Evaluación1_Hotel.Forms
                 }
             }
         }
-
         private void btnAgregarHabitacion_Click(object sender, EventArgs e)
         {
             if (Login.camposVacios(new object[] { txtPrecio }, new object[] { cbNumeroHabitacion, cbTipoHabitacion, cbNumHotel, cbCapacidadHabitacion }))
@@ -283,7 +382,7 @@ namespace Evaluación1_Hotel.Forms
             }
             else
             {
-                agregarHabitacionList();
+                // agregarHabitacionList();
                 mostrarHabitaciones();
                 limpiar();
                 contHabitacion += 1;
@@ -291,18 +390,11 @@ namespace Evaluación1_Hotel.Forms
 
                 // limpiamos el combo box para que no se dupliquen
 
-                cbHabitacion.Items.Clear();
-                cbHabitacion.Items.Add(0);
-                //agregamos los hoteles al combo box de habitaciones
-                foreach (var h in habitaciones)
-                {
-                    cbHabitacion.Items.Add(h.Id);
-                }
+                CargarHabitaciones();
 
             }
 
         }
-
         private void btnAgregarReservacion_Click(object sender, EventArgs e)
         {
             if (Login.camposVacios(new object[] { }, new object[] { cbClientes, cbHabitacion, cbEstado }))
@@ -314,18 +406,30 @@ namespace Evaluación1_Hotel.Forms
             {
                 agregarReservacionList();
                 mostrarReservaciones();
+                limpiar();
                 //-----------
-                //reservaciones
-                cbClientes.SelectedIndex = 0;
-                cbHabitacion.SelectedIndex = 0;
-                cbEstado.SelectedIndex = 0;
+
+
+                // limpiamos el combo box para que no se dupliquen
+                cbReservaPagos.Items.Clear();
+                cbReservacionFactura.Items.Clear();
+                cbReservacionFactura.Items.Add(0);
+                cbReservaPagos.Items.Add(0); //agregamos el primer indice 0 para que si es 0 no dejd agregar nada
+                //agregamos los reservaciones al combo box de pagos
+                //agregamos las reservaciones al combo box de facturas
+                foreach (var r in Reservaciones)
+                {
+                    cbReservaPagos.Items.Add(r.ReservaId);
+                    cbReservacionFactura.Items.Add(r.ReservaId);
+                }
+
+
 
                 //-----------
                 contReservacion += 1;
                 lblNumReservacion.Text = "N°: " + contReservacion;
             }
         }
-
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
 
@@ -342,22 +446,24 @@ namespace Evaluación1_Hotel.Forms
                 limpiar();
 
                 // limpiamos el combo box para que no se dupliquen
-
+                cbClienteFacturacion.Items.Clear();
                 cbClientes.Items.Clear();
+                cbClienteFacturacion.Items.Add(0);
                 cbClientes.Items.Add(0);
                 //agregamos los clientes al combo box de reservacion
+                //agregamos los clientes al combo box de facturacion
                 foreach (var c in CClientes)
                 {
                     cbClientes.Items.Add(c.C_Nombre);
+                    cbClienteFacturacion.Items.Add(c.Cedula);
                 }
             }
 
         }
-
         private void btnAgregarEmpleado_Click(object sender, EventArgs e)
         {
 
-            if (Login.camposVacios(new object[] { txtCedEmpleado, txtNombreEmpleado, txtApellidoEmpleado, txtEmailEmpleado, txtTelEmpleado}, new object[] {cbPosicion }))
+            if (Login.camposVacios(new object[] { txtCedEmpleado, txtNombreEmpleado, txtApellidoEmpleado, txtEmailEmpleado, txtTelEmpleado }, new object[] { cbPosicion }))
             {
                 lblMsjEmpleado.ForeColor = Color.Red;
                 lblMsjEmpleado.Text = "No puede dejar campos vacíos";
@@ -367,7 +473,57 @@ namespace Evaluación1_Hotel.Forms
                 agregarEmpleado();
                 mostrarEmpleados();
                 limpiar();
+
+                // limpiamos el combo box para que no se dupliquen
+                cbEmpleadoFacturacion.Items.Clear();
+                cbEmpleadoFacturacion.Items.Add(0);
+                //agregamos los empleados al combo box de facturacion
+                foreach (var empleado in Empleados)
+                {
+                    cbEmpleadoFacturacion.Items.Add(empleado.CedulaEmpleado);
+                }
+
             }
+        }
+        private void btnAgregarPago_Click(object sender, EventArgs e)
+        {
+            if (Login.camposVacios(new object[] { txtMontoPago }, new object[] { cbReservaPagos, cbMetodosPago }))
+            {
+                lblMsjPago.ForeColor = Color.Red;
+                lblMsjPago.Text = "No puede dejar campos vacíos";
+            }
+            else
+            {
+
+                agregarPagoList();
+                mostrarPagos();
+                limpiar();
+            }
+        }
+        private void btnAgregarFactura_Click(object sender, EventArgs e)
+        {
+            agregarFacturaList();
+            mostrarFacturas();
+            limpiar();
+
+        }
+        private void cbHabitacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string pos = cbHabitacion.SelectedItem.ToString();
+            string p = cbHabitacion.SelectedIndex.ToString();
+            
+            foreach (var h in habitaciones)
+            {
+                if (h.Numero.ToString() == pos)
+                {
+                    txtCapacidadHReservacion.Text = h.Capacidad.ToString();
+                    txtxTipoHReservacion.Text = h.Tipo.ToString();
+                    txtMontoHRservacion.Text = h.PrecioPoNoche.ToString();
+                }
+            }
+
+
+            Console.WriteLine(cbHabitacion.SelectedItem.ToString());
         }
     }
 }
