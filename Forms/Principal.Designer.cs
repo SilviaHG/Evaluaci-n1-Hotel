@@ -35,7 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.cbHabitacionesHotel = new MaterialSkin.Controls.MaterialComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblMsj = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,7 +48,6 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HabitacionesH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblID = new MaterialSkin.Controls.MaterialLabel();
             this.SliderStars = new MaterialSkin.Controls.MaterialSlider();
             this.txtxPais = new MaterialSkin.Controls.MaterialTextBox2();
@@ -77,6 +75,9 @@
             this.cbNumeroHabitacion = new MaterialSkin.Controls.MaterialComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
+            this.txtMontoHRservacion = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txtCapacidadHReservacion = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txtxTipoHReservacion = new MaterialSkin.Controls.MaterialTextBox2();
             this.dtRersevacion = new System.Windows.Forms.DataGridView();
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -170,9 +171,6 @@
             this.txtNombreEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtCedEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtxTipoHReservacion = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtCapacidadHReservacion = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtMontoHRservacion = new MaterialSkin.Controls.MaterialTextBox2();
             this.lbl_IdHabitacion.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -231,7 +229,7 @@
             this.tabPage8.Controls.Add(this.panel3);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(764, 499);
+            this.tabPage8.Size = new System.Drawing.Size(764, 604);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Hotel Amapolas";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -270,7 +268,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(764, 499);
+            this.tabPage1.Size = new System.Drawing.Size(764, 604);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hotel";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -278,7 +276,6 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.cbHabitacionesHotel);
             this.materialCard1.Controls.Add(this.label3);
             this.materialCard1.Controls.Add(this.lblMsj);
             this.materialCard1.Controls.Add(this.panel1);
@@ -297,33 +294,8 @@
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(758, 493);
+            this.materialCard1.Size = new System.Drawing.Size(758, 598);
             this.materialCard1.TabIndex = 0;
-            // 
-            // cbHabitacionesHotel
-            // 
-            this.cbHabitacionesHotel.AutoResize = false;
-            this.cbHabitacionesHotel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbHabitacionesHotel.Depth = 0;
-            this.cbHabitacionesHotel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbHabitacionesHotel.DropDownHeight = 174;
-            this.cbHabitacionesHotel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbHabitacionesHotel.DropDownWidth = 121;
-            this.cbHabitacionesHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbHabitacionesHotel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbHabitacionesHotel.FormattingEnabled = true;
-            this.cbHabitacionesHotel.Hint = "Habitaciones";
-            this.cbHabitacionesHotel.IntegralHeight = false;
-            this.cbHabitacionesHotel.ItemHeight = 43;
-            this.cbHabitacionesHotel.Items.AddRange(new object[] {
-            "0"});
-            this.cbHabitacionesHotel.Location = new System.Drawing.Point(319, 228);
-            this.cbHabitacionesHotel.MaxDropDownItems = 4;
-            this.cbHabitacionesHotel.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbHabitacionesHotel.Name = "cbHabitacionesHotel";
-            this.cbHabitacionesHotel.Size = new System.Drawing.Size(250, 49);
-            this.cbHabitacionesHotel.StartIndex = 0;
-            this.cbHabitacionesHotel.TabIndex = 13;
             // 
             // label3
             // 
@@ -415,6 +387,7 @@
             // 
             // dtHoteles
             // 
+            this.dtHoteles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtHoteles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtHoteles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -422,8 +395,7 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6,
-            this.HabitacionesH});
+            this.Column6});
             this.dtHoteles.Location = new System.Drawing.Point(9, 283);
             this.dtHoteles.Name = "dtHoteles";
             this.dtHoteles.Size = new System.Drawing.Size(732, 150);
@@ -458,11 +430,6 @@
             // 
             this.Column6.HeaderText = "Estrellas";
             this.Column6.Name = "Column6";
-            // 
-            // HabitacionesH
-            // 
-            this.HabitacionesH.HeaderText = "Habitaciones";
-            this.HabitacionesH.Name = "HabitacionesH";
             // 
             // lblID
             // 
@@ -612,7 +579,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(764, 499);
+            this.tabPage2.Size = new System.Drawing.Size(764, 604);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Habitación";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -638,7 +605,7 @@
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
             this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(758, 493);
+            this.materialCard2.Size = new System.Drawing.Size(758, 598);
             this.materialCard2.TabIndex = 0;
             // 
             // label4
@@ -661,9 +628,9 @@
             // 
             // lblMsjHabitacion
             // 
-            this.lblMsjHabitacion.Location = new System.Drawing.Point(327, 435);
+            this.lblMsjHabitacion.Location = new System.Drawing.Point(274, 435);
             this.lblMsjHabitacion.Name = "lblMsjHabitacion";
-            this.lblMsjHabitacion.Size = new System.Drawing.Size(122, 35);
+            this.lblMsjHabitacion.Size = new System.Drawing.Size(235, 35);
             this.lblMsjHabitacion.TabIndex = 8;
             this.lblMsjHabitacion.Text = "...";
             // 
@@ -759,7 +726,8 @@
             this.cbNumHotel.IntegralHeight = false;
             this.cbNumHotel.ItemHeight = 43;
             this.cbNumHotel.Items.AddRange(new object[] {
-            "0"});
+            "0",
+            "1"});
             this.cbNumHotel.Location = new System.Drawing.Point(423, 124);
             this.cbNumHotel.MaxDropDownItems = 4;
             this.cbNumHotel.MouseState = MaterialSkin.MouseState.OUT;
@@ -785,6 +753,7 @@
             this.txtPrecio.TabIndex = 4;
             this.txtPrecio.Text = "";
             this.txtPrecio.TrailingIcon = null;
+            this.txtPrecio.Leave += new System.EventHandler(this.txtPrecio_Leave);
             // 
             // cbTipoHabitacion
             // 
@@ -924,6 +893,93 @@
             this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard3.Size = new System.Drawing.Size(764, 604);
             this.materialCard3.TabIndex = 0;
+            // 
+            // txtMontoHRservacion
+            // 
+            this.txtMontoHRservacion.AnimateReadOnly = false;
+            this.txtMontoHRservacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtMontoHRservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtMontoHRservacion.Depth = 0;
+            this.txtMontoHRservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMontoHRservacion.HideSelection = true;
+            this.txtMontoHRservacion.Hint = "₡";
+            this.txtMontoHRservacion.LeadingIcon = null;
+            this.txtMontoHRservacion.Location = new System.Drawing.Point(362, 146);
+            this.txtMontoHRservacion.MaxLength = 32767;
+            this.txtMontoHRservacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtMontoHRservacion.Name = "txtMontoHRservacion";
+            this.txtMontoHRservacion.PasswordChar = '\0';
+            this.txtMontoHRservacion.PrefixSuffixText = null;
+            this.txtMontoHRservacion.ReadOnly = true;
+            this.txtMontoHRservacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtMontoHRservacion.SelectedText = "";
+            this.txtMontoHRservacion.SelectionLength = 0;
+            this.txtMontoHRservacion.SelectionStart = 0;
+            this.txtMontoHRservacion.ShortcutsEnabled = true;
+            this.txtMontoHRservacion.Size = new System.Drawing.Size(149, 48);
+            this.txtMontoHRservacion.TabIndex = 14;
+            this.txtMontoHRservacion.TabStop = false;
+            this.txtMontoHRservacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMontoHRservacion.TrailingIcon = null;
+            this.txtMontoHRservacion.UseSystemPasswordChar = false;
+            // 
+            // txtCapacidadHReservacion
+            // 
+            this.txtCapacidadHReservacion.AnimateReadOnly = false;
+            this.txtCapacidadHReservacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtCapacidadHReservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtCapacidadHReservacion.Depth = 0;
+            this.txtCapacidadHReservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCapacidadHReservacion.HideSelection = true;
+            this.txtCapacidadHReservacion.Hint = "Capacidad";
+            this.txtCapacidadHReservacion.LeadingIcon = null;
+            this.txtCapacidadHReservacion.Location = new System.Drawing.Point(234, 146);
+            this.txtCapacidadHReservacion.MaxLength = 32767;
+            this.txtCapacidadHReservacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCapacidadHReservacion.Name = "txtCapacidadHReservacion";
+            this.txtCapacidadHReservacion.PasswordChar = '\0';
+            this.txtCapacidadHReservacion.PrefixSuffixText = null;
+            this.txtCapacidadHReservacion.ReadOnly = true;
+            this.txtCapacidadHReservacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtCapacidadHReservacion.SelectedText = "";
+            this.txtCapacidadHReservacion.SelectionLength = 0;
+            this.txtCapacidadHReservacion.SelectionStart = 0;
+            this.txtCapacidadHReservacion.ShortcutsEnabled = true;
+            this.txtCapacidadHReservacion.Size = new System.Drawing.Size(121, 48);
+            this.txtCapacidadHReservacion.TabIndex = 13;
+            this.txtCapacidadHReservacion.TabStop = false;
+            this.txtCapacidadHReservacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCapacidadHReservacion.TrailingIcon = null;
+            this.txtCapacidadHReservacion.UseSystemPasswordChar = false;
+            // 
+            // txtxTipoHReservacion
+            // 
+            this.txtxTipoHReservacion.AnimateReadOnly = false;
+            this.txtxTipoHReservacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtxTipoHReservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtxTipoHReservacion.Depth = 0;
+            this.txtxTipoHReservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtxTipoHReservacion.HideSelection = true;
+            this.txtxTipoHReservacion.Hint = "Tipo Habitación";
+            this.txtxTipoHReservacion.LeadingIcon = null;
+            this.txtxTipoHReservacion.Location = new System.Drawing.Point(362, 71);
+            this.txtxTipoHReservacion.MaxLength = 32767;
+            this.txtxTipoHReservacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtxTipoHReservacion.Name = "txtxTipoHReservacion";
+            this.txtxTipoHReservacion.PasswordChar = '\0';
+            this.txtxTipoHReservacion.PrefixSuffixText = null;
+            this.txtxTipoHReservacion.ReadOnly = true;
+            this.txtxTipoHReservacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtxTipoHReservacion.SelectedText = "";
+            this.txtxTipoHReservacion.SelectionLength = 0;
+            this.txtxTipoHReservacion.SelectionStart = 0;
+            this.txtxTipoHReservacion.ShortcutsEnabled = true;
+            this.txtxTipoHReservacion.Size = new System.Drawing.Size(149, 48);
+            this.txtxTipoHReservacion.TabIndex = 12;
+            this.txtxTipoHReservacion.TabStop = false;
+            this.txtxTipoHReservacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtxTipoHReservacion.TrailingIcon = null;
+            this.txtxTipoHReservacion.UseSystemPasswordChar = false;
             // 
             // dtRersevacion
             // 
@@ -1159,7 +1215,7 @@
             this.tabPage4.Controls.Add(this.materialCard4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(764, 499);
+            this.tabPage4.Size = new System.Drawing.Size(764, 604);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Cliente";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1185,7 +1241,7 @@
             this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard4.Name = "materialCard4";
             this.materialCard4.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard4.Size = new System.Drawing.Size(764, 499);
+            this.materialCard4.Size = new System.Drawing.Size(764, 604);
             this.materialCard4.TabIndex = 0;
             // 
             // dtC
@@ -1329,6 +1385,7 @@
             this.txtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTel.TrailingIcon = null;
             this.txtTel.UseSystemPasswordChar = false;
+            this.txtTel.Click += new System.EventHandler(this.txtTel_Click);
             // 
             // txtEmailC
             // 
@@ -1445,6 +1502,7 @@
             this.txtCedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCedula.TrailingIcon = null;
             this.txtCedula.UseSystemPasswordChar = false;
+            this.txtCedula.Leave += new System.EventHandler(this.txtCedula_Leave);
             // 
             // label6
             // 
@@ -1460,7 +1518,7 @@
             this.tabPage5.Controls.Add(this.materialCard5);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(764, 499);
+            this.tabPage5.Size = new System.Drawing.Size(764, 604);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Pago";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1485,7 +1543,7 @@
             this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard5.Name = "materialCard5";
             this.materialCard5.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard5.Size = new System.Drawing.Size(764, 499);
+            this.materialCard5.Size = new System.Drawing.Size(764, 604);
             this.materialCard5.TabIndex = 0;
             // 
             // lblMsjPago
@@ -1629,6 +1687,7 @@
             this.txtMontoPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMontoPago.TrailingIcon = null;
             this.txtMontoPago.UseSystemPasswordChar = false;
+            this.txtMontoPago.Leave += new System.EventHandler(this.txtMontoPago_Leave);
             // 
             // cbReservaPagos
             // 
@@ -1646,7 +1705,10 @@
             this.cbReservaPagos.IntegralHeight = false;
             this.cbReservaPagos.ItemHeight = 43;
             this.cbReservaPagos.Items.AddRange(new object[] {
-            "0"});
+            "0",
+            "1",
+            "2",
+            "3"});
             this.cbReservaPagos.Location = new System.Drawing.Point(73, 160);
             this.cbReservaPagos.MaxDropDownItems = 4;
             this.cbReservaPagos.MouseState = MaterialSkin.MouseState.OUT;
@@ -1677,7 +1739,7 @@
             this.tabPage6.Controls.Add(this.materialCard6);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(764, 499);
+            this.tabPage6.Size = new System.Drawing.Size(764, 604);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Factura";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1703,7 +1765,7 @@
             this.materialCard6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard6.Name = "materialCard6";
             this.materialCard6.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard6.Size = new System.Drawing.Size(764, 499);
+            this.materialCard6.Size = new System.Drawing.Size(764, 604);
             this.materialCard6.TabIndex = 0;
             // 
             // lblMsjFactura
@@ -1825,6 +1887,7 @@
             this.txtMontoFacturacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMontoFacturacion.TrailingIcon = null;
             this.txtMontoFacturacion.UseSystemPasswordChar = false;
+            this.txtMontoFacturacion.Leave += new System.EventHandler(this.txtMontoFacturacion_Leave);
             // 
             // cbEmpleadoFacturacion
             // 
@@ -1932,7 +1995,7 @@
             this.tabPage7.Controls.Add(this.materialCard7);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(764, 499);
+            this.tabPage7.Size = new System.Drawing.Size(764, 604);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Empleado";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1958,7 +2021,7 @@
             this.materialCard7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard7.Name = "materialCard7";
             this.materialCard7.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard7.Size = new System.Drawing.Size(764, 499);
+            this.materialCard7.Size = new System.Drawing.Size(764, 604);
             this.materialCard7.TabIndex = 0;
             // 
             // lblMsjEmpleado
@@ -2073,6 +2136,7 @@
             this.txtTelEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTelEmpleado.TrailingIcon = null;
             this.txtTelEmpleado.UseSystemPasswordChar = false;
+            this.txtTelEmpleado.Leave += new System.EventHandler(this.txtTelEmpleado_Leave);
             // 
             // txtEmailEmpleado
             // 
@@ -2218,6 +2282,7 @@
             this.txtCedEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCedEmpleado.TrailingIcon = null;
             this.txtCedEmpleado.UseSystemPasswordChar = false;
+            this.txtCedEmpleado.Leave += new System.EventHandler(this.txtCedEmpleado_Leave);
             // 
             // label9
             // 
@@ -2227,93 +2292,6 @@
             this.label9.Size = new System.Drawing.Size(197, 23);
             this.label9.TabIndex = 0;
             this.label9.Text = "Agregar Empleado";
-            // 
-            // txtxTipoHReservacion
-            // 
-            this.txtxTipoHReservacion.AnimateReadOnly = false;
-            this.txtxTipoHReservacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtxTipoHReservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtxTipoHReservacion.Depth = 0;
-            this.txtxTipoHReservacion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtxTipoHReservacion.HideSelection = true;
-            this.txtxTipoHReservacion.Hint = "Tipo Habitación";
-            this.txtxTipoHReservacion.LeadingIcon = null;
-            this.txtxTipoHReservacion.Location = new System.Drawing.Point(362, 71);
-            this.txtxTipoHReservacion.MaxLength = 32767;
-            this.txtxTipoHReservacion.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtxTipoHReservacion.Name = "txtxTipoHReservacion";
-            this.txtxTipoHReservacion.PasswordChar = '\0';
-            this.txtxTipoHReservacion.PrefixSuffixText = null;
-            this.txtxTipoHReservacion.ReadOnly = true;
-            this.txtxTipoHReservacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtxTipoHReservacion.SelectedText = "";
-            this.txtxTipoHReservacion.SelectionLength = 0;
-            this.txtxTipoHReservacion.SelectionStart = 0;
-            this.txtxTipoHReservacion.ShortcutsEnabled = true;
-            this.txtxTipoHReservacion.Size = new System.Drawing.Size(149, 48);
-            this.txtxTipoHReservacion.TabIndex = 12;
-            this.txtxTipoHReservacion.TabStop = false;
-            this.txtxTipoHReservacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtxTipoHReservacion.TrailingIcon = null;
-            this.txtxTipoHReservacion.UseSystemPasswordChar = false;
-            // 
-            // txtCapacidadHReservacion
-            // 
-            this.txtCapacidadHReservacion.AnimateReadOnly = false;
-            this.txtCapacidadHReservacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtCapacidadHReservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtCapacidadHReservacion.Depth = 0;
-            this.txtCapacidadHReservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCapacidadHReservacion.HideSelection = true;
-            this.txtCapacidadHReservacion.Hint = "Capacidad";
-            this.txtCapacidadHReservacion.LeadingIcon = null;
-            this.txtCapacidadHReservacion.Location = new System.Drawing.Point(234, 146);
-            this.txtCapacidadHReservacion.MaxLength = 32767;
-            this.txtCapacidadHReservacion.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtCapacidadHReservacion.Name = "txtCapacidadHReservacion";
-            this.txtCapacidadHReservacion.PasswordChar = '\0';
-            this.txtCapacidadHReservacion.PrefixSuffixText = null;
-            this.txtCapacidadHReservacion.ReadOnly = true;
-            this.txtCapacidadHReservacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtCapacidadHReservacion.SelectedText = "";
-            this.txtCapacidadHReservacion.SelectionLength = 0;
-            this.txtCapacidadHReservacion.SelectionStart = 0;
-            this.txtCapacidadHReservacion.ShortcutsEnabled = true;
-            this.txtCapacidadHReservacion.Size = new System.Drawing.Size(121, 48);
-            this.txtCapacidadHReservacion.TabIndex = 13;
-            this.txtCapacidadHReservacion.TabStop = false;
-            this.txtCapacidadHReservacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtCapacidadHReservacion.TrailingIcon = null;
-            this.txtCapacidadHReservacion.UseSystemPasswordChar = false;
-            // 
-            // txtMontoHRservacion
-            // 
-            this.txtMontoHRservacion.AnimateReadOnly = false;
-            this.txtMontoHRservacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtMontoHRservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtMontoHRservacion.Depth = 0;
-            this.txtMontoHRservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtMontoHRservacion.HideSelection = true;
-            this.txtMontoHRservacion.Hint = "₡";
-            this.txtMontoHRservacion.LeadingIcon = null;
-            this.txtMontoHRservacion.Location = new System.Drawing.Point(362, 146);
-            this.txtMontoHRservacion.MaxLength = 32767;
-            this.txtMontoHRservacion.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtMontoHRservacion.Name = "txtMontoHRservacion";
-            this.txtMontoHRservacion.PasswordChar = '\0';
-            this.txtMontoHRservacion.PrefixSuffixText = null;
-            this.txtMontoHRservacion.ReadOnly = true;
-            this.txtMontoHRservacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtMontoHRservacion.SelectedText = "";
-            this.txtMontoHRservacion.SelectionLength = 0;
-            this.txtMontoHRservacion.SelectionStart = 0;
-            this.txtMontoHRservacion.ShortcutsEnabled = true;
-            this.txtMontoHRservacion.Size = new System.Drawing.Size(149, 48);
-            this.txtMontoHRservacion.TabIndex = 14;
-            this.txtMontoHRservacion.TabStop = false;
-            this.txtMontoHRservacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtMontoHRservacion.TrailingIcon = null;
-            this.txtMontoHRservacion.UseSystemPasswordChar = false;
             // 
             // Principal
             // 
@@ -2500,16 +2478,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.Panel panel8;
         private MaterialSkin.Controls.MaterialButton btnAgregarFactura;
-        private MaterialSkin.Controls.MaterialComboBox cbHabitacionesHotel;
+        private MaterialSkin.Controls.MaterialTextBox2 txtMontoHRservacion;
+        private MaterialSkin.Controls.MaterialTextBox2 txtCapacidadHReservacion;
+        private MaterialSkin.Controls.MaterialTextBox2 txtxTipoHReservacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HabitacionesH;
-        private MaterialSkin.Controls.MaterialTextBox2 txtMontoHRservacion;
-        private MaterialSkin.Controls.MaterialTextBox2 txtCapacidadHReservacion;
-        private MaterialSkin.Controls.MaterialTextBox2 txtxTipoHReservacion;
     }
 }

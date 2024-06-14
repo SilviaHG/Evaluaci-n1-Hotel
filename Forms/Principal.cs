@@ -51,7 +51,7 @@ namespace Evaluación1_Hotel.Forms
                 Primary.Red800, Primary.Red900,
                 Primary.Red800, Accent.Red700, TextShade.WHITE
             );
-
+            //txtMontoPago.TextChanged += (t,y) => MessageBox.Show("Hola");
         }
 
         /// <summary>
@@ -60,12 +60,11 @@ namespace Evaluación1_Hotel.Forms
         public void agregarHotelList()
         {
             //agrergamos los hoteles a la lista
-            /* ClassHotel guardarHotel = new ClassHotel(
-                 contHotel, txtNombre.Text, txtDireccion.Text, txtCiudad.Text, txtxPais.Text, SliderStars.Value,
-                 cbHabitacionesHotel.SelectedItem.ToString
+            ClassHotel guardarHotel = new ClassHotel(
+                 contHotel, txtNombre.Text, txtDireccion.Text, txtCiudad.Text, txtxPais.Text, SliderStars.Value
+
                  );
-            */
-            // hoteles.Add(guardarHotel);
+            hoteles.Add(guardarHotel);
         }
         /// <summary>
         /// creamos habitacions de forma predeterminados
@@ -114,12 +113,10 @@ namespace Evaluación1_Hotel.Forms
             // limpiamos el combo box para que no se dupliquen
             cbHabitacion.Items.Clear();
             cbHabitacion.Items.Add(0);
-            cbHabitacionesHotel.Items.Clear();
-            cbHabitacionesHotel.Items.Add(0);
             //agregamos los hoteles al combo box de habitaciones
             for (int i = 0; i < habitaciones.Count; i++)
             {
-                cbHabitacionesHotel.Items.Add(habitaciones[i].Numero);
+                // cbHabitacionesHotel.Items.Add(habitaciones[i].Numero);
                 cbHabitacion.Items.Add(habitaciones[i].Numero);
             }
         }
@@ -355,6 +352,7 @@ namespace Evaluación1_Hotel.Forms
                 {
                     //agregamos hoteles
                     agregarHotelList();
+                    //agregarHabitacionList();
                     // mostrar hoteles al datagried
                     mostrarHoteles();
                     limpiar();
@@ -383,6 +381,7 @@ namespace Evaluación1_Hotel.Forms
             else
             {
                 // agregarHabitacionList();
+                //CargarHabitaciones();
                 mostrarHabitaciones();
                 limpiar();
                 contHabitacion += 1;
@@ -390,8 +389,7 @@ namespace Evaluación1_Hotel.Forms
 
                 // limpiamos el combo box para que no se dupliquen
 
-                CargarHabitaciones();
-
+                
             }
 
         }
@@ -511,7 +509,7 @@ namespace Evaluación1_Hotel.Forms
         {
             string pos = cbHabitacion.SelectedItem.ToString();
             string p = cbHabitacion.SelectedIndex.ToString();
-            
+
             foreach (var h in habitaciones)
             {
                 if (h.Numero.ToString() == pos)
@@ -521,9 +519,180 @@ namespace Evaluación1_Hotel.Forms
                     txtMontoHRservacion.Text = h.PrecioPoNoche.ToString();
                 }
             }
+        }
 
+        private void txtPrecio_Leave(object sender, EventArgs e)
+        {
+            if (txtPrecio.Text.Length >= 0)
+            {
+                int numero = 0;
+                bool esNumero = int.TryParse(txtPrecio.Text, out numero);
 
-            Console.WriteLine(cbHabitacion.SelectedItem.ToString());
+                if (esNumero)
+                {
+                    lblMsj.Text = "...";
+                    btnAgregarHabitacion.Enabled = true;
+                }
+                else
+                {
+                    txtPrecio.Hint = "Debe ser número";
+                    lblMsjHabitacion.ForeColor = Color.Red;
+                    lblMsjHabitacion.Text = $"En la casilla 'Monto' debe de ingresar solo números";
+                    //txtPrecio.SelectAll();
+                   // txtPrecio.Focus();
+                    txtPrecio.BackColor = Color.Red;
+                    btnAgregarHabitacion.Enabled = false;
+                }
+            }
+        }
+
+        private void txtCedula_Leave(object sender, EventArgs e)
+        {
+            if (txtCedula.Text.Length >= 0)
+            {
+                int numero = 0;
+                bool esNumero = int.TryParse(txtCedula.Text, out numero);
+
+                if (esNumero )
+                {
+                    lblMsjCliente.Text = "...";
+                    btnAgregarCliente.Enabled = true;
+                }
+                else
+                {
+                    txtCedula.Hint = "Debe ser número";
+                    lblMsjCliente.ForeColor = Color.Red;
+                    lblMsjCliente.Text = $"En la casilla 'Cédula y teléfono' debe de ingresar solo números";
+                    btnAgregarCliente.Enabled = false;
+                    //txtPrecio.SelectAll();
+                    // txtMontoHRservacion.Focus();
+                    // txtMontoHRservacion.BackColor = Color.Red;
+                }
+            }
+        }
+
+        private void txtTel_Click(object sender, EventArgs e)
+        {
+            if ( txtTel.Text.Length >= 0)
+            {
+                int numero = 0;
+                bool num = int.TryParse(txtTel.Text, out numero);
+
+                if (num)
+                {
+                    lblMsjCliente.Text = "...";
+                    btnAgregarCliente.Enabled = true;
+                }
+                else
+                {
+                    txtTel.Hint = "Debe ser número";
+                    lblMsjCliente.ForeColor = Color.Red;
+                    lblMsjCliente.Text = $"En la casilla 'Cédula y teléfono' debe de ingresar solo números";
+                    btnAgregarCliente.Enabled = false;
+                    //txtPrecio.SelectAll();
+                    // txtMontoHRservacion.Focus();
+                    // txtMontoHRservacion.BackColor = Color.Red;
+                }
+            }
+        }
+        private void txtMontoPago_Leave(object sender, EventArgs e)
+        {
+            if (txtMontoPago.Text.Length >= 0)
+            {
+                int numero = 0;
+                bool num = int.TryParse(txtMontoPago.Text, out numero);
+
+                if (num)
+                {
+                    lblMsjPago.Text = "...";
+                    btnAgregarPago.Enabled = true;
+                }
+                else
+                {
+                    txtMontoPago.Hint = "Debe ser número";
+                    lblMsjPago.ForeColor = Color.Red;
+                    lblMsjPago.Text = $"En la casilla 'Cédula y teléfono' debe de ingresar solo números";
+                    btnAgregarPago.Enabled = false;
+                    //txtPrecio.SelectAll();
+                    // txtMontoHRservacion.Focus();
+                    // txtMontoHRservacion.BackColor = Color.Red;
+                }
+            }
+        }
+
+        private void txtMontoFacturacion_Leave(object sender, EventArgs e)
+        {
+            if (txtMontoFacturacion.Text.Length >= 0)
+            {
+                int numero = 0;
+                bool num = int.TryParse(txtMontoFacturacion.Text, out numero);
+
+                if (num)
+                {
+                    lblMsjFactura.Text = "...";
+                    btnAgregarFactura.Enabled = true;
+                }
+                else
+                {
+                    txtMontoFacturacion.Hint = "Debe ser número";
+                    lblMsjFactura.ForeColor = Color.Red;
+                    lblMsjFactura.Text = $"En la casilla 'Cédula y teléfono' debe de ingresar solo números";
+                    btnAgregarFactura.Enabled = false;
+                    //txtPrecio.SelectAll();
+                    // txtMontoHRservacion.Focus();
+                    // txtMontoHRservacion.BackColor = Color.Red;
+                }
+            }
+        }
+
+        private void txtCedEmpleado_Leave(object sender, EventArgs e)
+        {
+            if (txtCedEmpleado.Text.Length >= 0)
+            {
+                int numero = 0;
+                bool num = int.TryParse(txtCedEmpleado.Text, out numero);
+
+                if (num)
+                {
+                    lblMsjEmpleado.Text = "...";
+                    btnAgregarEmpleado.Enabled = true;
+                }
+                else
+                {
+                    txtCedEmpleado.Hint = "Debe ser número";
+                    lblMsjEmpleado.ForeColor = Color.Red;
+                    lblMsjEmpleado.Text = $"En la casilla 'Cédula y teléfono' debe de ingresar solo números";
+                    btnAgregarEmpleado.Enabled = false;
+                    //txtPrecio.SelectAll();
+                    // txtMontoHRservacion.Focus();
+                    // txtMontoHRservacion.BackColor = Color.Red;
+                }
+            }
+        }
+
+        private void txtTelEmpleado_Leave(object sender, EventArgs e)
+        {
+            if (txtTelEmpleado.Text.Length >= 0)
+            {
+                int numero = 0;
+                bool num = int.TryParse(txtTelEmpleado.Text, out numero);
+
+                if (num)
+                {
+                    lblMsjEmpleado.Text = "...";
+                    btnAgregarEmpleado.Enabled = true;
+                }
+                else
+                {
+                    txtTelEmpleado.Hint = "Debe ser número";
+                    lblMsjEmpleado.ForeColor = Color.Red;
+                    lblMsjEmpleado.Text = $"En la casilla 'Cédula y teléfono' debe de ingresar solo números";
+                    btnAgregarEmpleado.Enabled = false;
+                    //txtPrecio.SelectAll();
+                    // txtMontoHRservacion.Focus();
+                    // txtMontoHRservacion.BackColor = Color.Red;
+                }
+            }
         }
     }
 }
