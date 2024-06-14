@@ -11,21 +11,20 @@ namespace Evaluación1_Hotel.Clases
         public int ReservaId { get; set; }
         public string ClienteId { get; set; }
         public int Habitacion { get; set; }
-        public DateTime FInicio { get; set; }
-        public DateTime FFin { get; set; }
+        public string FInicio { get; set; }
+        public string FFin { get; set; }
         public string Estado { get; set; }
 
-        public ClassReservacion( int id_p, string cliente_p, int habitacion_p, DateTime inicio_p, DateTime fin_p, string estado_p ) 
-        { 
-            this.ReservaId = id_p;
+        public ClassReservacion() { }
+
+        public ClassReservacion( int Reservacionid_p, string cliente_p, int habitacion_p, string inicio_p, string fin_p, string estado_p ) 
+        {
+            this.ReservaId = Reservacionid_p;
             this.ClienteId = cliente_p;
             this.Habitacion = habitacion_p;
             this.FInicio = inicio_p;
             this.FFin = fin_p;
             this.Estado = estado_p;
         }
-
-
-
     }
 }
