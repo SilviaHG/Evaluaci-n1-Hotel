@@ -83,9 +83,39 @@ namespace Evaluación1_Hotel.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_emoji_de_flecha_izquierda_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-emoji-de-flecha-izquierda-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_emoji_de_flecha_izquierda_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-emoji-de-flecha-izquierda-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_hotel_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-hotel-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_más_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-más-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

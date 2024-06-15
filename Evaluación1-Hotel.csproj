@@ -63,6 +63,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\ClassHotel.cs" />
+    <Compile Include="Forms\muestra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\muestra.Designer.cs">
+      <DependentUpon>muestra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\muestra.resx">
+      <DependentUpon>muestra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -121,6 +130,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_hotel-lagarta-lodge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-más-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-emoji-de-flecha-izquierda-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-emoji-de-flecha-izquierda-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

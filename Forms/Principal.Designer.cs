@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_IdHabitacion = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabControl = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -170,7 +170,15 @@
             this.txtCedEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbl_IdHabitacion.SuspendLayout();
+            this.btnAgregarCliente_Reservacion = new System.Windows.Forms.Button();
+            this.btnRegresarCliente = new System.Windows.Forms.Button();
+            this.btnAgregarPago_Reservacion = new System.Windows.Forms.Button();
+            this.btnRegresarPago_Reservacion = new System.Windows.Forms.Button();
+            this.btnAgregarEmpleado_Facturacion = new System.Windows.Forms.Button();
+            this.btnAgregarReservacion_Facturacion = new System.Windows.Forms.Button();
+            this.btnAgregarCliente_Facturacion = new System.Windows.Forms.Button();
+            this.btnRegresarEmpleado_Facturacion = new System.Windows.Forms.Button();
+            this.tabControl.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -203,25 +211,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbl_IdHabitacion
+            // tabControl
             // 
-            this.lbl_IdHabitacion.Controls.Add(this.tabPage8);
-            this.lbl_IdHabitacion.Controls.Add(this.tabPage1);
-            this.lbl_IdHabitacion.Controls.Add(this.tabPage2);
-            this.lbl_IdHabitacion.Controls.Add(this.tabPage3);
-            this.lbl_IdHabitacion.Controls.Add(this.tabPage4);
-            this.lbl_IdHabitacion.Controls.Add(this.tabPage5);
-            this.lbl_IdHabitacion.Controls.Add(this.tabPage6);
-            this.lbl_IdHabitacion.Controls.Add(this.tabPage7);
-            this.lbl_IdHabitacion.Depth = 0;
-            this.lbl_IdHabitacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_IdHabitacion.Location = new System.Drawing.Point(3, 64);
-            this.lbl_IdHabitacion.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbl_IdHabitacion.Multiline = true;
-            this.lbl_IdHabitacion.Name = "lbl_IdHabitacion";
-            this.lbl_IdHabitacion.SelectedIndex = 0;
-            this.lbl_IdHabitacion.Size = new System.Drawing.Size(772, 630);
-            this.lbl_IdHabitacion.TabIndex = 1;
+            this.tabControl.Controls.Add(this.tabPage8);
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPage3);
+            this.tabControl.Controls.Add(this.tabPage4);
+            this.tabControl.Controls.Add(this.tabPage5);
+            this.tabControl.Controls.Add(this.tabPage6);
+            this.tabControl.Controls.Add(this.tabPage7);
+            this.tabControl.Depth = 0;
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(3, 64);
+            this.tabControl.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tabControl.Multiline = true;
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(772, 630);
+            this.tabControl.TabIndex = 1;
             // 
             // tabPage8
             // 
@@ -847,6 +855,7 @@
             // materialCard3
             // 
             this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard3.Controls.Add(this.btnAgregarCliente_Reservacion);
             this.materialCard3.Controls.Add(this.txtMontoHRservacion);
             this.materialCard3.Controls.Add(this.txtCapacidadHReservacion);
             this.materialCard3.Controls.Add(this.txtxTipoHReservacion);
@@ -1017,6 +1026,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.btnRegresarPago_Reservacion);
             this.panel4.Controls.Add(this.btnAgregarReservacion);
             this.panel4.Location = new System.Drawing.Point(517, 45);
             this.panel4.Name = "panel4";
@@ -1160,10 +1170,7 @@
             this.cbClientes.IntegralHeight = false;
             this.cbClientes.ItemHeight = 43;
             this.cbClientes.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3"});
+            "0"});
             this.cbClientes.Location = new System.Drawing.Point(90, 71);
             this.cbClientes.MaxDropDownItems = 4;
             this.cbClientes.MouseState = MaterialSkin.MouseState.OUT;
@@ -1280,6 +1287,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.btnRegresarCliente);
             this.panel5.Controls.Add(this.btnAgregarCliente);
             this.panel5.Location = new System.Drawing.Point(582, 60);
             this.panel5.Name = "panel5";
@@ -1504,6 +1512,7 @@
             // materialCard5
             // 
             this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard5.Controls.Add(this.btnAgregarPago_Reservacion);
             this.materialCard5.Controls.Add(this.lblMsjPago);
             this.materialCard5.Controls.Add(this.dtPagos);
             this.materialCard5.Controls.Add(this.panel7);
@@ -1683,10 +1692,7 @@
             this.cbReservaPagos.IntegralHeight = false;
             this.cbReservaPagos.ItemHeight = 43;
             this.cbReservaPagos.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3"});
+            "0"});
             this.cbReservaPagos.Location = new System.Drawing.Point(73, 160);
             this.cbReservaPagos.MaxDropDownItems = 4;
             this.cbReservaPagos.MouseState = MaterialSkin.MouseState.OUT;
@@ -1725,6 +1731,9 @@
             // materialCard6
             // 
             this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard6.Controls.Add(this.btnAgregarCliente_Facturacion);
+            this.materialCard6.Controls.Add(this.btnAgregarReservacion_Facturacion);
+            this.materialCard6.Controls.Add(this.btnAgregarEmpleado_Facturacion);
             this.materialCard6.Controls.Add(this.lblMsjFactura);
             this.materialCard6.Controls.Add(this.dtFactura);
             this.materialCard6.Controls.Add(this.panel8);
@@ -1748,7 +1757,7 @@
             // 
             // lblMsjFactura
             // 
-            this.lblMsjFactura.Location = new System.Drawing.Point(234, 423);
+            this.lblMsjFactura.Location = new System.Drawing.Point(234, 468);
             this.lblMsjFactura.Name = "lblMsjFactura";
             this.lblMsjFactura.Size = new System.Drawing.Size(270, 23);
             this.lblMsjFactura.TabIndex = 9;
@@ -1765,7 +1774,7 @@
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16,
             this.dataGridViewTextBoxColumn17});
-            this.dtFactura.Location = new System.Drawing.Point(32, 249);
+            this.dtFactura.Location = new System.Drawing.Point(32, 294);
             this.dtFactura.Name = "dtFactura";
             this.dtFactura.Size = new System.Drawing.Size(648, 150);
             this.dtFactura.TabIndex = 8;
@@ -1832,9 +1841,9 @@
             // 
             // dateTimeFechaFactura
             // 
-            this.dateTimeFechaFactura.Location = new System.Drawing.Point(249, 169);
+            this.dateTimeFechaFactura.Location = new System.Drawing.Point(283, 170);
             this.dateTimeFechaFactura.Name = "dateTimeFechaFactura";
-            this.dateTimeFechaFactura.Size = new System.Drawing.Size(224, 20);
+            this.dateTimeFechaFactura.Size = new System.Drawing.Size(194, 20);
             this.dateTimeFechaFactura.TabIndex = 6;
             // 
             // txtMontoFacturacion
@@ -1847,7 +1856,7 @@
             this.txtMontoFacturacion.HideSelection = true;
             this.txtMontoFacturacion.Hint = "₡";
             this.txtMontoFacturacion.LeadingIcon = null;
-            this.txtMontoFacturacion.Location = new System.Drawing.Point(32, 156);
+            this.txtMontoFacturacion.Location = new System.Drawing.Point(283, 215);
             this.txtMontoFacturacion.MaxLength = 32767;
             this.txtMontoFacturacion.MouseState = MaterialSkin.MouseState.OUT;
             this.txtMontoFacturacion.Name = "txtMontoFacturacion";
@@ -1883,11 +1892,8 @@
             this.cbEmpleadoFacturacion.IntegralHeight = false;
             this.cbEmpleadoFacturacion.ItemHeight = 43;
             this.cbEmpleadoFacturacion.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3"});
-            this.cbEmpleadoFacturacion.Location = new System.Drawing.Point(330, 84);
+            "0"});
+            this.cbEmpleadoFacturacion.Location = new System.Drawing.Point(334, 90);
             this.cbEmpleadoFacturacion.MaxDropDownItems = 4;
             this.cbEmpleadoFacturacion.MouseState = MaterialSkin.MouseState.OUT;
             this.cbEmpleadoFacturacion.Name = "cbEmpleadoFacturacion";
@@ -1911,11 +1917,8 @@
             this.cbClienteFacturacion.IntegralHeight = false;
             this.cbClienteFacturacion.ItemHeight = 43;
             this.cbClienteFacturacion.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3"});
-            this.cbClienteFacturacion.Location = new System.Drawing.Point(181, 84);
+            "0"});
+            this.cbClienteFacturacion.Location = new System.Drawing.Point(113, 155);
             this.cbClienteFacturacion.MaxDropDownItems = 4;
             this.cbClienteFacturacion.MouseState = MaterialSkin.MouseState.OUT;
             this.cbClienteFacturacion.Name = "cbClienteFacturacion";
@@ -1939,11 +1942,8 @@
             this.cbReservacionFactura.IntegralHeight = false;
             this.cbReservacionFactura.ItemHeight = 43;
             this.cbReservacionFactura.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3"});
-            this.cbReservacionFactura.Location = new System.Drawing.Point(32, 84);
+            "0"});
+            this.cbReservacionFactura.Location = new System.Drawing.Point(113, 90);
             this.cbReservacionFactura.MaxDropDownItems = 4;
             this.cbReservacionFactura.MouseState = MaterialSkin.MouseState.OUT;
             this.cbReservacionFactura.Name = "cbReservacionFactura";
@@ -1953,7 +1953,7 @@
             // 
             // lblNumFactura
             // 
-            this.lblNumFactura.Location = new System.Drawing.Point(75, 58);
+            this.lblNumFactura.Location = new System.Drawing.Point(116, 58);
             this.lblNumFactura.Name = "lblNumFactura";
             this.lblNumFactura.Size = new System.Drawing.Size(100, 23);
             this.lblNumFactura.TabIndex = 1;
@@ -2013,6 +2013,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.btnRegresarEmpleado_Facturacion);
             this.panel6.Controls.Add(this.btnAgregarEmpleado);
             this.panel6.Location = new System.Drawing.Point(599, 56);
             this.panel6.Name = "panel6";
@@ -2280,17 +2281,98 @@
             this.label1.Size = new System.Drawing.Size(760, 600);
             this.label1.TabIndex = 0;
             // 
+            // btnAgregarCliente_Reservacion
+            // 
+            this.btnAgregarCliente_Reservacion.BackColor = System.Drawing.Color.White;
+            this.btnAgregarCliente_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
+            this.btnAgregarCliente_Reservacion.Location = new System.Drawing.Point(52, 81);
+            this.btnAgregarCliente_Reservacion.Name = "btnAgregarCliente_Reservacion";
+            this.btnAgregarCliente_Reservacion.Size = new System.Drawing.Size(35, 39);
+            this.btnAgregarCliente_Reservacion.TabIndex = 15;
+            this.btnAgregarCliente_Reservacion.UseVisualStyleBackColor = false;
+            this.btnAgregarCliente_Reservacion.Click += new System.EventHandler(this.btnAgregarCliente_Reservacion_Click);
+            // 
+            // btnRegresarCliente
+            // 
+            this.btnRegresarCliente.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
+            this.btnRegresarCliente.Location = new System.Drawing.Point(26, 54);
+            this.btnRegresarCliente.Name = "btnRegresarCliente";
+            this.btnRegresarCliente.Size = new System.Drawing.Size(38, 33);
+            this.btnRegresarCliente.TabIndex = 1;
+            this.btnRegresarCliente.UseVisualStyleBackColor = true;
+            this.btnRegresarCliente.Click += new System.EventHandler(this.btnRegresarCliente_Click);
+            // 
+            // btnAgregarPago_Reservacion
+            // 
+            this.btnAgregarPago_Reservacion.BackColor = System.Drawing.Color.White;
+            this.btnAgregarPago_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
+            this.btnAgregarPago_Reservacion.Location = new System.Drawing.Point(32, 170);
+            this.btnAgregarPago_Reservacion.Name = "btnAgregarPago_Reservacion";
+            this.btnAgregarPago_Reservacion.Size = new System.Drawing.Size(35, 39);
+            this.btnAgregarPago_Reservacion.TabIndex = 16;
+            this.btnAgregarPago_Reservacion.UseVisualStyleBackColor = false;
+            this.btnAgregarPago_Reservacion.Click += new System.EventHandler(this.btnAgregarPago_Reservacion_Click);
+            // 
+            // btnRegresarPago_Reservacion
+            // 
+            this.btnRegresarPago_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
+            this.btnRegresarPago_Reservacion.Location = new System.Drawing.Point(25, 62);
+            this.btnRegresarPago_Reservacion.Name = "btnRegresarPago_Reservacion";
+            this.btnRegresarPago_Reservacion.Size = new System.Drawing.Size(38, 33);
+            this.btnRegresarPago_Reservacion.TabIndex = 2;
+            this.btnRegresarPago_Reservacion.UseVisualStyleBackColor = true;
+            this.btnRegresarPago_Reservacion.Click += new System.EventHandler(this.btnRegresarPago_Reservacion_Click);
+            // 
+            // btnAgregarEmpleado_Facturacion
+            // 
+            this.btnAgregarEmpleado_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
+            this.btnAgregarEmpleado_Facturacion.Location = new System.Drawing.Point(296, 108);
+            this.btnAgregarEmpleado_Facturacion.Name = "btnAgregarEmpleado_Facturacion";
+            this.btnAgregarEmpleado_Facturacion.Size = new System.Drawing.Size(32, 31);
+            this.btnAgregarEmpleado_Facturacion.TabIndex = 10;
+            this.btnAgregarEmpleado_Facturacion.UseVisualStyleBackColor = true;
+            this.btnAgregarEmpleado_Facturacion.Click += new System.EventHandler(this.btnAgregarEmpleado_Facturacion_Click);
+            // 
+            // btnAgregarReservacion_Facturacion
+            // 
+            this.btnAgregarReservacion_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
+            this.btnAgregarReservacion_Facturacion.Location = new System.Drawing.Point(75, 108);
+            this.btnAgregarReservacion_Facturacion.Name = "btnAgregarReservacion_Facturacion";
+            this.btnAgregarReservacion_Facturacion.Size = new System.Drawing.Size(32, 31);
+            this.btnAgregarReservacion_Facturacion.TabIndex = 11;
+            this.btnAgregarReservacion_Facturacion.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarCliente_Facturacion
+            // 
+            this.btnAgregarCliente_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
+            this.btnAgregarCliente_Facturacion.Location = new System.Drawing.Point(75, 173);
+            this.btnAgregarCliente_Facturacion.Name = "btnAgregarCliente_Facturacion";
+            this.btnAgregarCliente_Facturacion.Size = new System.Drawing.Size(32, 31);
+            this.btnAgregarCliente_Facturacion.TabIndex = 12;
+            this.btnAgregarCliente_Facturacion.UseVisualStyleBackColor = true;
+            this.btnAgregarCliente_Facturacion.Click += new System.EventHandler(this.btnAgregarCliente_Facturacion_Click);
+            // 
+            // btnRegresarEmpleado_Facturacion
+            // 
+            this.btnRegresarEmpleado_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
+            this.btnRegresarEmpleado_Facturacion.Location = new System.Drawing.Point(11, 69);
+            this.btnRegresarEmpleado_Facturacion.Name = "btnRegresarEmpleado_Facturacion";
+            this.btnRegresarEmpleado_Facturacion.Size = new System.Drawing.Size(38, 33);
+            this.btnRegresarEmpleado_Facturacion.TabIndex = 2;
+            this.btnRegresarEmpleado_Facturacion.UseVisualStyleBackColor = true;
+            this.btnRegresarEmpleado_Facturacion.Click += new System.EventHandler(this.btnRegresarEmpleado_Facturacion_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 697);
-            this.Controls.Add(this.lbl_IdHabitacion);
-            this.DrawerTabControl = this.lbl_IdHabitacion;
+            this.Controls.Add(this.tabControl);
+            this.DrawerTabControl = this.tabControl;
             this.Name = "Principal";
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);
-            this.lbl_IdHabitacion.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -2331,7 +2413,7 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTabControl lbl_IdHabitacion;
+        private MaterialSkin.Controls.MaterialTabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -2473,5 +2555,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAgregarCliente_Reservacion;
+        private System.Windows.Forms.Button btnRegresarCliente;
+        private System.Windows.Forms.Button btnAgregarPago_Reservacion;
+        private System.Windows.Forms.Button btnRegresarPago_Reservacion;
+        private System.Windows.Forms.Button btnAgregarEmpleado_Facturacion;
+        private System.Windows.Forms.Button btnAgregarCliente_Facturacion;
+        private System.Windows.Forms.Button btnAgregarReservacion_Facturacion;
+        private System.Windows.Forms.Button btnRegresarEmpleado_Facturacion;
     }
 }

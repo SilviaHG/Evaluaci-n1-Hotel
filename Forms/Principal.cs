@@ -16,6 +16,10 @@ namespace Evaluación1_Hotel.Forms
 {
     public partial class Principal : MaterialForm
     {
+        // para los tabpages
+        private Dictionary<Form, TabPage> lastOpenedTabs = new Dictionary<Form, TabPage>();
+
+
         //creamos las instancias
         ClassHotel Hotel = new ClassHotel(2, "Hotel Largarta", "Nosara", "Guanacaste", "Costa Rica", 4);
         ClassHotel Hotel1 = new ClassHotel(1, "Hotel Las Amapolas", "Liberia", "Guanacaste", "Costa Rica", 3);
@@ -322,6 +326,13 @@ namespace Evaluación1_Hotel.Forms
         }
         private void Principal_Load(object sender, EventArgs e)
         {
+
+            //cosas para tabpage
+            // para que esconda el boton de regresar
+            btnRegresarCliente.Visible = false;
+            btnRegresarPago_Reservacion.Visible = false;
+            btnRegresarEmpleado_Facturacion.Visible=false;
+
             //mostrar los hoteles por defecto
 
             hoteles.Add(Hotel1);
@@ -724,6 +735,80 @@ namespace Evaluación1_Hotel.Forms
                     // txtMontoHRservacion.BackColor = Color.Red;
                 }
             }
+        }
+
+
+
+
+        //eventos para tabpage
+        private TabPage lastOpenedTabPage;
+
+
+        // Llama a este método para abrir un TabPage y recordar el último abierto
+        private void OpenTabPageAndRememberLast(TabPage tabPage)
+        {
+            // Recordar el TabPage actual antes de cambiarlo
+            lastOpenedTabPage = tabControl.SelectedTab;
+            // Abrir el nuevo TabPage
+            tabControl.SelectedTab = tabPage;
+        }
+
+        private void btnAgregarCliente_Reservacion_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPage4;
+            btnRegresarCliente.Visible = true;
+        }
+
+        private void btnRegresarCliente_Click(object sender, EventArgs e)
+        {
+            btnRegresarCliente.Visible = false;
+            // Si estamos actualmente en tabPage4
+            if (tabControl.SelectedTab == tabPage4)
+            {
+                // Regresar al último TabPage recordado
+                if (lastOpenedTabPage != null)
+                {
+                    tabControl.SelectedTab = lastOpenedTabPage;
+                }
+            }
+            else
+            {
+                // Abrir tabPage4 y recordar el tabPage actual
+                OpenTabPageAndRememberLast(tabPage4);
+            }
+        }
+
+        private void btnAgregarPago_Reservacion_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPage3;
+            btnRegresarPago_Reservacion.Visible = true;
+        }
+
+        private void btnRegresarPago_Reservacion_Click(object sender, EventArgs e)
+        {
+            btnRegresarPago_Reservacion.Visible = false;
+            OpenTabPageAndRememberLast(tabPage5); // abre tabPage4 y lo registra como el último abierto.
+            
+        }
+
+        private void btnRegresarEmpleado_Facturacion_Click(object sender, EventArgs e)
+        {
+            btnRegresarEmpleado_Facturacion.Visible = false;
+            // Abre el último TabPage 
+            OpenTabPageAndRememberLast(tabPage6); // abre tabPage4 y lo registra como el último abierto.
+            
+           
+        }
+        private void btnAgregarEmpleado_Facturacion_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPage7;
+            btnRegresarEmpleado_Facturacion.Visible = true;
+        }
+
+        private void btnAgregarCliente_Facturacion_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPage4;
+            btnRegresarCliente.Visible = true;
         }
     }
 }
