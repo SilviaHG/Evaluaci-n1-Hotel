@@ -756,11 +756,17 @@ namespace Evaluación1_Hotel.Forms
             tabControl.SelectedTab = tabPage;
         }
 
+           
         private void btnAgregarCliente_Reservacion_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPage4;
             btnRegresarCliente.Visible = true;
             numPage = 3;
+
+
+            // desactivo el menu hamburguesa para que no se vea
+           
+
         }
 
         private void btnRegresarCliente_Click(object sender, EventArgs e)
