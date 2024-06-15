@@ -324,14 +324,19 @@ namespace Evaluación1_Hotel.Forms
             cbEmpleadoFacturacion.SelectedIndex = 0;
             dateTimeFechaFactura.Value = DateTime.Now;
         }
-        private void Principal_Load(object sender, EventArgs e)
+        public void DesactivarBotones()
         {
-
             //cosas para tabpage
             // para que esconda el boton de regresar
             btnRegresarCliente.Visible = false;
             btnRegresarPago_Reservacion.Visible = false;
-            btnRegresarEmpleado_Facturacion.Visible=false;
+            btnRegresarEmpleado_Facturacion.Visible = false;
+        }
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            //desactiva los botones
+            DesactivarBotones();
+            
 
             //mostrar los hoteles por defecto
 
