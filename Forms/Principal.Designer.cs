@@ -31,8 +31,6 @@
             this.lbl_IdHabitacion = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.label3 = new System.Windows.Forms.Label();
@@ -171,6 +169,7 @@
             this.txtNombreEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtCedEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
             this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbl_IdHabitacion.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -237,29 +236,12 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(127, 34);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(476, 337);
+            this.panel3.Size = new System.Drawing.Size(764, 604);
             this.panel3.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_hotel_100;
-            this.label2.Location = new System.Drawing.Point(145, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 82);
-            this.label2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 95);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(400, 225);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bienvenidos Hotel Amapolas";
             // 
             // tabPage1
             // 
@@ -725,9 +707,6 @@
             this.cbNumHotel.Hint = "N° Hotel";
             this.cbNumHotel.IntegralHeight = false;
             this.cbNumHotel.ItemHeight = 43;
-            this.cbNumHotel.Items.AddRange(new object[] {
-            "0",
-            "1"});
             this.cbNumHotel.Location = new System.Drawing.Point(423, 124);
             this.cbNumHotel.MaxDropDownItems = 4;
             this.cbNumHotel.MouseState = MaterialSkin.MouseState.OUT;
@@ -741,7 +720,7 @@
             this.txtPrecio.AnimateReadOnly = false;
             this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrecio.Depth = 0;
-            this.txtPrecio.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtPrecio.Hint = "₡";
             this.txtPrecio.LeadingIcon = null;
             this.txtPrecio.Location = new System.Drawing.Point(251, 176);
@@ -2292,6 +2271,15 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Agregar Empleado";
             // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Image = global::Evaluación1_Hotel.Properties.Resources.hotel;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(760, 600);
+            this.label1.TabIndex = 0;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2383,8 +2371,6 @@
         private System.Windows.Forms.Label lblH;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private MaterialSkin.Controls.MaterialCard materialCard3;
@@ -2486,5 +2472,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Label label1;
     }
 }

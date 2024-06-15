@@ -63,6 +63,26 @@ namespace Evaluación1_Hotel.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ebe9ac202a3149b75a8ae8adb2e1d8a7_XL {
+            get {
+                object obj = ResourceManager.GetObject("ebe9ac202a3149b75a8ae8adb2e1d8a7_XL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hotel {
+            get {
+                object obj = ResourceManager.GetObject("hotel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_hotel_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-hotel-100", resourceCulture);
@@ -86,6 +106,27 @@ namespace Evaluación1_Hotel.Properties {
         internal static System.Drawing.Bitmap icons8_usuario_96__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-usuario-96 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_hotel_lagarta_lodge {
+            get {
+                object obj = ResourceManager.GetObject("logo_hotel-lagarta-lodge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_hotel_illustration_hotel_euclidean_icon_hotels_text_room_happy_birthday_vector_images_thumbnail {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-hotel-illustration-hotel-euclidean-icon-hotels-text-room-happy-bi" +
+                        "rthday-vector-images-thumbnail", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

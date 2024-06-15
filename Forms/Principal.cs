@@ -17,7 +17,8 @@ namespace Evaluación1_Hotel.Forms
     public partial class Principal : MaterialForm
     {
         //creamos las instancias
-        ClassHotel Hotel = new ClassHotel(1, "Hotel Largarta", "Nosara", "Guacanascte", "Costa Rica", 4);
+        ClassHotel Hotel = new ClassHotel(2, "Hotel Largarta", "Nosara", "Guanacaste", "Costa Rica", 4);
+        ClassHotel Hotel1 = new ClassHotel(1, "Hotel Las Amapolas", "Liberia", "Guanacaste", "Costa Rica", 3);
         ClassHabitacion classHbitacion;
 
         //ClassHabitacion habitacion = new ClassHabitacion();
@@ -34,7 +35,7 @@ namespace Evaluación1_Hotel.Forms
         List<ClassPago> Pagos = new List<ClassPago>();
         List<ClassFactura> Facturas = new List<ClassFactura>();
         List<ClassEmpleado> Empleados = new List<ClassEmpleado>();
-        int contHotel = 1;
+        int contHotel = 3;
         int contHabitacion = 1;
         int contReservacion = 1;
         int contPagos = 1;
@@ -67,13 +68,30 @@ namespace Evaluación1_Hotel.Forms
                  );
             hoteles.Add(guardarHotel);
         }
+        public void agregarHabitacion()
+        {
+            //agreagmos una habitacion
+
+            ClassHabitacion guardarHabitacion = new ClassHabitacion(
+                contHabitacion,
+               cbNumeroHabitacion.SelectedItem.ToString(),
+               cbTipoHabitacion.SelectedItem.ToString(),
+                Convert.ToInt32(cbCapacidadHabitacion.SelectedItem),
+                Convert.ToDouble(txtPrecio.Text),
+               Convert.ToInt32(cbNumHotel.SelectedItem)
+                );
+            habitaciones.Add(guardarHabitacion);
+
+            //
+            Hotel.HabitacionesList = habitaciones;
+        }
         /// <summary>
         /// creamos habitacions de forma predeterminados
         /// </summary>
         public void agregarHabitacionList()
         {
             Random rnd = new Random(); //numeros random
-
+            habitaciones.Clear(); //limpiamos para que no se dupliquen
             //creamos una habitacion por defecto
             for (int i = 0; i < 4; i++)
             {
@@ -87,23 +105,11 @@ namespace Evaluación1_Hotel.Forms
                     );
                 //lo agregamos a la lista de habitaciones
                 habitaciones.Add(classHbitacion);
+                contHabitacion += 1;
             }
-
             //
             Hotel.HabitacionesList = habitaciones;
 
-            //agreagmos una habitacion
-            /*
-            ClassHabitacion guardarHabitacion = new ClassHabitacion(
-                contHabitacion,
-                Convert.ToInt32(cbNumeroHabitacion.SelectedItem),
-               cbTipoHabitacion.SelectedItem.ToString(),
-                Convert.ToInt32(cbCapacidadHabitacion.SelectedItem),
-                Convert.ToDouble(txtPrecio.Text),
-               Convert.ToInt32(cbNumHotel.SelectedItem)
-                );
-            habitaciones.Add(guardarHabitacion);
-            */
         }
         public void CargarHabitaciones()
         {
@@ -119,6 +125,7 @@ namespace Evaluación1_Hotel.Forms
             {
                 // cbHabitacionesHotel.Items.Add(habitaciones[i].Numero);
                 cbHabitacion.Items.Add(habitaciones[i].Numero);
+                
             }
         }
         public void agregarReservacionList()
@@ -315,6 +322,17 @@ namespace Evaluación1_Hotel.Forms
         }
         private void Principal_Load(object sender, EventArgs e)
         {
+            //mostrar los hoteles por defecto
+
+            hoteles.Add(Hotel1);
+            hoteles.Add(Hotel);
+            mostrarHoteles();
+            Console.WriteLine(hoteles.Count);
+            //cargamos las habitaciones a los combo box
+            CargarHabitaciones();
+            //mostramos las habitaciones al datagried
+            mostrarHabitaciones();
+
             lblID.Text = "N°: " + contHotel;
             lblH.Text = "Nº: " + contHabitacion;
             lblNumReservacion.Text = "N°: " + contReservacion;
@@ -328,8 +346,14 @@ namespace Evaluación1_Hotel.Forms
             label8.ForeColor = Color.Red;
             label9.ForeColor = Color.Red;
 
-            //cargamos las habitaciones a los combo box
-            CargarHabitaciones();
+            // limpiamos el combo box para que no se dupliquen
+            cbNumHotel.Items.Clear();
+            cbNumHotel.Items.Add(0);
+            //agregamos los hoteles al combo box de habitaciones
+            foreach (var h in hoteles)
+            {
+                cbNumHotel.Items.Add(h.Id);
+            }
 
         }
         private void btnAgregarHotel_Click(object sender, EventArgs e)
@@ -381,7 +405,7 @@ namespace Evaluación1_Hotel.Forms
             }
             else
             {
-                // agregarHabitacionList();
+                agregarHabitacion();
                 //CargarHabitaciones();
                 mostrarHabitaciones();
                 limpiar();

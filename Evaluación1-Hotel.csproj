@@ -110,5 +110,17 @@
   <ItemGroup>
     <None Include="Resources\icons8-hotel-100.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-hotel-illustration-hotel-euclidean-icon-hotels-text-room-happy-birthday-vector-images-thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ebe9ac202a3149b75a8ae8adb2e1d8a7_XL.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_hotel-lagarta-lodge.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
