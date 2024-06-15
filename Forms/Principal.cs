@@ -742,13 +742,11 @@ namespace Evaluación1_Hotel.Forms
 
         //eventos para tabpage
         private TabPage lastOpenedTabPage;
-
+        public int numPage = 0;
 
         // Llama a este método para abrir un TabPage y recordar el último abierto
         private void OpenTabPageAndRememberLast(TabPage tabPage)
         {
-            // Recordar el TabPage actual antes de cambiarlo
-            lastOpenedTabPage = tabControl.SelectedTab;
             // Abrir el nuevo TabPage
             tabControl.SelectedTab = tabPage;
         }
@@ -757,24 +755,20 @@ namespace Evaluación1_Hotel.Forms
         {
             tabControl.SelectedTab = tabPage4;
             btnRegresarCliente.Visible = true;
+            numPage = 3;
         }
 
         private void btnRegresarCliente_Click(object sender, EventArgs e)
         {
             btnRegresarCliente.Visible = false;
             // Si estamos actualmente en tabPage4
-            if (tabControl.SelectedTab == tabPage4)
+            if (numPage == 6) 
+            { //regresa a factura
+                OpenTabPageAndRememberLast(tabPage6);
+            }else if(numPage == 3)
             {
-                // Regresar al último TabPage recordado
-                if (lastOpenedTabPage != null)
-                {
-                    tabControl.SelectedTab = lastOpenedTabPage;
-                }
-            }
-            else
-            {
-                // Abrir tabPage4 y recordar el tabPage actual
-                OpenTabPageAndRememberLast(tabPage4);
+                //regresa a reservacion
+                OpenTabPageAndRememberLast(tabPage3);
             }
         }
 
@@ -782,13 +776,21 @@ namespace Evaluación1_Hotel.Forms
         {
             tabControl.SelectedTab = tabPage3;
             btnRegresarPago_Reservacion.Visible = true;
+            numPage = 5;
         }
 
         private void btnRegresarPago_Reservacion_Click(object sender, EventArgs e)
         {
-            btnRegresarPago_Reservacion.Visible = false;
-            OpenTabPageAndRememberLast(tabPage5); // abre tabPage4 y lo registra como el último abierto.
-            
+            if (numPage == 3)
+            {
+                OpenTabPageAndRememberLast(tabPage6);
+            }
+            else if (numPage == 5)
+            {
+                btnRegresarPago_Reservacion.Visible = false;
+                OpenTabPageAndRememberLast(tabPage5); // abre tabPage4 y lo registra como el último abierto.
+
+            }
         }
 
         private void btnRegresarEmpleado_Facturacion_Click(object sender, EventArgs e)
@@ -797,7 +799,6 @@ namespace Evaluación1_Hotel.Forms
             // Abre el último TabPage 
             OpenTabPageAndRememberLast(tabPage6); // abre tabPage4 y lo registra como el último abierto.
             
-           
         }
         private void btnAgregarEmpleado_Facturacion_Click(object sender, EventArgs e)
         {
@@ -809,6 +810,14 @@ namespace Evaluación1_Hotel.Forms
         {
             tabControl.SelectedTab = tabPage4;
             btnRegresarCliente.Visible = true;
+            numPage = 6;
+        }
+
+        private void btnAgregarReservacion_Facturacion_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPage3;
+            btnRegresarPago_Reservacion.Visible = true;
+            numPage = 3;
         }
     }
 }

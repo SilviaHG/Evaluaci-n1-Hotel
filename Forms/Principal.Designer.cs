@@ -2341,6 +2341,7 @@
             this.btnAgregarReservacion_Facturacion.Size = new System.Drawing.Size(32, 31);
             this.btnAgregarReservacion_Facturacion.TabIndex = 11;
             this.btnAgregarReservacion_Facturacion.UseVisualStyleBackColor = true;
+            this.btnAgregarReservacion_Facturacion.Click += new System.EventHandler(this.btnAgregarReservacion_Facturacion_Click);
             // 
             // btnAgregarCliente_Facturacion
             // 
