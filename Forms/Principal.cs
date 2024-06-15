@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace Evaluación1_Hotel.Forms
     public partial class Principal : MaterialForm
     {
         //creamos las instancias
-        ClassHotel Hotel = new ClassHotel(1, "Hotel Upala", "Upala", "Upala", "Costa Rica", 4);
+        ClassHotel Hotel = new ClassHotel(1, "Hotel Largarta", "Nosara", "Guacanascte", "Costa Rica", 4);
         ClassHabitacion classHbitacion;
 
         //ClassHabitacion habitacion = new ClassHabitacion();
@@ -388,8 +389,6 @@ namespace Evaluación1_Hotel.Forms
                 lblH.Text = "Nº: " + contHabitacion;
 
                 // limpiamos el combo box para que no se dupliquen
-
-                
             }
 
         }
@@ -430,7 +429,7 @@ namespace Evaluación1_Hotel.Forms
         }
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
-
+            string cedulaCliente = txtCedula.Text;
 
             if (Login.camposVacios(new object[] { txtCedula, txtNombreCliente, txtApellidoC, txtEmailC, txtTel, txtDireccionC }))
             {
@@ -439,27 +438,39 @@ namespace Evaluación1_Hotel.Forms
             }
             else
             {
-                agregarClienteList();
-                mostrarClientes();
-                limpiar();
-
-                // limpiamos el combo box para que no se dupliquen
-                cbClienteFacturacion.Items.Clear();
-                cbClientes.Items.Clear();
-                cbClienteFacturacion.Items.Add(0);
-                cbClientes.Items.Add(0);
-                //agregamos los clientes al combo box de reservacion
-                //agregamos los clientes al combo box de facturacion
-                foreach (var c in CClientes)
+                bool existeClient = CClientes.Exists(cliente => cliente.Cedula == Convert.ToInt32(cedulaCliente));
+                if (existeClient)
                 {
-                    cbClientes.Items.Add(c.C_Nombre);
-                    cbClienteFacturacion.Items.Add(c.Cedula);
+                    lblMsjCliente.ForeColor = Color.Red;
+                    lblMsjCliente.Text = "Este cliente ya existe en la BD";
                 }
+                else
+                {
+                    agregarClienteList();
+                    mostrarClientes();
+                    limpiar();
+
+                    // limpiamos el combo box para que no se dupliquen
+                    cbClienteFacturacion.Items.Clear();
+                    cbClientes.Items.Clear();
+                    cbClienteFacturacion.Items.Add(0);
+                    cbClientes.Items.Add(0);
+                    //agregamos los clientes al combo box de reservacion
+                    //agregamos los clientes al combo box de facturacion
+                    foreach (var c in CClientes)
+                    {
+                        cbClientes.Items.Add(c.C_Nombre);
+                        cbClienteFacturacion.Items.Add(c.Cedula);
+                    }
+                }
+
+
             }
 
         }
         private void btnAgregarEmpleado_Click(object sender, EventArgs e)
         {
+            string buscaEmpleado = txtCedEmpleado.Text;
 
             if (Login.camposVacios(new object[] { txtCedEmpleado, txtNombreEmpleado, txtApellidoEmpleado, txtEmailEmpleado, txtTelEmpleado }, new object[] { cbPosicion }))
             {
@@ -468,19 +479,28 @@ namespace Evaluación1_Hotel.Forms
             }
             else
             {
-                agregarEmpleado();
-                mostrarEmpleados();
-                limpiar();
+                bool existeEmpleado = Empleados.Exists(emple => emple.CedulaEmpleado == Convert.ToInt32(buscaEmpleado));
 
-                // limpiamos el combo box para que no se dupliquen
-                cbEmpleadoFacturacion.Items.Clear();
-                cbEmpleadoFacturacion.Items.Add(0);
-                //agregamos los empleados al combo box de facturacion
-                foreach (var empleado in Empleados)
+                if (existeEmpleado)
                 {
-                    cbEmpleadoFacturacion.Items.Add(empleado.CedulaEmpleado);
+                    lblMsjEmpleado.ForeColor = Color.Red;
+                    lblMsjEmpleado.Text = "Este empleado ya existe en la BD";
                 }
+                else
+                {
+                    agregarEmpleado();
+                    mostrarEmpleados();
+                    limpiar();
 
+                    // limpiamos el combo box para que no se dupliquen
+                    cbEmpleadoFacturacion.Items.Clear();
+                    cbEmpleadoFacturacion.Items.Add(0);
+                    //agregamos los empleados al combo box de facturacion
+                    foreach (var empleado in Empleados)
+                    {
+                        cbEmpleadoFacturacion.Items.Add(empleado.CedulaEmpleado);
+                    }
+                }
             }
         }
         private void btnAgregarPago_Click(object sender, EventArgs e)
@@ -500,9 +520,19 @@ namespace Evaluación1_Hotel.Forms
         }
         private void btnAgregarFactura_Click(object sender, EventArgs e)
         {
-            agregarFacturaList();
-            mostrarFacturas();
-            limpiar();
+            if (Login.camposVacios(new object[] { txtMontoFacturacion }, new object[] { cbReservacionFactura, cbClienteFacturacion, cbEmpleadoFacturacion }))
+            {
+                lblMsjFactura.ForeColor = Color.Red;
+                lblMsjFactura.Text = "No puede dejar campos vacíos";
+            }
+            else
+            {
+                agregarFacturaList();
+                mostrarFacturas();
+                limpiar();
+            }
+
+
 
         }
         private void cbHabitacion_SelectedIndexChanged(object sender, EventArgs e)
@@ -523,23 +553,25 @@ namespace Evaluación1_Hotel.Forms
 
         private void txtPrecio_Leave(object sender, EventArgs e)
         {
+
             if (txtPrecio.Text.Length >= 0)
             {
                 int numero = 0;
                 bool esNumero = int.TryParse(txtPrecio.Text, out numero);
 
-                if (esNumero)
+                if (esNumero && Convert.ToInt32(txtPrecio.Text) > 0)
                 {
+                    // si es numero y mayor que 0
                     lblMsj.Text = "...";
                     btnAgregarHabitacion.Enabled = true;
                 }
                 else
                 {
-                    txtPrecio.Hint = "Debe ser número";
+                    txtPrecio.Hint = "Debe ser número positivo";
                     lblMsjHabitacion.ForeColor = Color.Red;
-                    lblMsjHabitacion.Text = $"En la casilla 'Monto' debe de ingresar solo números";
+                    lblMsjHabitacion.Text = $"En la casilla 'Monto' debe de ingresar solo números positivos";
                     //txtPrecio.SelectAll();
-                   // txtPrecio.Focus();
+                    // txtPrecio.Focus();
                     txtPrecio.BackColor = Color.Red;
                     btnAgregarHabitacion.Enabled = false;
                 }
@@ -553,16 +585,16 @@ namespace Evaluación1_Hotel.Forms
                 int numero = 0;
                 bool esNumero = int.TryParse(txtCedula.Text, out numero);
 
-                if (esNumero )
+                if (esNumero && Convert.ToInt32(txtCedula.Text) > 0)
                 {
                     lblMsjCliente.Text = "...";
                     btnAgregarCliente.Enabled = true;
                 }
                 else
                 {
-                    txtCedula.Hint = "Debe ser número";
+                    txtCedula.Hint = "Debe ser número positivo";
                     lblMsjCliente.ForeColor = Color.Red;
-                    lblMsjCliente.Text = $"En la casilla 'Cédula y teléfono' debe de ingresar solo números";
+                    lblMsjCliente.Text = $"En la casilla 'Cédula' debe de ingresar solo números positivos";
                     btnAgregarCliente.Enabled = false;
                     //txtPrecio.SelectAll();
                     // txtMontoHRservacion.Focus();
@@ -571,30 +603,6 @@ namespace Evaluación1_Hotel.Forms
             }
         }
 
-        private void txtTel_Click(object sender, EventArgs e)
-        {
-            if ( txtTel.Text.Length >= 0)
-            {
-                int numero = 0;
-                bool num = int.TryParse(txtTel.Text, out numero);
-
-                if (num)
-                {
-                    lblMsjCliente.Text = "...";
-                    btnAgregarCliente.Enabled = true;
-                }
-                else
-                {
-                    txtTel.Hint = "Debe ser número";
-                    lblMsjCliente.ForeColor = Color.Red;
-                    lblMsjCliente.Text = $"En la casilla 'Cédula y teléfono' debe de ingresar solo números";
-                    btnAgregarCliente.Enabled = false;
-                    //txtPrecio.SelectAll();
-                    // txtMontoHRservacion.Focus();
-                    // txtMontoHRservacion.BackColor = Color.Red;
-                }
-            }
-        }
         private void txtMontoPago_Leave(object sender, EventArgs e)
         {
             if (txtMontoPago.Text.Length >= 0)
@@ -602,16 +610,16 @@ namespace Evaluación1_Hotel.Forms
                 int numero = 0;
                 bool num = int.TryParse(txtMontoPago.Text, out numero);
 
-                if (num)
+                if (num && Convert.ToInt32(txtMontoPago.Text) > 0)
                 {
                     lblMsjPago.Text = "...";
                     btnAgregarPago.Enabled = true;
                 }
                 else
                 {
-                    txtMontoPago.Hint = "Debe ser número";
+                    txtMontoPago.Hint = "Debe ser número positivos";
                     lblMsjPago.ForeColor = Color.Red;
-                    lblMsjPago.Text = $"En la casilla 'Cédula y teléfono' debe de ingresar solo números";
+                    lblMsjPago.Text = $"En la casilla 'Monto' debe de ingresar solo números positivos";
                     btnAgregarPago.Enabled = false;
                     //txtPrecio.SelectAll();
                     // txtMontoHRservacion.Focus();
@@ -627,16 +635,16 @@ namespace Evaluación1_Hotel.Forms
                 int numero = 0;
                 bool num = int.TryParse(txtMontoFacturacion.Text, out numero);
 
-                if (num)
+                if (num && Convert.ToInt32(txtMontoFacturacion.Text) > 0)
                 {
                     lblMsjFactura.Text = "...";
                     btnAgregarFactura.Enabled = true;
                 }
                 else
                 {
-                    txtMontoFacturacion.Hint = "Debe ser número";
+                    txtMontoFacturacion.Hint = "Debe ser número positivo";
                     lblMsjFactura.ForeColor = Color.Red;
-                    lblMsjFactura.Text = $"En la casilla 'Cédula y teléfono' debe de ingresar solo números";
+                    lblMsjFactura.Text = $"En la casilla 'Monto' debe de ingresar solo números";
                     btnAgregarFactura.Enabled = false;
                     //txtPrecio.SelectAll();
                     // txtMontoHRservacion.Focus();
@@ -644,7 +652,6 @@ namespace Evaluación1_Hotel.Forms
                 }
             }
         }
-
         private void txtCedEmpleado_Leave(object sender, EventArgs e)
         {
             if (txtCedEmpleado.Text.Length >= 0)
@@ -652,16 +659,16 @@ namespace Evaluación1_Hotel.Forms
                 int numero = 0;
                 bool num = int.TryParse(txtCedEmpleado.Text, out numero);
 
-                if (num)
+                if (num && Convert.ToInt32(txtCedEmpleado.Text) > 0)
                 {
                     lblMsjEmpleado.Text = "...";
                     btnAgregarEmpleado.Enabled = true;
                 }
                 else
                 {
-                    txtCedEmpleado.Hint = "Debe ser número";
+                    txtCedEmpleado.Hint = "Debe ser número positivos";
                     lblMsjEmpleado.ForeColor = Color.Red;
-                    lblMsjEmpleado.Text = $"En la casilla 'Cédula y teléfono' debe de ingresar solo números";
+                    lblMsjEmpleado.Text = $"En la casilla 'Cédula' debe de ingresar solo números positivos";
                     btnAgregarEmpleado.Enabled = false;
                     //txtPrecio.SelectAll();
                     // txtMontoHRservacion.Focus();
@@ -677,16 +684,16 @@ namespace Evaluación1_Hotel.Forms
                 int numero = 0;
                 bool num = int.TryParse(txtTelEmpleado.Text, out numero);
 
-                if (num)
+                if (num && Convert.ToInt32(txtTelEmpleado.Text) > 0)
                 {
                     lblMsjEmpleado.Text = "...";
                     btnAgregarEmpleado.Enabled = true;
                 }
                 else
                 {
-                    txtTelEmpleado.Hint = "Debe ser número";
+                    txtTelEmpleado.Hint = "Debe ser número positivo";
                     lblMsjEmpleado.ForeColor = Color.Red;
-                    lblMsjEmpleado.Text = $"En la casilla 'Cédula y teléfono' debe de ingresar solo números";
+                    lblMsjEmpleado.Text = $"En la casilla 'Teléfono' debe de ingresar solo números positivos";
                     btnAgregarEmpleado.Enabled = false;
                     //txtPrecio.SelectAll();
                     // txtMontoHRservacion.Focus();

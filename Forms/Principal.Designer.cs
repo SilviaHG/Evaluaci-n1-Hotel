@@ -1385,7 +1385,6 @@
             this.txtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTel.TrailingIcon = null;
             this.txtTel.UseSystemPasswordChar = false;
-            this.txtTel.Click += new System.EventHandler(this.txtTel_Click);
             // 
             // txtEmailC
             // 
