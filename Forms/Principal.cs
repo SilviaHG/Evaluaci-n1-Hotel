@@ -559,6 +559,9 @@ namespace Evaluación1_Hotel.Forms
                 agregarPagoList();
                 mostrarPagos();
                 limpiar();
+                contPagos += 1;
+                lblNumPago.Text = "Nº: " + contPagos;
+
             }
         }
         private void btnAgregarFactura_Click(object sender, EventArgs e)
@@ -573,6 +576,9 @@ namespace Evaluación1_Hotel.Forms
                 agregarFacturaList();
                 mostrarFacturas();
                 limpiar();
+                contFacturas += 1;
+                lblNumFactura.Text = "Nº: " + contFacturas;
+
             }
 
 
@@ -765,10 +771,7 @@ namespace Evaluación1_Hotel.Forms
             tabControl.SelectedTab = tabPage4;
             btnRegresarCliente.Visible = true;
             numPage = 3;
-
-
             // desactivo el menu hamburguesa para que no se vea
-
 
         }
 
@@ -797,14 +800,15 @@ namespace Evaluación1_Hotel.Forms
         private void btnRegresarPago_Reservacion_Click(object sender, EventArgs e)
         {
             if (numPage == 3)
-            {
+            {   // regresa a facturacion
                 OpenTabPageAndRememberLast(tabPage6);
             }
             else if (numPage == 5)
             {
+                //regresa a pago
+                OpenTabPageAndRememberLast(tabPage5);// abre tabPage4 y lo registra como el último abierto.
+                
                 btnRegresarPago_Reservacion.Visible = false;
-                OpenTabPageAndRememberLast(tabPage5); // abre tabPage4 y lo registra como el último abierto.
-
             }
         }
 
