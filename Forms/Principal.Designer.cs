@@ -178,6 +178,17 @@
             this.txtNombreEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtCedEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnEliminarHabitacion = new MaterialSkin.Controls.MaterialButton();
+            this.btnEliminarReservacion = new MaterialSkin.Controls.MaterialButton();
+            this.btnEliminarCliente = new MaterialSkin.Controls.MaterialButton();
+            this.btnEliminarPago = new MaterialSkin.Controls.MaterialButton();
+            this.btnEliminarFactura = new MaterialSkin.Controls.MaterialButton();
+            this.btnEliminarEmpleado = new MaterialSkin.Controls.MaterialButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.tabControl.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -275,6 +286,7 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.materialLabel3);
             this.materialCard1.Controls.Add(this.label3);
             this.materialCard1.Controls.Add(this.lblMsj);
             this.materialCard1.Controls.Add(this.panel1);
@@ -383,6 +395,7 @@
             this.btnEliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnEliminar.UseAccentColor = false;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dtHoteles
             // 
@@ -436,7 +449,7 @@
             this.lblID.AutoSize = true;
             this.lblID.Depth = 0;
             this.lblID.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblID.Location = new System.Drawing.Point(124, 55);
+            this.lblID.Location = new System.Drawing.Point(126, 55);
             this.lblID.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(18, 19);
@@ -587,6 +600,7 @@
             // materialCard2
             // 
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.label10);
             this.materialCard2.Controls.Add(this.label4);
             this.materialCard2.Controls.Add(this.lblH);
             this.materialCard2.Controls.Add(this.lblMsjHabitacion);
@@ -620,7 +634,7 @@
             // lblH
             // 
             this.lblH.AutoSize = true;
-            this.lblH.Location = new System.Drawing.Point(88, 54);
+            this.lblH.Location = new System.Drawing.Point(98, 54);
             this.lblH.Name = "lblH";
             this.lblH.Size = new System.Drawing.Size(35, 13);
             this.lblH.TabIndex = 9;
@@ -684,6 +698,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnEliminarHabitacion);
             this.panel2.Controls.Add(this.btnAgregarHabitacion);
             this.panel2.Location = new System.Drawing.Point(565, 54);
             this.panel2.Name = "panel2";
@@ -866,6 +881,7 @@
             // materialCard3
             // 
             this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard3.Controls.Add(this.label2);
             this.materialCard3.Controls.Add(this.btnAgregarCliente_Reservacion);
             this.materialCard3.Controls.Add(this.txtMontoHRservacion);
             this.materialCard3.Controls.Add(this.txtCapacidadHReservacion);
@@ -1049,6 +1065,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.btnEliminarReservacion);
             this.panel4.Controls.Add(this.btnRegresarPago_Reservacion);
             this.panel4.Controls.Add(this.btnAgregarReservacion);
             this.panel4.Location = new System.Drawing.Point(517, 45);
@@ -1059,7 +1076,7 @@
             // btnRegresarPago_Reservacion
             // 
             this.btnRegresarPago_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
-            this.btnRegresarPago_Reservacion.Location = new System.Drawing.Point(25, 62);
+            this.btnRegresarPago_Reservacion.Location = new System.Drawing.Point(25, 151);
             this.btnRegresarPago_Reservacion.Name = "btnRegresarPago_Reservacion";
             this.btnRegresarPago_Reservacion.Size = new System.Drawing.Size(38, 33);
             this.btnRegresarPago_Reservacion.TabIndex = 2;
@@ -1203,7 +1220,8 @@
             this.cbClientes.IntegralHeight = false;
             this.cbClientes.ItemHeight = 43;
             this.cbClientes.Items.AddRange(new object[] {
-            "0"});
+            "0",
+            "1"});
             this.cbClientes.Location = new System.Drawing.Point(90, 71);
             this.cbClientes.MaxDropDownItems = 4;
             this.cbClientes.MouseState = MaterialSkin.MouseState.OUT;
@@ -1214,9 +1232,9 @@
             // 
             // lblNumReservacion
             // 
-            this.lblNumReservacion.Location = new System.Drawing.Point(116, 45);
+            this.lblNumReservacion.Location = new System.Drawing.Point(117, 45);
             this.lblNumReservacion.Name = "lblNumReservacion";
-            this.lblNumReservacion.Size = new System.Drawing.Size(61, 23);
+            this.lblNumReservacion.Size = new System.Drawing.Size(178, 23);
             this.lblNumReservacion.TabIndex = 1;
             this.lblNumReservacion.Text = "num";
             // 
@@ -1321,6 +1339,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.btnEliminarCliente);
             this.panel5.Controls.Add(this.btnRegresarCliente);
             this.panel5.Controls.Add(this.btnAgregarCliente);
             this.panel5.Location = new System.Drawing.Point(582, 60);
@@ -1331,7 +1350,7 @@
             // btnRegresarCliente
             // 
             this.btnRegresarCliente.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
-            this.btnRegresarCliente.Location = new System.Drawing.Point(26, 54);
+            this.btnRegresarCliente.Location = new System.Drawing.Point(26, 116);
             this.btnRegresarCliente.Name = "btnRegresarCliente";
             this.btnRegresarCliente.Size = new System.Drawing.Size(38, 33);
             this.btnRegresarCliente.TabIndex = 1;
@@ -1556,6 +1575,7 @@
             // materialCard5
             // 
             this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard5.Controls.Add(this.label12);
             this.materialCard5.Controls.Add(this.btnAgregarPago_Reservacion);
             this.materialCard5.Controls.Add(this.lblMsjPago);
             this.materialCard5.Controls.Add(this.dtPagos);
@@ -1640,6 +1660,7 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.btnEliminarPago);
             this.panel7.Controls.Add(this.btnAgregarPago);
             this.panel7.Location = new System.Drawing.Point(532, 52);
             this.panel7.Name = "panel7";
@@ -1748,7 +1769,9 @@
             this.cbReservaPagos.IntegralHeight = false;
             this.cbReservaPagos.ItemHeight = 43;
             this.cbReservaPagos.Items.AddRange(new object[] {
-            "0"});
+            "0",
+            "1",
+            "2"});
             this.cbReservaPagos.Location = new System.Drawing.Point(73, 160);
             this.cbReservaPagos.MaxDropDownItems = 4;
             this.cbReservaPagos.MouseState = MaterialSkin.MouseState.OUT;
@@ -1787,6 +1810,7 @@
             // materialCard6
             // 
             this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard6.Controls.Add(this.label13);
             this.materialCard6.Controls.Add(this.btnAgregarCliente_Facturacion);
             this.materialCard6.Controls.Add(this.btnAgregarReservacion_Facturacion);
             this.materialCard6.Controls.Add(this.btnAgregarEmpleado_Facturacion);
@@ -1899,6 +1923,7 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.btnEliminarFactura);
             this.panel8.Controls.Add(this.btnAgregarFactura);
             this.panel8.Location = new System.Drawing.Point(513, 58);
             this.panel8.Name = "panel8";
@@ -2103,6 +2128,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.btnEliminarEmpleado);
             this.panel6.Controls.Add(this.btnRegresarEmpleado_Facturacion);
             this.panel6.Controls.Add(this.btnAgregarEmpleado);
             this.panel6.Location = new System.Drawing.Point(599, 56);
@@ -2113,7 +2139,7 @@
             // btnRegresarEmpleado_Facturacion
             // 
             this.btnRegresarEmpleado_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
-            this.btnRegresarEmpleado_Facturacion.Location = new System.Drawing.Point(11, 69);
+            this.btnRegresarEmpleado_Facturacion.Location = new System.Drawing.Point(11, 119);
             this.btnRegresarEmpleado_Facturacion.Name = "btnRegresarEmpleado_Facturacion";
             this.btnRegresarEmpleado_Facturacion.Size = new System.Drawing.Size(38, 33);
             this.btnRegresarEmpleado_Facturacion.TabIndex = 2;
@@ -2373,6 +2399,176 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Agregar Empleado";
             // 
+            // btnEliminarHabitacion
+            // 
+            this.btnEliminarHabitacion.AutoSize = false;
+            this.btnEliminarHabitacion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEliminarHabitacion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEliminarHabitacion.Depth = 0;
+            this.btnEliminarHabitacion.HighEmphasis = true;
+            this.btnEliminarHabitacion.Icon = null;
+            this.btnEliminarHabitacion.Location = new System.Drawing.Point(23, 76);
+            this.btnEliminarHabitacion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEliminarHabitacion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminarHabitacion.Name = "btnEliminarHabitacion";
+            this.btnEliminarHabitacion.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEliminarHabitacion.Size = new System.Drawing.Size(89, 40);
+            this.btnEliminarHabitacion.TabIndex = 9;
+            this.btnEliminarHabitacion.Text = "Eliminar";
+            this.btnEliminarHabitacion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEliminarHabitacion.UseAccentColor = false;
+            this.btnEliminarHabitacion.UseVisualStyleBackColor = true;
+            this.btnEliminarHabitacion.Click += new System.EventHandler(this.btnEliminarHabitacion_Click);
+            // 
+            // btnEliminarReservacion
+            // 
+            this.btnEliminarReservacion.AutoSize = false;
+            this.btnEliminarReservacion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEliminarReservacion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEliminarReservacion.Depth = 0;
+            this.btnEliminarReservacion.HighEmphasis = true;
+            this.btnEliminarReservacion.Icon = null;
+            this.btnEliminarReservacion.Location = new System.Drawing.Point(24, 63);
+            this.btnEliminarReservacion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEliminarReservacion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminarReservacion.Name = "btnEliminarReservacion";
+            this.btnEliminarReservacion.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEliminarReservacion.Size = new System.Drawing.Size(89, 40);
+            this.btnEliminarReservacion.TabIndex = 10;
+            this.btnEliminarReservacion.Text = "Eliminar";
+            this.btnEliminarReservacion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEliminarReservacion.UseAccentColor = false;
+            this.btnEliminarReservacion.UseVisualStyleBackColor = true;
+            this.btnEliminarReservacion.Click += new System.EventHandler(this.btnEliminarReservacion_Click);
+            // 
+            // btnEliminarCliente
+            // 
+            this.btnEliminarCliente.AutoSize = false;
+            this.btnEliminarCliente.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEliminarCliente.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEliminarCliente.Depth = 0;
+            this.btnEliminarCliente.HighEmphasis = true;
+            this.btnEliminarCliente.Icon = null;
+            this.btnEliminarCliente.Location = new System.Drawing.Point(26, 66);
+            this.btnEliminarCliente.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEliminarCliente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminarCliente.Name = "btnEliminarCliente";
+            this.btnEliminarCliente.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEliminarCliente.Size = new System.Drawing.Size(101, 36);
+            this.btnEliminarCliente.TabIndex = 2;
+            this.btnEliminarCliente.Text = "Eliminar";
+            this.btnEliminarCliente.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEliminarCliente.UseAccentColor = false;
+            this.btnEliminarCliente.UseVisualStyleBackColor = true;
+            this.btnEliminarCliente.Click += new System.EventHandler(this.btnEliminarCliente_Click);
+            // 
+            // btnEliminarPago
+            // 
+            this.btnEliminarPago.AutoSize = false;
+            this.btnEliminarPago.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEliminarPago.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEliminarPago.Depth = 0;
+            this.btnEliminarPago.HighEmphasis = true;
+            this.btnEliminarPago.Icon = null;
+            this.btnEliminarPago.Location = new System.Drawing.Point(43, 80);
+            this.btnEliminarPago.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEliminarPago.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminarPago.Name = "btnEliminarPago";
+            this.btnEliminarPago.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEliminarPago.Size = new System.Drawing.Size(75, 36);
+            this.btnEliminarPago.TabIndex = 1;
+            this.btnEliminarPago.Text = "Eliminar";
+            this.btnEliminarPago.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEliminarPago.UseAccentColor = false;
+            this.btnEliminarPago.UseVisualStyleBackColor = true;
+            this.btnEliminarPago.Click += new System.EventHandler(this.btnEliminarPago_Click);
+            // 
+            // btnEliminarFactura
+            // 
+            this.btnEliminarFactura.AutoSize = false;
+            this.btnEliminarFactura.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEliminarFactura.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEliminarFactura.Depth = 0;
+            this.btnEliminarFactura.HighEmphasis = true;
+            this.btnEliminarFactura.Icon = null;
+            this.btnEliminarFactura.Location = new System.Drawing.Point(29, 72);
+            this.btnEliminarFactura.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEliminarFactura.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminarFactura.Name = "btnEliminarFactura";
+            this.btnEliminarFactura.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEliminarFactura.Size = new System.Drawing.Size(103, 36);
+            this.btnEliminarFactura.TabIndex = 1;
+            this.btnEliminarFactura.Text = "Eliminar";
+            this.btnEliminarFactura.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEliminarFactura.UseAccentColor = false;
+            this.btnEliminarFactura.UseVisualStyleBackColor = true;
+            this.btnEliminarFactura.Click += new System.EventHandler(this.btnEliminarFactura_Click);
+            // 
+            // btnEliminarEmpleado
+            // 
+            this.btnEliminarEmpleado.AutoSize = false;
+            this.btnEliminarEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEliminarEmpleado.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEliminarEmpleado.Depth = 0;
+            this.btnEliminarEmpleado.HighEmphasis = true;
+            this.btnEliminarEmpleado.Icon = null;
+            this.btnEliminarEmpleado.Location = new System.Drawing.Point(11, 67);
+            this.btnEliminarEmpleado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEliminarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
+            this.btnEliminarEmpleado.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEliminarEmpleado.Size = new System.Drawing.Size(111, 36);
+            this.btnEliminarEmpleado.TabIndex = 3;
+            this.btnEliminarEmpleado.Text = "Eliminar";
+            this.btnEliminarEmpleado.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEliminarEmpleado.UseAccentColor = false;
+            this.btnEliminarEmpleado.UseVisualStyleBackColor = true;
+            this.btnEliminarEmpleado.Click += new System.EventHandler(this.btnEliminarEmpleado_Click);
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(93, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 23);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "N° ";
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(68, 54);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(27, 23);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "N° ";
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(64, 52);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(22, 23);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "N° ";
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(96, 58);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(20, 23);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "N° ";
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(102, 55);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(18, 19);
+            this.materialLabel3.TabIndex = 13;
+            this.materialLabel3.Text = "N°";
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2574,5 +2770,16 @@
         private System.Windows.Forms.Button btnAgregarCliente_Facturacion;
         private System.Windows.Forms.Button btnAgregarReservacion_Facturacion;
         private System.Windows.Forms.Button btnRegresarEmpleado_Facturacion;
+        private MaterialSkin.Controls.MaterialButton btnEliminarHabitacion;
+        private MaterialSkin.Controls.MaterialButton btnEliminarReservacion;
+        private MaterialSkin.Controls.MaterialButton btnEliminarCliente;
+        private MaterialSkin.Controls.MaterialButton btnEliminarPago;
+        private MaterialSkin.Controls.MaterialButton btnEliminarFactura;
+        private MaterialSkin.Controls.MaterialButton btnEliminarEmpleado;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
     }
 }

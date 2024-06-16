@@ -105,7 +105,7 @@ namespace Evaluación1_Hotel.Forms
                     "Individual",
                     Convert.ToInt32($"{rnd.Next(10)}"),
                     Convert.ToDouble($"{rnd.Next(2500)}"),
-                    685
+                    Convert.ToInt32($"{rnd.Next(2)}")
                     );
                 //lo agregamos a la lista de habitaciones
                 habitaciones.Add(classHbitacion);
@@ -294,6 +294,10 @@ namespace Evaluación1_Hotel.Forms
             cbEstado.SelectedIndex = 0;
             dateTimeInicio.Value = DateTime.Now;
             dateTimeFin.Value = DateTime.Now;
+            //reservaciones campos de Habitaciones
+            txtxTipoHReservacion.Text = "";
+            txtCapacidadHReservacion.Text = "";
+            txtMontoHRservacion.Text = "";
 
             //clientes
             txtCedula.Text = "";
@@ -352,11 +356,11 @@ namespace Evaluación1_Hotel.Forms
             //mostramos las habitaciones al datagried
             mostrarHabitaciones();
 
-            lblID.Text = "N°: " + contHotel;
-            lblH.Text = "Nº: " + contHabitacion;
-            lblNumReservacion.Text = "N°: " + contReservacion;
-            lblNumPago.Text = "N°: " + contPagos;
-            lblNumFactura.Text = "N° " + contFacturas;
+            lblID.Text = contHotel.ToString();
+            lblH.Text = contHabitacion.ToString();
+            lblNumReservacion.Text = contReservacion.ToString();
+            lblNumPago.Text = contPagos.ToString();
+            lblNumFactura.Text = contFacturas.ToString();
             label3.ForeColor = Color.Red;
             label4.ForeColor = Color.Red;
             label5.ForeColor = Color.Red;
@@ -401,7 +405,7 @@ namespace Evaluación1_Hotel.Forms
                     mostrarHoteles();
                     limpiar();
                     contHotel += 1;
-                    lblID.Text = "N°: " + contHotel;
+                    lblID.Text = contHotel.ToString();
 
                     // limpiamos el combo box para que no se dupliquen
                     cbNumHotel.Items.Clear();
@@ -424,14 +428,23 @@ namespace Evaluación1_Hotel.Forms
             }
             else
             {
-                agregarHabitacion();
-                //CargarHabitaciones();
-                mostrarHabitaciones();
-                limpiar();
-                contHabitacion += 1;
-                lblH.Text = "Nº: " + contHabitacion;
 
-                // limpiamos el combo box para que no se dupliquen
+                bool exist = habitaciones.Exists(s => s.Id == Convert.ToInt32(numHabitacionEliminar));
+
+                if (exist)
+                {
+                    lblMsjHabitacion.ForeColor = Color.Red;
+                    lblMsjHabitacion.Text = "Este ID de habitación ya existe";
+                }
+                else
+                {
+                    agregarHabitacion();
+                    //CargarHabitaciones();
+                    mostrarHabitaciones();
+                    limpiar();
+                    contHabitacion += 1;
+                    lblH.Text = contHabitacion.ToString();
+                }
             }
 
         }
@@ -444,30 +457,35 @@ namespace Evaluación1_Hotel.Forms
             }
             else
             {
-                agregarReservacionList();
-                mostrarReservaciones();
-                limpiar();
-                //-----------
+                bool exist = Reservaciones.Exists(s => s.ReservaId == Convert.ToInt32(lblNumReservacion.Text));
 
-
-                // limpiamos el combo box para que no se dupliquen
-                cbReservaPagos.Items.Clear();
-                cbReservacionFactura.Items.Clear();
-                cbReservacionFactura.Items.Add(0);
-                cbReservaPagos.Items.Add(0); //agregamos el primer indice 0 para que si es 0 no dejd agregar nada
-                //agregamos los reservaciones al combo box de pagos
-                //agregamos las reservaciones al combo box de facturas
-                foreach (var r in Reservaciones)
+                if (exist)
                 {
-                    cbReservaPagos.Items.Add(r.ReservaId);
-                    cbReservacionFactura.Items.Add(r.ReservaId);
+                    lblMsjReserevacion.ForeColor = Color.Red;
+                    lblMsjReserevacion.Text = "Este ID de reservación ya existe";
                 }
-
-
-
-                //-----------
-                contReservacion += 1;
-                lblNumReservacion.Text = "N°: " + contReservacion;
+                else
+                {
+                    agregarReservacionList();
+                    mostrarReservaciones();
+                    limpiar();
+                    // limpiamos el combo box para que no se dupliquen
+                    cbReservaPagos.Items.Clear();
+                    cbReservacionFactura.Items.Clear();
+                    cbReservacionFactura.Items.Add(0);
+                    cbReservaPagos.Items.Add(0); //agregamos el primer indice 0 para que si es 0 no dejd agregar nada
+                                                 //agregamos los reservaciones al combo box de pagos
+                                                 //agregamos las reservaciones al combo box de facturas
+                    foreach (var r in Reservaciones)
+                    {
+                        cbReservaPagos.Items.Add(r.ReservaId);
+                        cbReservacionFactura.Items.Add(r.ReservaId);
+                    }
+                    //-----------
+                    contReservacion += 1;
+                    lblNumReservacion.Text = contReservacion.ToString();
+                }
+                
             }
         }
         private void btnAgregarCliente_Click(object sender, EventArgs e)
@@ -555,13 +573,21 @@ namespace Evaluación1_Hotel.Forms
             }
             else
             {
+                bool exist = Pagos.Exists(s => s.PagoId == Convert.ToInt32(numPagosEliminar));
 
-                agregarPagoList();
-                mostrarPagos();
-                limpiar();
-                contPagos += 1;
-                lblNumPago.Text = "Nº: " + contPagos;
-
+                if (exist)
+                {
+                    lblMsjPago.ForeColor = Color.Red;
+                    lblMsjPago.Text = "Este ID de pago ya existe";
+                }
+                else
+                {
+                    agregarPagoList();
+                    mostrarPagos();
+                    limpiar();
+                    contPagos += 1;
+                    lblNumPago.Text = contPagos.ToString();
+                }
             }
         }
         private void btnAgregarFactura_Click(object sender, EventArgs e)
@@ -573,17 +599,30 @@ namespace Evaluación1_Hotel.Forms
             }
             else
             {
-                agregarFacturaList();
-                mostrarFacturas();
-                limpiar();
-                contFacturas += 1;
-                lblNumFactura.Text = "Nº: " + contFacturas;
+                bool exist = Facturas.Exists(s => s.FacturaId == Convert.ToInt32(numFacturaEliminar));
 
+                if (exist)
+                {
+                    lblMsjFactura.ForeColor = Color.Red;
+                    lblMsjFactura.Text = "Este ID de factura ya existe";
+                }
+                else
+                {
+
+                    agregarFacturaList();
+                    mostrarFacturas();
+                    limpiar();
+                    contFacturas += 1;
+                    lblNumFactura.Text = contFacturas.ToString();
+                }
             }
-
-
-
         }
+        /// <summary>
+        /// Funcion que muestra los datos de capacidad,tipo y monto de la habitacion cuando
+        /// se selecciona una habitacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbHabitacion_SelectedIndexChanged(object sender, EventArgs e)
         {
             string pos = cbHabitacion.SelectedItem.ToString();
@@ -612,6 +651,7 @@ namespace Evaluación1_Hotel.Forms
                 {
                     // si es numero y mayor que 0
                     lblMsj.Text = "...";
+                    txtPrecio.Hint = "₡";
                     btnAgregarHabitacion.Enabled = true;
                 }
                 else
@@ -637,6 +677,7 @@ namespace Evaluación1_Hotel.Forms
                 if (esNumero && Convert.ToInt32(txtCedula.Text) > 0)
                 {
                     lblMsjCliente.Text = "...";
+                    txtCedula.Hint = "Cédula";
                     btnAgregarCliente.Enabled = true;
                 }
                 else
@@ -662,6 +703,7 @@ namespace Evaluación1_Hotel.Forms
                 if (num && Convert.ToInt32(txtMontoPago.Text) > 0)
                 {
                     lblMsjPago.Text = "...";
+                    txtMontoPago.Hint= "₡";
                     btnAgregarPago.Enabled = true;
                 }
                 else
@@ -687,6 +729,7 @@ namespace Evaluación1_Hotel.Forms
                 if (num && Convert.ToInt32(txtMontoFacturacion.Text) > 0)
                 {
                     lblMsjFactura.Text = "...";
+                    txtMontoFacturacion.Hint = "₡";
                     btnAgregarFactura.Enabled = true;
                 }
                 else
@@ -711,6 +754,7 @@ namespace Evaluación1_Hotel.Forms
                 if (num && Convert.ToInt32(txtCedEmpleado.Text) > 0)
                 {
                     lblMsjEmpleado.Text = "...";
+                    txtCedEmpleado.Hint = "Cédula";
                     btnAgregarEmpleado.Enabled = true;
                 }
                 else
@@ -736,6 +780,7 @@ namespace Evaluación1_Hotel.Forms
                 if (num && Convert.ToInt32(txtTelEmpleado.Text) > 0)
                 {
                     lblMsjEmpleado.Text = "...";
+                    txtTelEmpleado.Hint = "Teléfono";
                     btnAgregarEmpleado.Enabled = true;
                 }
                 else
@@ -782,11 +827,13 @@ namespace Evaluación1_Hotel.Forms
             if (numPage == 6)
             { //regresa a factura
                 OpenTabPageAndRememberLast(tabPage6);
+                
             }
             else if (numPage == 3)
             {
                 //regresa a reservacion
                 OpenTabPageAndRememberLast(tabPage3);
+                
             }
         }
 
@@ -802,13 +849,15 @@ namespace Evaluación1_Hotel.Forms
             if (numPage == 3)
             {   // regresa a facturacion
                 OpenTabPageAndRememberLast(tabPage6);
+                
             }
             else if (numPage == 5)
             {
                 //regresa a pago
                 OpenTabPageAndRememberLast(tabPage5);// abre tabPage4 y lo registra como el último abierto.
-                
+
                 btnRegresarPago_Reservacion.Visible = false;
+                
             }
         }
 
@@ -838,6 +887,11 @@ namespace Evaluación1_Hotel.Forms
             btnRegresarPago_Reservacion.Visible = true;
             numPage = 3;
         }
+
+        /// <summary>
+        /// eventos para cuando se haga click a la tabla
+        /// que se muestren los datos en los txt o los comboBox
+        /// </summary>
 
         string nombreHotelEliminar = "";
         string numHabitacionEliminar = "";
@@ -884,7 +938,7 @@ namespace Evaluación1_Hotel.Forms
             //de eliminar
             lblH.Text = fila.Cells[0].Value.ToString();
             numHabitacionEliminar = fila.Cells[0].Value.ToString();
-
+            cbNumeroHabitacion.SelectedItem = fila.Cells[1].Value.ToString();
             cbTipoHabitacion.SelectedItem = fila.Cells[2].Value.ToString();
             cbCapacidadHabitacion.SelectedItem = fila.Cells[3].Value.ToString();
             txtPrecio.Text = fila.Cells[4].Value.ToString();
@@ -902,17 +956,16 @@ namespace Evaluación1_Hotel.Forms
             // Cells[1] sería precio unitario etc...
             //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
             //de eliminar
-
+            lblNumReservacion.Text = fila.Cells[0].Value.ToString();
             numReservacionEliminar = fila.Cells[0].Value.ToString();
-            lblH.Text = "N° " + fila.Cells[0].Value.ToString();
             cbClientes.SelectedItem = fila.Cells[1].Value.ToString();
             cbHabitacion.SelectedItem = fila.Cells[2].Value.ToString();
             cbEstado.SelectedItem = fila.Cells[3].Value.ToString();
             // Convertir el valor de la celda a DateTime usando TryParse y asignarlo al DateTimePicker
-            
 
-            dateTimeInicio.Value = DateTime.Parse( fila.Cells[4].Value.ToString());
-           dateTimeFin.Value = DateTime.Parse(fila.Cells[5].Value.ToString());
+
+            dateTimeInicio.Value = DateTime.Parse(fila.Cells[4].Value.ToString());
+            dateTimeFin.Value = DateTime.Parse(fila.Cells[5].Value.ToString());
 
             cbHabitacion_SelectedIndexChanged(sender, e);
             RefreshCombos();
@@ -952,8 +1005,8 @@ namespace Evaluación1_Hotel.Forms
             // Cells[1] sería precio unitario etc...
             //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
             //de eliminar
+            lblNumPago.Text = fila.Cells[0].Value.ToString();
             numPagosEliminar = fila.Cells[0].Value.ToString();
-            lblNumFactura.Text = "N°: " + numPagosEliminar;
             cbReservaPagos.SelectedItem = fila.Cells[1].Value.ToString();
             cbMetodosPago.SelectedItem = fila.Cells[2].Value.ToString();
             txtMontoPago.Text = fila.Cells[3].Value.ToString();
@@ -971,8 +1024,10 @@ namespace Evaluación1_Hotel.Forms
             // Cells[1] sería precio unitario etc...
             //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
             //de eliminar
+
+
+            lblNumFactura.Text = fila.Cells[0].Value.ToString();
             numFacturaEliminar = fila.Cells[0].Value.ToString();
-            lblNumFactura.Text = "N° " + fila.Cells[0].Value.ToString();
             cbReservacionFactura.SelectedItem = fila.Cells[1].Value.ToString();
             cbClienteFacturacion.SelectedItem = fila.Cells[2].Value.ToString();
             cbEmpleadoFacturacion.SelectedItem = fila.Cells[3].Value.ToString();
@@ -991,7 +1046,6 @@ namespace Evaluación1_Hotel.Forms
             // Cells[1] sería precio unitario etc...
             //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
             //de eliminar
-            string posicion = fila.Cells[3].Value.ToString();
             numEmpleadoEliminar = fila.Cells[0].Value.ToString();
             txtCedEmpleado.Text = numEmpleadoEliminar;
             txtNombreEmpleado.Text = fila.Cells[1].Value.ToString();
@@ -1004,6 +1058,10 @@ namespace Evaluación1_Hotel.Forms
 
             Console.WriteLine(numEmpleadoEliminar);
         }
+        /// <summary>
+        /// Funcion para refrescar los comboBox cada vez que hago cambios,
+        /// agrego un dato, o selecciono en la tabla
+        /// </summary>
         public void RefreshCombos()
         {
 
@@ -1020,6 +1078,440 @@ namespace Evaluación1_Hotel.Forms
             cbClienteFacturacion.Refresh();
             cbEmpleadoFacturacion.Refresh();
             cbPosicion.Refresh();
+        }
+        /// <summary>
+        /// Empiezan los eventos de eliminar
+        /// </summary>
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        { //elimina el hotel
+            int cantFilaSeleccionada = dtHoteles.SelectedRows.Count;
+
+            if (cantFilaSeleccionada <= 0)
+            {
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "Debes seleccionar una fila";
+            }
+            else
+            {
+
+                if (string.IsNullOrEmpty(nombreHotelEliminar))
+                {
+                    lblMsj.ForeColor = Color.Red;
+                    lblMsj.Text = "No has seleccionado un producto de la tabla, primero presiónalo";
+                }
+                else
+                {
+                    bool exist = hoteles.Exists(s => s.Nombre == txtNombre.Text);
+                    string name = txtNombre.Text;
+                    if (exist)
+                    {
+                        DialogResult opcionUsuario = MessageBox.Show($"Desea eliminar el hotel {nombreHotelEliminar}?",
+                              "Advertencia", MessageBoxButtons.YesNo);
+                        switch (opcionUsuario)
+                        {
+                            case DialogResult.Yes:
+
+                                // Encuentra el hotel que coincide con el nombre
+                                ClassHotel hotelAEliminar = hoteles.Find(s => s.Nombre == txtNombre.Text);
+
+                                // Remueve el hotel de la lista
+                                hoteles.Remove(hotelAEliminar);
+                                MessageBox.Show($"El hotel {txtNombre.Text} fue eliminado.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                limpiar();
+                                mostrarHoteles();
+
+                                if (contHotel > 1)
+                                {
+                                    contHotel -= 1;
+
+                                    lblID.Text = "N° " + contHotel;
+                                }
+
+                                break;
+                            case DialogResult.No:
+                                lblMsj.ForeColor = Color.Red;
+                                lblMsj.Text = "No se ha eliminado ningún Hotel";
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show($"El hotel {txtNombre.Text} no existe en la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+
+            }
+
+        }
+
+        private void btnEliminarHabitacion_Click(object sender, EventArgs e)
+        {
+            int cantFilaSeleccionada = dtHabitaciones.SelectedRows.Count;
+
+            if (cantFilaSeleccionada <= 0)
+            {
+                lblMsjHabitacion.ForeColor = Color.Red;
+                lblMsjHabitacion.Text = "Debes seleccionar una fila";
+            }
+            else
+            {
+
+                if (string.IsNullOrEmpty(numHabitacionEliminar))
+                {
+                    lblMsjHabitacion.ForeColor = Color.Red;
+                    lblMsjHabitacion.Text = "No has seleccionado un producto de la tabla, primero presiónalo";
+                }
+                else
+                {
+                    bool exist = habitaciones.Exists(s => s.Id == Convert.ToInt32(numHabitacionEliminar));
+                    string name = lblH.Text;
+                    if (exist)
+                    {
+                        DialogResult opcionUsuario = MessageBox.Show($"Desea eliminar la habitación # {numHabitacionEliminar}?",
+                              "Advertencia", MessageBoxButtons.YesNo);
+                        switch (opcionUsuario)
+                        {
+                            case DialogResult.Yes:
+
+                                // Encuentra el hotel que coincide con el nombre
+                                ClassHabitacion habitacionAEliminar = habitaciones.Find(s => s.Id == Convert.ToInt32(numHabitacionEliminar));
+
+                                // Remueve el hotel de la lista
+                                habitaciones.Remove(habitacionAEliminar);
+                                MessageBox.Show($"La habitación #{numHabitacionEliminar} fue eliminado.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                limpiar();
+                                mostrarHabitaciones();
+
+                                if (contHabitacion > 1)
+                                {
+                                    contHabitacion -= 1;
+
+                                    lblH.Text = "N° " + contHabitacion;
+                                }
+
+                                break;
+                            case DialogResult.No:
+                                lblMsjHabitacion.ForeColor = Color.Red;
+                                lblMsjHabitacion.Text = "No se ha eliminado ninguna habitación";
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show($"La habitación #{numHabitacionEliminar} no existe en la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+
+            }
+        }
+
+        private void btnEliminarReservacion_Click(object sender, EventArgs e)
+        {
+            int cantFilaSeleccionada = dtRersevacion.SelectedRows.Count;
+
+            if (cantFilaSeleccionada <= 0)
+            {
+                lblMsjReserevacion.ForeColor = Color.Red;
+                lblMsjReserevacion.Text = "Debes seleccionar una fila";
+            }
+            else
+            {
+
+                if (string.IsNullOrEmpty(numReservacionEliminar))
+                {
+                    lblMsjReserevacion.ForeColor = Color.Red;
+                    lblMsjReserevacion.Text = "No has seleccionado un producto de la tabla, primero presiónalo";
+                }
+                else
+                {
+                    bool exist = Reservaciones.Exists(s => s.ReservaId == Convert.ToInt32(numReservacionEliminar));
+                    string name = lblH.Text;
+                    if (exist)
+                    {
+                        DialogResult opcionUsuario = MessageBox.Show($"Desea eliminar la reservación #{numReservacionEliminar}?",
+                              "Advertencia", MessageBoxButtons.YesNo);
+                        switch (opcionUsuario)
+                        {
+                            case DialogResult.Yes:
+
+                                // Encuentra el hotel que coincide con el nombre
+                                ClassReservacion reservacionAEliminar = Reservaciones.Find(s => s.ReservaId == Convert.ToInt32(numReservacionEliminar));
+
+                                // Remueve el hotel de la lista
+                                Reservaciones.Remove(reservacionAEliminar);
+                                MessageBox.Show($"La reservación #{numReservacionEliminar} fue eliminado.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                limpiar();
+                                mostrarReservaciones();
+
+                                if (contReservacion > 1)
+                                {
+                                    contReservacion -= 1;
+
+                                    lblNumReservacion.Text = "N° " + contReservacion;
+                                }
+
+                                break;
+                            case DialogResult.No:
+                                lblMsjReserevacion.ForeColor = Color.Red;
+                                lblMsjReserevacion.Text = "No se ha eliminado ninguna reservación";
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show($"La reservación #{numReservacionEliminar} no existe en la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+
+            }
+        }
+
+        private void btnEliminarCliente_Click(object sender, EventArgs e)
+        {
+            int cantFilaSeleccionada = dtC.SelectedRows.Count;
+
+            if (cantFilaSeleccionada <= 0)
+            {
+                lblMsjCliente.ForeColor = Color.Red;
+                lblMsjCliente.Text = "Debes seleccionar una fila";
+            }
+            else
+            {
+
+                if (string.IsNullOrEmpty(numClienteEliminar))
+                {
+                    lblMsjCliente.ForeColor = Color.Red;
+                    lblMsjCliente.Text = "No has seleccionado un producto de la tabla, primero presiónalo";
+                }
+                else
+                {
+                    bool exist = CClientes.Exists(s => s.Cedula == Convert.ToInt32(numClienteEliminar));
+                   
+                    if (exist)
+                    {
+                        DialogResult opcionUsuario = MessageBox.Show($"Desea eliminar al cliente con la cédula #{numClienteEliminar}?",
+                              "Advertencia", MessageBoxButtons.YesNo);
+                        switch (opcionUsuario)
+                        {
+                            case DialogResult.Yes:
+
+                                // Encuentra el hotel que coincide con el nombre
+                                ClassCliente clienteAEliminar = CClientes.Find(s => s.Cedula == Convert.ToInt32(numClienteEliminar));
+
+                                // Remueve el hotel de la lista
+                                CClientes.Remove(clienteAEliminar);
+                                MessageBox.Show($"El cliente con cédula #{numClienteEliminar} fue eliminado.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                limpiar();
+                                mostrarClientes();
+
+
+                                break;
+                            case DialogResult.No:
+                                lblMsjCliente.ForeColor = Color.Red;
+                                lblMsjCliente.Text = "No se ha eliminado ninguna reservación";
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show($"El cliente con la cédula #{numClienteEliminar} no existe en la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+
+            }
+        }
+
+        private void btnEliminarPago_Click(object sender, EventArgs e)
+        {
+            int cantFilaSeleccionada = dtPagos.SelectedRows.Count;
+
+            if (cantFilaSeleccionada <= 0)
+            {
+                lblMsjPago.ForeColor = Color.Red;
+                lblMsjPago.Text = "Debes seleccionar una fila";
+            }
+            else
+            {
+
+                if (string.IsNullOrEmpty(numPagosEliminar))
+                {
+                    lblMsjPago.ForeColor = Color.Red;
+                    lblMsjPago.Text = "No has seleccionado un producto de la tabla, primero presiónalo";
+                }
+                else
+                {
+                    bool exist = Pagos.Exists(s => s.PagoId == Convert.ToInt32(numPagosEliminar));
+
+                    if (exist)
+                    {
+                        DialogResult opcionUsuario = MessageBox.Show($"Desea eliminar el pago #{numPagosEliminar}?",
+                              "Advertencia", MessageBoxButtons.YesNo);
+                        switch (opcionUsuario)
+                        {
+                            case DialogResult.Yes:
+
+                                // Encuentra el hotel que coincide con el nombre
+                                ClassPago pagoAEliminar = Pagos.Find(s => s.PagoId == Convert.ToInt32(numPagosEliminar));
+
+                                // Remueve el hotel de la lista
+                                Pagos.Remove(pagoAEliminar);
+                                MessageBox.Show($"El pago #{numPagosEliminar} fue eliminado.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                limpiar();
+                                mostrarPagos();
+
+
+                                if (contPagos > 1)
+                                {
+                                    contPagos -= 1;
+
+                                    lblNumPago.Text = "N° " + contPagos;
+                                }
+
+
+                                break;
+                            case DialogResult.No:
+                                lblMsjPago.ForeColor = Color.Red;
+                                lblMsjPago.Text = "No se ha eliminado ningún pago";
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show($"El pago con el #{numPagosEliminar} no existe en la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+
+            }
+        }
+
+        private void btnEliminarFactura_Click(object sender, EventArgs e)
+        {
+            int cantFilaSeleccionada = dtFactura.SelectedRows.Count;
+
+            if (cantFilaSeleccionada <= 0)
+            {
+                lblMsjFactura.ForeColor = Color.Red;
+                lblMsjFactura.Text = "Debes seleccionar una fila";
+            }
+            else
+            {
+
+                if (string.IsNullOrEmpty(numFacturaEliminar))
+                {
+                    lblMsjFactura.ForeColor = Color.Red;
+                    lblMsjFactura.Text = "No has seleccionado un producto de la tabla, primero presiónalo";
+                }
+                else
+                {
+                    bool exist = Facturas.Exists(s => s.FacturaId == Convert.ToInt32(numFacturaEliminar));
+
+                    if (exist)
+                    {
+                        DialogResult opcionUsuario = MessageBox.Show($"Desea eliminar la factura #{numFacturaEliminar}?",
+                              "Advertencia", MessageBoxButtons.YesNo);
+                        switch (opcionUsuario)
+                        {
+                            case DialogResult.Yes:
+
+                                // Encuentra el hotel que coincide con el nombre
+                                ClassFactura facturaAEliminar = Facturas.Find(s => s.FacturaId == Convert.ToInt32(numFacturaEliminar));
+
+                                // Remueve el hotel de la lista
+                                Facturas.Remove(facturaAEliminar);
+                                MessageBox.Show($"La factura #{numFacturaEliminar} fue eliminado.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                limpiar();
+                                mostrarFacturas();
+
+
+                                if (contFacturas > 1)
+                                {
+                                    contFacturas -= 1;
+
+                                    lblNumFactura.Text = "N° " + contFacturas;
+                                }
+                                break;
+                            case DialogResult.No:
+                                lblMsjFactura.ForeColor = Color.Red;
+                                lblMsjFactura.Text = "No se ha eliminado ninguna factura";
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show($"El pago con la factura #{numFacturaEliminar} no existe en la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+
+            }
+        }
+
+        private void btnEliminarEmpleado_Click(object sender, EventArgs e)
+        {
+            int cantFilaSeleccionada = dtEmpleado.SelectedRows.Count;
+
+            if (cantFilaSeleccionada <= 0)
+            {
+                lblMsjEmpleado.ForeColor = Color.Red;
+                lblMsjEmpleado.Text = "Debes seleccionar una fila";
+            }
+            else
+            {
+
+                if (string.IsNullOrEmpty(numEmpleadoEliminar))
+                {
+                    lblMsjEmpleado.ForeColor = Color.Red;
+                    lblMsjEmpleado.Text = "No has seleccionado un producto de la tabla, primero presiónalo";
+                }
+                else
+                {
+                    bool exist = Empleados.Exists(s => s.CedulaEmpleado == Convert.ToInt32(numEmpleadoEliminar));
+
+                    if (exist)
+                    {
+                        DialogResult opcionUsuario = MessageBox.Show($"Desea eliminar el empleado con la cédula #{numEmpleadoEliminar}?",
+                              "Advertencia", MessageBoxButtons.YesNo);
+                        switch (opcionUsuario)
+                        {
+                            case DialogResult.Yes:
+
+                                // Encuentra el hotel que coincide con el nombre
+                                ClassEmpleado empleadoAEliminar = Empleados.Find(s => s.CedulaEmpleado == Convert.ToInt32(numEmpleadoEliminar));
+
+                                // Remueve el hotel de la lista
+                                Empleados.Remove(empleadoAEliminar);
+                                MessageBox.Show($"El empleado con la cédula #{numEmpleadoEliminar} fue eliminado.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                limpiar();
+                                mostrarEmpleados();
+
+                                break;
+                            case DialogResult.No:
+                                lblMsjEmpleado.ForeColor = Color.Red;
+                                lblMsjEmpleado.Text = "No se ha eliminado ningún empleado";
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show($"El empleado con la cédula #{numEmpleadoEliminar} no existe en la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+
+            }
         }
     }
 }
