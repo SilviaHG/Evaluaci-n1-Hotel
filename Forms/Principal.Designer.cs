@@ -31,6 +31,7 @@
             this.tabControl = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.label3 = new System.Windows.Forms.Label();
@@ -73,6 +74,7 @@
             this.cbNumeroHabitacion = new MaterialSkin.Controls.MaterialComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
+            this.btnAgregarCliente_Reservacion = new System.Windows.Forms.Button();
             this.txtMontoHRservacion = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtCapacidadHReservacion = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtxTipoHReservacion = new MaterialSkin.Controls.MaterialTextBox2();
@@ -85,6 +87,7 @@
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMsjReserevacion = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnRegresarPago_Reservacion = new System.Windows.Forms.Button();
             this.btnAgregarReservacion = new MaterialSkin.Controls.MaterialButton();
             this.cbEstado = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -106,6 +109,7 @@
             this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMsjCliente = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnRegresarCliente = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new MaterialSkin.Controls.MaterialButton();
             this.txtDireccionC = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtTel = new MaterialSkin.Controls.MaterialTextBox2();
@@ -116,6 +120,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
+            this.btnAgregarPago_Reservacion = new System.Windows.Forms.Button();
             this.lblMsjPago = new System.Windows.Forms.Label();
             this.dtPagos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -133,6 +138,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
+            this.btnAgregarCliente_Facturacion = new System.Windows.Forms.Button();
+            this.btnAgregarReservacion_Facturacion = new System.Windows.Forms.Button();
+            this.btnAgregarEmpleado_Facturacion = new System.Windows.Forms.Button();
             this.lblMsjFactura = new System.Windows.Forms.Label();
             this.dtFactura = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -154,6 +162,7 @@
             this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
             this.lblMsjEmpleado = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnRegresarEmpleado_Facturacion = new System.Windows.Forms.Button();
             this.btnAgregarEmpleado = new MaterialSkin.Controls.MaterialButton();
             this.dtEmpleado = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -169,15 +178,6 @@
             this.txtNombreEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtCedEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
             this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAgregarCliente_Reservacion = new System.Windows.Forms.Button();
-            this.btnRegresarCliente = new System.Windows.Forms.Button();
-            this.btnAgregarPago_Reservacion = new System.Windows.Forms.Button();
-            this.btnRegresarPago_Reservacion = new System.Windows.Forms.Button();
-            this.btnAgregarEmpleado_Facturacion = new System.Windows.Forms.Button();
-            this.btnAgregarReservacion_Facturacion = new System.Windows.Forms.Button();
-            this.btnAgregarCliente_Facturacion = new System.Windows.Forms.Button();
-            this.btnRegresarEmpleado_Facturacion = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -250,6 +250,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(764, 604);
             this.panel3.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Image = global::Evaluación1_Hotel.Properties.Resources.hotel;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(760, 600);
+            this.label1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -390,6 +399,7 @@
             this.dtHoteles.Name = "dtHoteles";
             this.dtHoteles.Size = new System.Drawing.Size(732, 150);
             this.dtHoteles.TabIndex = 6;
+            this.dtHoteles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtHoteles_CellClick);
             // 
             // Column1
             // 
@@ -639,6 +649,7 @@
             this.dtHabitaciones.Name = "dtHabitaciones";
             this.dtHabitaciones.Size = new System.Drawing.Size(649, 150);
             this.dtHabitaciones.TabIndex = 7;
+            this.dtHabitaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtHabitaciones_CellClick);
             // 
             // Column7
             // 
@@ -728,7 +739,7 @@
             this.txtPrecio.AnimateReadOnly = false;
             this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrecio.Depth = 0;
-            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrecio.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtPrecio.Hint = "₡";
             this.txtPrecio.LeadingIcon = null;
             this.txtPrecio.Location = new System.Drawing.Point(251, 176);
@@ -882,6 +893,17 @@
             this.materialCard3.Size = new System.Drawing.Size(764, 604);
             this.materialCard3.TabIndex = 0;
             // 
+            // btnAgregarCliente_Reservacion
+            // 
+            this.btnAgregarCliente_Reservacion.BackColor = System.Drawing.Color.White;
+            this.btnAgregarCliente_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
+            this.btnAgregarCliente_Reservacion.Location = new System.Drawing.Point(52, 81);
+            this.btnAgregarCliente_Reservacion.Name = "btnAgregarCliente_Reservacion";
+            this.btnAgregarCliente_Reservacion.Size = new System.Drawing.Size(35, 39);
+            this.btnAgregarCliente_Reservacion.TabIndex = 15;
+            this.btnAgregarCliente_Reservacion.UseVisualStyleBackColor = false;
+            this.btnAgregarCliente_Reservacion.Click += new System.EventHandler(this.btnAgregarCliente_Reservacion_Click);
+            // 
             // txtMontoHRservacion
             // 
             this.txtMontoHRservacion.AnimateReadOnly = false;
@@ -984,6 +1006,7 @@
             this.dtRersevacion.Name = "dtRersevacion";
             this.dtRersevacion.Size = new System.Drawing.Size(694, 150);
             this.dtRersevacion.TabIndex = 11;
+            this.dtRersevacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtRersevacion_CellClick);
             // 
             // num
             // 
@@ -1032,6 +1055,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(141, 207);
             this.panel4.TabIndex = 9;
+            // 
+            // btnRegresarPago_Reservacion
+            // 
+            this.btnRegresarPago_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
+            this.btnRegresarPago_Reservacion.Location = new System.Drawing.Point(25, 62);
+            this.btnRegresarPago_Reservacion.Name = "btnRegresarPago_Reservacion";
+            this.btnRegresarPago_Reservacion.Size = new System.Drawing.Size(38, 33);
+            this.btnRegresarPago_Reservacion.TabIndex = 2;
+            this.btnRegresarPago_Reservacion.UseVisualStyleBackColor = true;
+            this.btnRegresarPago_Reservacion.Click += new System.EventHandler(this.btnRegresarPago_Reservacion_Click);
             // 
             // btnAgregarReservacion
             // 
@@ -1245,6 +1278,7 @@
             this.dtC.Name = "dtC";
             this.dtC.Size = new System.Drawing.Size(688, 150);
             this.dtC.TabIndex = 10;
+            this.dtC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtC_CellClick);
             // 
             // Column16
             // 
@@ -1293,6 +1327,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(152, 159);
             this.panel5.TabIndex = 7;
+            // 
+            // btnRegresarCliente
+            // 
+            this.btnRegresarCliente.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
+            this.btnRegresarCliente.Location = new System.Drawing.Point(26, 54);
+            this.btnRegresarCliente.Name = "btnRegresarCliente";
+            this.btnRegresarCliente.Size = new System.Drawing.Size(38, 33);
+            this.btnRegresarCliente.TabIndex = 1;
+            this.btnRegresarCliente.UseVisualStyleBackColor = true;
+            this.btnRegresarCliente.Click += new System.EventHandler(this.btnRegresarCliente_Click);
             // 
             // btnAgregarCliente
             // 
@@ -1533,6 +1577,17 @@
             this.materialCard5.Size = new System.Drawing.Size(764, 604);
             this.materialCard5.TabIndex = 0;
             // 
+            // btnAgregarPago_Reservacion
+            // 
+            this.btnAgregarPago_Reservacion.BackColor = System.Drawing.Color.White;
+            this.btnAgregarPago_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
+            this.btnAgregarPago_Reservacion.Location = new System.Drawing.Point(32, 170);
+            this.btnAgregarPago_Reservacion.Name = "btnAgregarPago_Reservacion";
+            this.btnAgregarPago_Reservacion.Size = new System.Drawing.Size(35, 39);
+            this.btnAgregarPago_Reservacion.TabIndex = 16;
+            this.btnAgregarPago_Reservacion.UseVisualStyleBackColor = false;
+            this.btnAgregarPago_Reservacion.Click += new System.EventHandler(this.btnAgregarPago_Reservacion_Click);
+            // 
             // lblMsjPago
             // 
             this.lblMsjPago.Location = new System.Drawing.Point(228, 427);
@@ -1555,6 +1610,7 @@
             this.dtPagos.Name = "dtPagos";
             this.dtPagos.Size = new System.Drawing.Size(623, 150);
             this.dtPagos.TabIndex = 7;
+            this.dtPagos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtPagos_CellClick);
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -1755,6 +1811,36 @@
             this.materialCard6.Size = new System.Drawing.Size(764, 604);
             this.materialCard6.TabIndex = 0;
             // 
+            // btnAgregarCliente_Facturacion
+            // 
+            this.btnAgregarCliente_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
+            this.btnAgregarCliente_Facturacion.Location = new System.Drawing.Point(75, 173);
+            this.btnAgregarCliente_Facturacion.Name = "btnAgregarCliente_Facturacion";
+            this.btnAgregarCliente_Facturacion.Size = new System.Drawing.Size(32, 31);
+            this.btnAgregarCliente_Facturacion.TabIndex = 12;
+            this.btnAgregarCliente_Facturacion.UseVisualStyleBackColor = true;
+            this.btnAgregarCliente_Facturacion.Click += new System.EventHandler(this.btnAgregarCliente_Facturacion_Click);
+            // 
+            // btnAgregarReservacion_Facturacion
+            // 
+            this.btnAgregarReservacion_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
+            this.btnAgregarReservacion_Facturacion.Location = new System.Drawing.Point(75, 108);
+            this.btnAgregarReservacion_Facturacion.Name = "btnAgregarReservacion_Facturacion";
+            this.btnAgregarReservacion_Facturacion.Size = new System.Drawing.Size(32, 31);
+            this.btnAgregarReservacion_Facturacion.TabIndex = 11;
+            this.btnAgregarReservacion_Facturacion.UseVisualStyleBackColor = true;
+            this.btnAgregarReservacion_Facturacion.Click += new System.EventHandler(this.btnAgregarReservacion_Facturacion_Click);
+            // 
+            // btnAgregarEmpleado_Facturacion
+            // 
+            this.btnAgregarEmpleado_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
+            this.btnAgregarEmpleado_Facturacion.Location = new System.Drawing.Point(296, 108);
+            this.btnAgregarEmpleado_Facturacion.Name = "btnAgregarEmpleado_Facturacion";
+            this.btnAgregarEmpleado_Facturacion.Size = new System.Drawing.Size(32, 31);
+            this.btnAgregarEmpleado_Facturacion.TabIndex = 10;
+            this.btnAgregarEmpleado_Facturacion.UseVisualStyleBackColor = true;
+            this.btnAgregarEmpleado_Facturacion.Click += new System.EventHandler(this.btnAgregarEmpleado_Facturacion_Click);
+            // 
             // lblMsjFactura
             // 
             this.lblMsjFactura.Location = new System.Drawing.Point(234, 468);
@@ -1778,6 +1864,7 @@
             this.dtFactura.Name = "dtFactura";
             this.dtFactura.Size = new System.Drawing.Size(648, 150);
             this.dtFactura.TabIndex = 8;
+            this.dtFactura.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtFactura_CellClick);
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -1892,7 +1979,8 @@
             this.cbEmpleadoFacturacion.IntegralHeight = false;
             this.cbEmpleadoFacturacion.ItemHeight = 43;
             this.cbEmpleadoFacturacion.Items.AddRange(new object[] {
-            "0"});
+            "0",
+            "1"});
             this.cbEmpleadoFacturacion.Location = new System.Drawing.Point(334, 90);
             this.cbEmpleadoFacturacion.MaxDropDownItems = 4;
             this.cbEmpleadoFacturacion.MouseState = MaterialSkin.MouseState.OUT;
@@ -1917,7 +2005,8 @@
             this.cbClienteFacturacion.IntegralHeight = false;
             this.cbClienteFacturacion.ItemHeight = 43;
             this.cbClienteFacturacion.Items.AddRange(new object[] {
-            "0"});
+            "0",
+            "1"});
             this.cbClienteFacturacion.Location = new System.Drawing.Point(113, 155);
             this.cbClienteFacturacion.MaxDropDownItems = 4;
             this.cbClienteFacturacion.MouseState = MaterialSkin.MouseState.OUT;
@@ -1942,7 +2031,8 @@
             this.cbReservacionFactura.IntegralHeight = false;
             this.cbReservacionFactura.ItemHeight = 43;
             this.cbReservacionFactura.Items.AddRange(new object[] {
-            "0"});
+            "0",
+            "1"});
             this.cbReservacionFactura.Location = new System.Drawing.Point(113, 90);
             this.cbReservacionFactura.MaxDropDownItems = 4;
             this.cbReservacionFactura.MouseState = MaterialSkin.MouseState.OUT;
@@ -2020,6 +2110,16 @@
             this.panel6.Size = new System.Drawing.Size(136, 200);
             this.panel6.TabIndex = 8;
             // 
+            // btnRegresarEmpleado_Facturacion
+            // 
+            this.btnRegresarEmpleado_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
+            this.btnRegresarEmpleado_Facturacion.Location = new System.Drawing.Point(11, 69);
+            this.btnRegresarEmpleado_Facturacion.Name = "btnRegresarEmpleado_Facturacion";
+            this.btnRegresarEmpleado_Facturacion.Size = new System.Drawing.Size(38, 33);
+            this.btnRegresarEmpleado_Facturacion.TabIndex = 2;
+            this.btnRegresarEmpleado_Facturacion.UseVisualStyleBackColor = true;
+            this.btnRegresarEmpleado_Facturacion.Click += new System.EventHandler(this.btnRegresarEmpleado_Facturacion_Click);
+            // 
             // btnAgregarEmpleado
             // 
             this.btnAgregarEmpleado.AutoSize = false;
@@ -2056,6 +2156,7 @@
             this.dtEmpleado.Name = "dtEmpleado";
             this.dtEmpleado.Size = new System.Drawing.Size(699, 150);
             this.dtEmpleado.TabIndex = 7;
+            this.dtEmpleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtEmpleado_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -2271,97 +2372,6 @@
             this.label9.Size = new System.Drawing.Size(197, 23);
             this.label9.TabIndex = 0;
             this.label9.Text = "Agregar Empleado";
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Image = global::Evaluación1_Hotel.Properties.Resources.hotel;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(760, 600);
-            this.label1.TabIndex = 0;
-            // 
-            // btnAgregarCliente_Reservacion
-            // 
-            this.btnAgregarCliente_Reservacion.BackColor = System.Drawing.Color.White;
-            this.btnAgregarCliente_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
-            this.btnAgregarCliente_Reservacion.Location = new System.Drawing.Point(52, 81);
-            this.btnAgregarCliente_Reservacion.Name = "btnAgregarCliente_Reservacion";
-            this.btnAgregarCliente_Reservacion.Size = new System.Drawing.Size(35, 39);
-            this.btnAgregarCliente_Reservacion.TabIndex = 15;
-            this.btnAgregarCliente_Reservacion.UseVisualStyleBackColor = false;
-            this.btnAgregarCliente_Reservacion.Click += new System.EventHandler(this.btnAgregarCliente_Reservacion_Click);
-            // 
-            // btnRegresarCliente
-            // 
-            this.btnRegresarCliente.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
-            this.btnRegresarCliente.Location = new System.Drawing.Point(26, 54);
-            this.btnRegresarCliente.Name = "btnRegresarCliente";
-            this.btnRegresarCliente.Size = new System.Drawing.Size(38, 33);
-            this.btnRegresarCliente.TabIndex = 1;
-            this.btnRegresarCliente.UseVisualStyleBackColor = true;
-            this.btnRegresarCliente.Click += new System.EventHandler(this.btnRegresarCliente_Click);
-            // 
-            // btnAgregarPago_Reservacion
-            // 
-            this.btnAgregarPago_Reservacion.BackColor = System.Drawing.Color.White;
-            this.btnAgregarPago_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
-            this.btnAgregarPago_Reservacion.Location = new System.Drawing.Point(32, 170);
-            this.btnAgregarPago_Reservacion.Name = "btnAgregarPago_Reservacion";
-            this.btnAgregarPago_Reservacion.Size = new System.Drawing.Size(35, 39);
-            this.btnAgregarPago_Reservacion.TabIndex = 16;
-            this.btnAgregarPago_Reservacion.UseVisualStyleBackColor = false;
-            this.btnAgregarPago_Reservacion.Click += new System.EventHandler(this.btnAgregarPago_Reservacion_Click);
-            // 
-            // btnRegresarPago_Reservacion
-            // 
-            this.btnRegresarPago_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
-            this.btnRegresarPago_Reservacion.Location = new System.Drawing.Point(25, 62);
-            this.btnRegresarPago_Reservacion.Name = "btnRegresarPago_Reservacion";
-            this.btnRegresarPago_Reservacion.Size = new System.Drawing.Size(38, 33);
-            this.btnRegresarPago_Reservacion.TabIndex = 2;
-            this.btnRegresarPago_Reservacion.UseVisualStyleBackColor = true;
-            this.btnRegresarPago_Reservacion.Click += new System.EventHandler(this.btnRegresarPago_Reservacion_Click);
-            // 
-            // btnAgregarEmpleado_Facturacion
-            // 
-            this.btnAgregarEmpleado_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
-            this.btnAgregarEmpleado_Facturacion.Location = new System.Drawing.Point(296, 108);
-            this.btnAgregarEmpleado_Facturacion.Name = "btnAgregarEmpleado_Facturacion";
-            this.btnAgregarEmpleado_Facturacion.Size = new System.Drawing.Size(32, 31);
-            this.btnAgregarEmpleado_Facturacion.TabIndex = 10;
-            this.btnAgregarEmpleado_Facturacion.UseVisualStyleBackColor = true;
-            this.btnAgregarEmpleado_Facturacion.Click += new System.EventHandler(this.btnAgregarEmpleado_Facturacion_Click);
-            // 
-            // btnAgregarReservacion_Facturacion
-            // 
-            this.btnAgregarReservacion_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
-            this.btnAgregarReservacion_Facturacion.Location = new System.Drawing.Point(75, 108);
-            this.btnAgregarReservacion_Facturacion.Name = "btnAgregarReservacion_Facturacion";
-            this.btnAgregarReservacion_Facturacion.Size = new System.Drawing.Size(32, 31);
-            this.btnAgregarReservacion_Facturacion.TabIndex = 11;
-            this.btnAgregarReservacion_Facturacion.UseVisualStyleBackColor = true;
-            this.btnAgregarReservacion_Facturacion.Click += new System.EventHandler(this.btnAgregarReservacion_Facturacion_Click);
-            // 
-            // btnAgregarCliente_Facturacion
-            // 
-            this.btnAgregarCliente_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
-            this.btnAgregarCliente_Facturacion.Location = new System.Drawing.Point(75, 173);
-            this.btnAgregarCliente_Facturacion.Name = "btnAgregarCliente_Facturacion";
-            this.btnAgregarCliente_Facturacion.Size = new System.Drawing.Size(32, 31);
-            this.btnAgregarCliente_Facturacion.TabIndex = 12;
-            this.btnAgregarCliente_Facturacion.UseVisualStyleBackColor = true;
-            this.btnAgregarCliente_Facturacion.Click += new System.EventHandler(this.btnAgregarCliente_Facturacion_Click);
-            // 
-            // btnRegresarEmpleado_Facturacion
-            // 
-            this.btnRegresarEmpleado_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
-            this.btnRegresarEmpleado_Facturacion.Location = new System.Drawing.Point(11, 69);
-            this.btnRegresarEmpleado_Facturacion.Name = "btnRegresarEmpleado_Facturacion";
-            this.btnRegresarEmpleado_Facturacion.Size = new System.Drawing.Size(38, 33);
-            this.btnRegresarEmpleado_Facturacion.TabIndex = 2;
-            this.btnRegresarEmpleado_Facturacion.UseVisualStyleBackColor = true;
-            this.btnRegresarEmpleado_Facturacion.Click += new System.EventHandler(this.btnRegresarEmpleado_Facturacion_Click);
             // 
             // Principal
             // 

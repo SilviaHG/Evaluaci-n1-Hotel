@@ -129,7 +129,7 @@ namespace Evaluación1_Hotel.Forms
             {
                 // cbHabitacionesHotel.Items.Add(habitaciones[i].Numero);
                 cbHabitacion.Items.Add(habitaciones[i].Numero);
-                
+
             }
         }
         public void agregarReservacionList()
@@ -226,7 +226,7 @@ namespace Evaluación1_Hotel.Forms
             dtRersevacion.Rows.Clear();
             for (int i = 0; i < Reservaciones.Count; i++)
             {
-                dtRersevacion.Rows.Add(Reservaciones[i].ReservaId, Reservaciones[i].ClienteId, Reservaciones[i].Habitacion, Reservaciones[i].FInicio, Reservaciones[i].FFin, Reservaciones[i].Estado);
+                dtRersevacion.Rows.Add(Reservaciones[i].ReservaId, Reservaciones[i].ClienteId, Reservaciones[i].Habitacion, Reservaciones[i].Estado, Reservaciones[i].FInicio, Reservaciones[i].FFin);
             }
         }
         public void mostrarClientes()
@@ -323,6 +323,9 @@ namespace Evaluación1_Hotel.Forms
             cbClienteFacturacion.SelectedIndex = 0;
             cbEmpleadoFacturacion.SelectedIndex = 0;
             dateTimeFechaFactura.Value = DateTime.Now;
+
+            //refresco los comboBox
+            RefreshCombos();
         }
         public void DesactivarBotones()
         {
@@ -336,7 +339,7 @@ namespace Evaluación1_Hotel.Forms
         {
             //desactiva los botones
             DesactivarBotones();
-            
+
 
             //mostrar los hoteles por defecto
 
@@ -756,7 +759,7 @@ namespace Evaluación1_Hotel.Forms
             tabControl.SelectedTab = tabPage;
         }
 
-           
+
         private void btnAgregarCliente_Reservacion_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPage4;
@@ -765,7 +768,7 @@ namespace Evaluación1_Hotel.Forms
 
 
             // desactivo el menu hamburguesa para que no se vea
-           
+
 
         }
 
@@ -773,10 +776,11 @@ namespace Evaluación1_Hotel.Forms
         {
             btnRegresarCliente.Visible = false;
             // Si estamos actualmente en tabPage4
-            if (numPage == 6) 
+            if (numPage == 6)
             { //regresa a factura
                 OpenTabPageAndRememberLast(tabPage6);
-            }else if(numPage == 3)
+            }
+            else if (numPage == 3)
             {
                 //regresa a reservacion
                 OpenTabPageAndRememberLast(tabPage3);
@@ -809,7 +813,7 @@ namespace Evaluación1_Hotel.Forms
             btnRegresarEmpleado_Facturacion.Visible = false;
             // Abre el último TabPage 
             OpenTabPageAndRememberLast(tabPage6); // abre tabPage4 y lo registra como el último abierto.
-            
+
         }
         private void btnAgregarEmpleado_Facturacion_Click(object sender, EventArgs e)
         {
@@ -829,6 +833,189 @@ namespace Evaluación1_Hotel.Forms
             tabControl.SelectedTab = tabPage3;
             btnRegresarPago_Reservacion.Visible = true;
             numPage = 3;
+        }
+
+        string nombreHotelEliminar = "";
+        string numHabitacionEliminar = "";
+        string numReservacionEliminar = "";
+        string numClienteEliminar = "";
+        string numPagosEliminar = "";
+        string numFacturaEliminar = "";
+        string numEmpleadoEliminar = "";
+
+        private void dtHoteles_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            Console.WriteLine(dtHoteles.Rows.Count);
+            //Aqui obtenemos toda la fila (con todos sus encabezados)
+            DataGridViewRow fila = dtHoteles.SelectedRows[0];
+            //aqui obtengo el nombre del producto a eliminar
+            //recordar que el Cells[0] pertenece a la primera columna
+            // Cells[1] sería precio unitario etc...
+            //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
+            //de eliminar
+            lblID.Text = fila.Cells[0].Value.ToString();
+            nombreHotelEliminar = fila.Cells[1].Value.ToString();
+            txtNombre.Text = nombreHotelEliminar;
+            txtDireccion.Text = fila.Cells[2].Value.ToString();
+            txtCiudad.Text = fila.Cells[3].Value.ToString();
+            txtxPais.Text = fila.Cells[4].Value.ToString();
+            SliderStars.Value = int.Parse(fila.Cells[5].Value.ToString());
+
+
+            Console.WriteLine(nombreHotelEliminar);
+
+        }
+
+        private void dtHabitaciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine(dtHabitaciones.Rows.Count);
+            //Aqui obtenemos toda la fila (con todos sus encabezados)
+            DataGridViewRow fila = dtHabitaciones.SelectedRows[0];
+            //aqui obtengo el nombre del producto a eliminar
+            //recordar que el Cells[0] pertenece a la primera columna
+            // Cells[1] sería precio unitario etc...
+            //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
+            //de eliminar
+            lblH.Text = fila.Cells[0].Value.ToString();
+            numHabitacionEliminar = fila.Cells[0].Value.ToString();
+
+            cbTipoHabitacion.SelectedItem = fila.Cells[2].Value.ToString();
+            cbCapacidadHabitacion.SelectedItem = fila.Cells[3].Value.ToString();
+            txtPrecio.Text = fila.Cells[4].Value.ToString();
+            cbNumHotel.SelectedItem = fila.Cells[5].Value.ToString();
+            RefreshCombos();
+        }
+
+        private void dtRersevacion_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine(dtRersevacion.Rows.Count);
+            //Aqui obtenemos toda la fila (con todos sus encabezados)
+            DataGridViewRow fila = dtRersevacion.SelectedRows[0];
+            //aqui obtengo el nombre del producto a eliminar
+            //recordar que el Cells[0] pertenece a la primera columna
+            // Cells[1] sería precio unitario etc...
+            //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
+            //de eliminar
+
+            numReservacionEliminar = fila.Cells[0].Value.ToString();
+            lblH.Text = "N° " + fila.Cells[0].Value.ToString();
+            cbClientes.SelectedItem = fila.Cells[1].Value.ToString();
+            cbHabitacion.SelectedItem = fila.Cells[2].Value.ToString();
+            cbEstado.SelectedItem = fila.Cells[3].Value.ToString();
+            // Convertir el valor de la celda a DateTime usando TryParse y asignarlo al DateTimePicker
+            
+
+            dateTimeInicio.Value = DateTime.Parse( fila.Cells[4].Value.ToString());
+           dateTimeFin.Value = DateTime.Parse(fila.Cells[5].Value.ToString());
+
+            cbHabitacion_SelectedIndexChanged(sender, e);
+            RefreshCombos();
+
+        }
+
+        private void dtC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            Console.WriteLine(dtC.Rows.Count);
+            //Aqui obtenemos toda la fila (con todos sus encabezados)
+            DataGridViewRow fila = dtC.SelectedRows[0];
+            //aqui obtengo el nombre del producto a eliminar
+            //recordar que el Cells[0] pertenece a la primera columna
+            // Cells[1] sería precio unitario etc...
+            //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
+            //de eliminar
+            numClienteEliminar = fila.Cells[0].Value.ToString();
+            txtCedula.Text = numClienteEliminar;
+            txtNombreCliente.Text = fila.Cells[1].Value.ToString();
+            txtApellidoC.Text = fila.Cells[2].Value.ToString();
+            txtEmailC.Text = fila.Cells[3].Value.ToString();
+            txtTel.Text = fila.Cells[4].Value.ToString();
+            txtDireccionC.Text = fila.Cells[5].Value.ToString();
+
+
+            Console.WriteLine(numClienteEliminar);
+        }
+
+        private void dtPagos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine(dtPagos.Rows.Count);
+            //Aqui obtenemos toda la fila (con todos sus encabezados)
+            DataGridViewRow fila = dtPagos.SelectedRows[0];
+            //aqui obtengo el nombre del producto a eliminar
+            //recordar que el Cells[0] pertenece a la primera columna
+            // Cells[1] sería precio unitario etc...
+            //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
+            //de eliminar
+            numPagosEliminar = fila.Cells[0].Value.ToString();
+            lblNumFactura.Text = "N°: " + numPagosEliminar;
+            cbReservaPagos.SelectedItem = fila.Cells[1].Value.ToString();
+            cbMetodosPago.SelectedItem = fila.Cells[2].Value.ToString();
+            txtMontoPago.Text = fila.Cells[3].Value.ToString();
+            dateTimePagos.Value = DateTime.Parse(fila.Cells[4].Value.ToString());
+            RefreshCombos();
+        }
+
+        private void dtFactura_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine(dtFactura.Rows.Count);
+            //Aqui obtenemos toda la fila (con todos sus encabezados)
+            DataGridViewRow fila = dtFactura.SelectedRows[0];
+            //aqui obtengo el nombre del producto a eliminar
+            //recordar que el Cells[0] pertenece a la primera columna
+            // Cells[1] sería precio unitario etc...
+            //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
+            //de eliminar
+            numFacturaEliminar = fila.Cells[0].Value.ToString();
+            lblNumFactura.Text = "N° " + fila.Cells[0].Value.ToString();
+            cbReservacionFactura.SelectedItem = fila.Cells[1].Value.ToString();
+            cbClienteFacturacion.SelectedItem = fila.Cells[2].Value.ToString();
+            cbEmpleadoFacturacion.SelectedItem = fila.Cells[3].Value.ToString();
+            txtMontoFacturacion.Text = fila.Cells[4].Value.ToString();
+            dateTimeFechaFactura.Value = DateTime.Parse(fila.Cells[5].Value.ToString());
+            RefreshCombos();
+        }
+
+        private void dtEmpleado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine(dtEmpleado.Rows.Count);
+            //Aqui obtenemos toda la fila (con todos sus encabezados)
+            DataGridViewRow fila = dtEmpleado.SelectedRows[0];
+            //aqui obtengo el nombre del producto a eliminar
+            //recordar que el Cells[0] pertenece a la primera columna
+            // Cells[1] sería precio unitario etc...
+            //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
+            //de eliminar
+            string posicion = fila.Cells[3].Value.ToString();
+            numEmpleadoEliminar = fila.Cells[0].Value.ToString();
+            txtCedEmpleado.Text = numEmpleadoEliminar;
+            txtNombreEmpleado.Text = fila.Cells[1].Value.ToString();
+            txtApellidoEmpleado.Text = fila.Cells[2].Value.ToString();
+            cbPosicion.SelectedItem = fila.Cells[3].Value.ToString();
+            txtEmailEmpleado.Text = fila.Cells[4].Value.ToString();
+            txtTelEmpleado.Text = fila.Cells[5].Value.ToString();
+            RefreshCombos();
+
+
+            Console.WriteLine(numEmpleadoEliminar);
+        }
+        public void RefreshCombos()
+        {
+
+            cbNumeroHabitacion.Refresh();
+            cbCapacidadHabitacion.Refresh();
+            cbNumHotel.Refresh();
+            cbTipoHabitacion.Refresh();
+            cbClientes.Refresh();
+            cbHabitacion.Refresh();
+            cbEstado.Refresh();
+            cbReservaPagos.Refresh();
+            cbMetodosPago.Refresh();
+            cbReservacionFactura.Refresh();
+            cbClienteFacturacion.Refresh();
+            cbEmpleadoFacturacion.Refresh();
+            cbPosicion.Refresh();
         }
     }
 }
