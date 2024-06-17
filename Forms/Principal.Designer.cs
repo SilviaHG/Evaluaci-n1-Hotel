@@ -189,6 +189,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.btnActualizarHabitacion = new MaterialSkin.Controls.MaterialButton();
+            this.btnActualizarReservacion = new MaterialSkin.Controls.MaterialButton();
+            this.btnActualizarCliente = new MaterialSkin.Controls.MaterialButton();
+            this.btnActualizarPago = new MaterialSkin.Controls.MaterialButton();
+            this.btnActualizaFacturación = new MaterialSkin.Controls.MaterialButton();
+            this.btnActualizarEmpleado = new MaterialSkin.Controls.MaterialButton();
             this.tabControl.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -354,6 +360,7 @@
             this.btnActualizar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnActualizar.UseAccentColor = false;
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAgregarHotel
             // 
@@ -698,6 +705,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnActualizarHabitacion);
             this.panel2.Controls.Add(this.btnEliminarHabitacion);
             this.panel2.Controls.Add(this.btnAgregarHabitacion);
             this.panel2.Location = new System.Drawing.Point(565, 54);
@@ -741,6 +749,8 @@
             this.cbNumHotel.Hint = "N° Hotel";
             this.cbNumHotel.IntegralHeight = false;
             this.cbNumHotel.ItemHeight = 43;
+            this.cbNumHotel.Items.AddRange(new object[] {
+            "0"});
             this.cbNumHotel.Location = new System.Drawing.Point(423, 124);
             this.cbNumHotel.MaxDropDownItems = 4;
             this.cbNumHotel.MouseState = MaterialSkin.MouseState.OUT;
@@ -786,6 +796,7 @@
             this.cbTipoHabitacion.Items.AddRange(new object[] {
             "Ninguna",
             "Sencilla",
+            "Individual",
             "Doble",
             "Matrimoniales",
             "Suite",
@@ -850,16 +861,7 @@
             this.cbNumeroHabitacion.IntegralHeight = false;
             this.cbNumeroHabitacion.ItemHeight = 43;
             this.cbNumeroHabitacion.Items.AddRange(new object[] {
-            "0",
-            "100",
-            "200",
-            "300",
-            "400",
-            "500",
-            "600",
-            "700",
-            "800",
-            "900"});
+            "0"});
             this.cbNumeroHabitacion.Location = new System.Drawing.Point(53, 91);
             this.cbNumeroHabitacion.MaxDropDownItems = 4;
             this.cbNumeroHabitacion.MouseState = MaterialSkin.MouseState.OUT;
@@ -1065,6 +1067,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.btnActualizarReservacion);
             this.panel4.Controls.Add(this.btnEliminarReservacion);
             this.panel4.Controls.Add(this.btnRegresarPago_Reservacion);
             this.panel4.Controls.Add(this.btnAgregarReservacion);
@@ -1076,7 +1079,7 @@
             // btnRegresarPago_Reservacion
             // 
             this.btnRegresarPago_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
-            this.btnRegresarPago_Reservacion.Location = new System.Drawing.Point(25, 151);
+            this.btnRegresarPago_Reservacion.Location = new System.Drawing.Point(25, 161);
             this.btnRegresarPago_Reservacion.Name = "btnRegresarPago_Reservacion";
             this.btnRegresarPago_Reservacion.Size = new System.Drawing.Size(38, 33);
             this.btnRegresarPago_Reservacion.TabIndex = 2;
@@ -1090,7 +1093,7 @@
             this.btnAgregarReservacion.Depth = 0;
             this.btnAgregarReservacion.HighEmphasis = true;
             this.btnAgregarReservacion.Icon = null;
-            this.btnAgregarReservacion.Location = new System.Drawing.Point(25, 17);
+            this.btnAgregarReservacion.Location = new System.Drawing.Point(25, 8);
             this.btnAgregarReservacion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAgregarReservacion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregarReservacion.Name = "btnAgregarReservacion";
@@ -1191,10 +1194,7 @@
             this.cbHabitacion.IntegralHeight = false;
             this.cbHabitacion.ItemHeight = 43;
             this.cbHabitacion.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3"});
+            "0"});
             this.cbHabitacion.Location = new System.Drawing.Point(234, 70);
             this.cbHabitacion.MaxDropDownItems = 4;
             this.cbHabitacion.MouseState = MaterialSkin.MouseState.OUT;
@@ -1220,8 +1220,7 @@
             this.cbClientes.IntegralHeight = false;
             this.cbClientes.ItemHeight = 43;
             this.cbClientes.Items.AddRange(new object[] {
-            "0",
-            "1"});
+            "0"});
             this.cbClientes.Location = new System.Drawing.Point(90, 71);
             this.cbClientes.MaxDropDownItems = 4;
             this.cbClientes.MouseState = MaterialSkin.MouseState.OUT;
@@ -1292,7 +1291,7 @@
             this.Column19,
             this.Column20,
             this.Column21});
-            this.dtC.Location = new System.Drawing.Point(46, 240);
+            this.dtC.Location = new System.Drawing.Point(46, 273);
             this.dtC.Name = "dtC";
             this.dtC.Size = new System.Drawing.Size(688, 150);
             this.dtC.TabIndex = 10;
@@ -1330,7 +1329,7 @@
             // 
             // lblMsjCliente
             // 
-            this.lblMsjCliente.Location = new System.Drawing.Point(299, 424);
+            this.lblMsjCliente.Location = new System.Drawing.Point(299, 457);
             this.lblMsjCliente.Name = "lblMsjCliente";
             this.lblMsjCliente.Size = new System.Drawing.Size(227, 23);
             this.lblMsjCliente.TabIndex = 9;
@@ -1339,18 +1338,19 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.btnActualizarCliente);
             this.panel5.Controls.Add(this.btnEliminarCliente);
             this.panel5.Controls.Add(this.btnRegresarCliente);
             this.panel5.Controls.Add(this.btnAgregarCliente);
             this.panel5.Location = new System.Drawing.Point(582, 60);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(152, 159);
+            this.panel5.Size = new System.Drawing.Size(152, 201);
             this.panel5.TabIndex = 7;
             // 
             // btnRegresarCliente
             // 
             this.btnRegresarCliente.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
-            this.btnRegresarCliente.Location = new System.Drawing.Point(26, 116);
+            this.btnRegresarCliente.Location = new System.Drawing.Point(26, 156);
             this.btnRegresarCliente.Name = "btnRegresarCliente";
             this.btnRegresarCliente.Size = new System.Drawing.Size(38, 33);
             this.btnRegresarCliente.TabIndex = 1;
@@ -1388,7 +1388,7 @@
             this.txtDireccionC.HideSelection = true;
             this.txtDireccionC.Hint = "Dirección";
             this.txtDireccionC.LeadingIcon = null;
-            this.txtDireccionC.Location = new System.Drawing.Point(302, 171);
+            this.txtDireccionC.Location = new System.Drawing.Point(302, 207);
             this.txtDireccionC.MaxLength = 32767;
             this.txtDireccionC.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDireccionC.Name = "txtDireccionC";
@@ -1417,7 +1417,7 @@
             this.txtTel.HideSelection = true;
             this.txtTel.Hint = "Teléfono";
             this.txtTel.LeadingIcon = null;
-            this.txtTel.Location = new System.Drawing.Point(302, 114);
+            this.txtTel.Location = new System.Drawing.Point(302, 138);
             this.txtTel.MaxLength = 32767;
             this.txtTel.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTel.Name = "txtTel";
@@ -1446,7 +1446,7 @@
             this.txtEmailC.HideSelection = true;
             this.txtEmailC.Hint = "Email";
             this.txtEmailC.LeadingIcon = null;
-            this.txtEmailC.Location = new System.Drawing.Point(302, 60);
+            this.txtEmailC.Location = new System.Drawing.Point(302, 73);
             this.txtEmailC.MaxLength = 32767;
             this.txtEmailC.MouseState = MaterialSkin.MouseState.OUT;
             this.txtEmailC.Name = "txtEmailC";
@@ -1475,7 +1475,7 @@
             this.txtApellidoC.HideSelection = true;
             this.txtApellidoC.Hint = "Apellido";
             this.txtApellidoC.LeadingIcon = null;
-            this.txtApellidoC.Location = new System.Drawing.Point(46, 171);
+            this.txtApellidoC.Location = new System.Drawing.Point(46, 207);
             this.txtApellidoC.MaxLength = 32767;
             this.txtApellidoC.MouseState = MaterialSkin.MouseState.OUT;
             this.txtApellidoC.Name = "txtApellidoC";
@@ -1504,7 +1504,7 @@
             this.txtNombreCliente.HideSelection = true;
             this.txtNombreCliente.Hint = "Nombre";
             this.txtNombreCliente.LeadingIcon = null;
-            this.txtNombreCliente.Location = new System.Drawing.Point(46, 114);
+            this.txtNombreCliente.Location = new System.Drawing.Point(46, 138);
             this.txtNombreCliente.MaxLength = 32767;
             this.txtNombreCliente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNombreCliente.Name = "txtNombreCliente";
@@ -1533,7 +1533,7 @@
             this.txtCedula.HideSelection = true;
             this.txtCedula.Hint = "Cédula";
             this.txtCedula.LeadingIcon = null;
-            this.txtCedula.Location = new System.Drawing.Point(46, 60);
+            this.txtCedula.Location = new System.Drawing.Point(46, 73);
             this.txtCedula.MaxLength = 32767;
             this.txtCedula.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCedula.Name = "txtCedula";
@@ -1660,6 +1660,7 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.btnActualizarPago);
             this.panel7.Controls.Add(this.btnEliminarPago);
             this.panel7.Controls.Add(this.btnAgregarPago);
             this.panel7.Location = new System.Drawing.Point(532, 52);
@@ -1675,12 +1676,12 @@
             this.btnAgregarPago.Depth = 0;
             this.btnAgregarPago.HighEmphasis = true;
             this.btnAgregarPago.Icon = null;
-            this.btnAgregarPago.Location = new System.Drawing.Point(45, 32);
+            this.btnAgregarPago.Location = new System.Drawing.Point(40, 10);
             this.btnAgregarPago.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAgregarPago.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregarPago.Name = "btnAgregarPago";
             this.btnAgregarPago.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnAgregarPago.Size = new System.Drawing.Size(75, 36);
+            this.btnAgregarPago.Size = new System.Drawing.Size(87, 36);
             this.btnAgregarPago.TabIndex = 0;
             this.btnAgregarPago.Text = "Agregar";
             this.btnAgregarPago.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -1923,6 +1924,7 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.btnActualizaFacturación);
             this.panel8.Controls.Add(this.btnEliminarFactura);
             this.panel8.Controls.Add(this.btnAgregarFactura);
             this.panel8.Location = new System.Drawing.Point(513, 58);
@@ -1938,7 +1940,7 @@
             this.btnAgregarFactura.Depth = 0;
             this.btnAgregarFactura.HighEmphasis = true;
             this.btnAgregarFactura.Icon = null;
-            this.btnAgregarFactura.Location = new System.Drawing.Point(29, 24);
+            this.btnAgregarFactura.Location = new System.Drawing.Point(29, 6);
             this.btnAgregarFactura.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAgregarFactura.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregarFactura.Name = "btnAgregarFactura";
@@ -2128,6 +2130,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.btnActualizarEmpleado);
             this.panel6.Controls.Add(this.btnEliminarEmpleado);
             this.panel6.Controls.Add(this.btnRegresarEmpleado_Facturacion);
             this.panel6.Controls.Add(this.btnAgregarEmpleado);
@@ -2139,7 +2142,7 @@
             // btnRegresarEmpleado_Facturacion
             // 
             this.btnRegresarEmpleado_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
-            this.btnRegresarEmpleado_Facturacion.Location = new System.Drawing.Point(11, 119);
+            this.btnRegresarEmpleado_Facturacion.Location = new System.Drawing.Point(11, 157);
             this.btnRegresarEmpleado_Facturacion.Name = "btnRegresarEmpleado_Facturacion";
             this.btnRegresarEmpleado_Facturacion.Size = new System.Drawing.Size(38, 33);
             this.btnRegresarEmpleado_Facturacion.TabIndex = 2;
@@ -2154,7 +2157,7 @@
             this.btnAgregarEmpleado.Depth = 0;
             this.btnAgregarEmpleado.HighEmphasis = true;
             this.btnAgregarEmpleado.Icon = null;
-            this.btnAgregarEmpleado.Location = new System.Drawing.Point(11, 17);
+            this.btnAgregarEmpleado.Location = new System.Drawing.Point(11, 13);
             this.btnAgregarEmpleado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAgregarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregarEmpleado.Name = "btnAgregarEmpleado";
@@ -2407,7 +2410,7 @@
             this.btnEliminarHabitacion.Depth = 0;
             this.btnEliminarHabitacion.HighEmphasis = true;
             this.btnEliminarHabitacion.Icon = null;
-            this.btnEliminarHabitacion.Location = new System.Drawing.Point(23, 76);
+            this.btnEliminarHabitacion.Location = new System.Drawing.Point(23, 68);
             this.btnEliminarHabitacion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEliminarHabitacion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminarHabitacion.Name = "btnEliminarHabitacion";
@@ -2428,7 +2431,7 @@
             this.btnEliminarReservacion.Depth = 0;
             this.btnEliminarReservacion.HighEmphasis = true;
             this.btnEliminarReservacion.Icon = null;
-            this.btnEliminarReservacion.Location = new System.Drawing.Point(24, 63);
+            this.btnEliminarReservacion.Location = new System.Drawing.Point(24, 57);
             this.btnEliminarReservacion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEliminarReservacion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminarReservacion.Name = "btnEliminarReservacion";
@@ -2449,7 +2452,7 @@
             this.btnEliminarCliente.Depth = 0;
             this.btnEliminarCliente.HighEmphasis = true;
             this.btnEliminarCliente.Icon = null;
-            this.btnEliminarCliente.Location = new System.Drawing.Point(26, 66);
+            this.btnEliminarCliente.Location = new System.Drawing.Point(26, 57);
             this.btnEliminarCliente.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEliminarCliente.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminarCliente.Name = "btnEliminarCliente";
@@ -2470,12 +2473,12 @@
             this.btnEliminarPago.Depth = 0;
             this.btnEliminarPago.HighEmphasis = true;
             this.btnEliminarPago.Icon = null;
-            this.btnEliminarPago.Location = new System.Drawing.Point(43, 80);
+            this.btnEliminarPago.Location = new System.Drawing.Point(38, 57);
             this.btnEliminarPago.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEliminarPago.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminarPago.Name = "btnEliminarPago";
             this.btnEliminarPago.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnEliminarPago.Size = new System.Drawing.Size(75, 36);
+            this.btnEliminarPago.Size = new System.Drawing.Size(89, 36);
             this.btnEliminarPago.TabIndex = 1;
             this.btnEliminarPago.Text = "Eliminar";
             this.btnEliminarPago.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -2491,7 +2494,7 @@
             this.btnEliminarFactura.Depth = 0;
             this.btnEliminarFactura.HighEmphasis = true;
             this.btnEliminarFactura.Icon = null;
-            this.btnEliminarFactura.Location = new System.Drawing.Point(29, 72);
+            this.btnEliminarFactura.Location = new System.Drawing.Point(29, 52);
             this.btnEliminarFactura.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEliminarFactura.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminarFactura.Name = "btnEliminarFactura";
@@ -2512,7 +2515,7 @@
             this.btnEliminarEmpleado.Depth = 0;
             this.btnEliminarEmpleado.HighEmphasis = true;
             this.btnEliminarEmpleado.Icon = null;
-            this.btnEliminarEmpleado.Location = new System.Drawing.Point(11, 67);
+            this.btnEliminarEmpleado.Location = new System.Drawing.Point(11, 62);
             this.btnEliminarEmpleado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEliminarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
@@ -2568,6 +2571,132 @@
             this.materialLabel3.Size = new System.Drawing.Size(18, 19);
             this.materialLabel3.TabIndex = 13;
             this.materialLabel3.Text = "N°";
+            // 
+            // btnActualizarHabitacion
+            // 
+            this.btnActualizarHabitacion.AutoSize = false;
+            this.btnActualizarHabitacion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnActualizarHabitacion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnActualizarHabitacion.Depth = 0;
+            this.btnActualizarHabitacion.HighEmphasis = true;
+            this.btnActualizarHabitacion.Icon = null;
+            this.btnActualizarHabitacion.Location = new System.Drawing.Point(23, 130);
+            this.btnActualizarHabitacion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnActualizarHabitacion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnActualizarHabitacion.Name = "btnActualizarHabitacion";
+            this.btnActualizarHabitacion.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnActualizarHabitacion.Size = new System.Drawing.Size(89, 40);
+            this.btnActualizarHabitacion.TabIndex = 10;
+            this.btnActualizarHabitacion.Text = "Actualizar";
+            this.btnActualizarHabitacion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnActualizarHabitacion.UseAccentColor = false;
+            this.btnActualizarHabitacion.UseVisualStyleBackColor = true;
+            this.btnActualizarHabitacion.Click += new System.EventHandler(this.btnActualizarHabitacion_Click);
+            // 
+            // btnActualizarReservacion
+            // 
+            this.btnActualizarReservacion.AutoSize = false;
+            this.btnActualizarReservacion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnActualizarReservacion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnActualizarReservacion.Depth = 0;
+            this.btnActualizarReservacion.HighEmphasis = true;
+            this.btnActualizarReservacion.Icon = null;
+            this.btnActualizarReservacion.Location = new System.Drawing.Point(24, 109);
+            this.btnActualizarReservacion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnActualizarReservacion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnActualizarReservacion.Name = "btnActualizarReservacion";
+            this.btnActualizarReservacion.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnActualizarReservacion.Size = new System.Drawing.Size(89, 40);
+            this.btnActualizarReservacion.TabIndex = 11;
+            this.btnActualizarReservacion.Text = "Actualizar";
+            this.btnActualizarReservacion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnActualizarReservacion.UseAccentColor = false;
+            this.btnActualizarReservacion.UseVisualStyleBackColor = true;
+            this.btnActualizarReservacion.Click += new System.EventHandler(this.btnActualizarReservacion_Click);
+            // 
+            // btnActualizarCliente
+            // 
+            this.btnActualizarCliente.AutoSize = false;
+            this.btnActualizarCliente.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnActualizarCliente.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnActualizarCliente.Depth = 0;
+            this.btnActualizarCliente.HighEmphasis = true;
+            this.btnActualizarCliente.Icon = null;
+            this.btnActualizarCliente.Location = new System.Drawing.Point(24, 107);
+            this.btnActualizarCliente.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnActualizarCliente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnActualizarCliente.Name = "btnActualizarCliente";
+            this.btnActualizarCliente.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnActualizarCliente.Size = new System.Drawing.Size(101, 36);
+            this.btnActualizarCliente.TabIndex = 3;
+            this.btnActualizarCliente.Text = "Actualizar";
+            this.btnActualizarCliente.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnActualizarCliente.UseAccentColor = false;
+            this.btnActualizarCliente.UseVisualStyleBackColor = true;
+            this.btnActualizarCliente.Click += new System.EventHandler(this.btnActualizarCliente_Click);
+            // 
+            // btnActualizarPago
+            // 
+            this.btnActualizarPago.AutoSize = false;
+            this.btnActualizarPago.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnActualizarPago.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnActualizarPago.Depth = 0;
+            this.btnActualizarPago.HighEmphasis = true;
+            this.btnActualizarPago.Icon = null;
+            this.btnActualizarPago.Location = new System.Drawing.Point(38, 105);
+            this.btnActualizarPago.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnActualizarPago.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnActualizarPago.Name = "btnActualizarPago";
+            this.btnActualizarPago.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnActualizarPago.Size = new System.Drawing.Size(89, 36);
+            this.btnActualizarPago.TabIndex = 3;
+            this.btnActualizarPago.Text = "Actualizar";
+            this.btnActualizarPago.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnActualizarPago.UseAccentColor = false;
+            this.btnActualizarPago.UseVisualStyleBackColor = true;
+            this.btnActualizarPago.Click += new System.EventHandler(this.btnActualizarPago_Click);
+            // 
+            // btnActualizaFacturación
+            // 
+            this.btnActualizaFacturación.AutoSize = false;
+            this.btnActualizaFacturación.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnActualizaFacturación.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnActualizaFacturación.Depth = 0;
+            this.btnActualizaFacturación.HighEmphasis = true;
+            this.btnActualizaFacturación.Icon = null;
+            this.btnActualizaFacturación.Location = new System.Drawing.Point(29, 98);
+            this.btnActualizaFacturación.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnActualizaFacturación.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnActualizaFacturación.Name = "btnActualizaFacturación";
+            this.btnActualizaFacturación.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnActualizaFacturación.Size = new System.Drawing.Size(103, 36);
+            this.btnActualizaFacturación.TabIndex = 2;
+            this.btnActualizaFacturación.Text = "Actualizar";
+            this.btnActualizaFacturación.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnActualizaFacturación.UseAccentColor = false;
+            this.btnActualizaFacturación.UseVisualStyleBackColor = true;
+            this.btnActualizaFacturación.Click += new System.EventHandler(this.btnActualizaFacturación_Click);
+            // 
+            // btnActualizarEmpleado
+            // 
+            this.btnActualizarEmpleado.AutoSize = false;
+            this.btnActualizarEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnActualizarEmpleado.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnActualizarEmpleado.Depth = 0;
+            this.btnActualizarEmpleado.HighEmphasis = true;
+            this.btnActualizarEmpleado.Icon = null;
+            this.btnActualizarEmpleado.Location = new System.Drawing.Point(11, 109);
+            this.btnActualizarEmpleado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnActualizarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnActualizarEmpleado.Name = "btnActualizarEmpleado";
+            this.btnActualizarEmpleado.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnActualizarEmpleado.Size = new System.Drawing.Size(111, 36);
+            this.btnActualizarEmpleado.TabIndex = 4;
+            this.btnActualizarEmpleado.Text = "Actualizar";
+            this.btnActualizarEmpleado.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnActualizarEmpleado.UseAccentColor = false;
+            this.btnActualizarEmpleado.UseVisualStyleBackColor = true;
+            this.btnActualizarEmpleado.Click += new System.EventHandler(this.btnActualizarEmpleado_Click);
             // 
             // Principal
             // 
@@ -2781,5 +2910,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialButton btnActualizarHabitacion;
+        private MaterialSkin.Controls.MaterialButton btnActualizarReservacion;
+        private MaterialSkin.Controls.MaterialButton btnActualizarCliente;
+        private MaterialSkin.Controls.MaterialButton btnActualizarPago;
+        private MaterialSkin.Controls.MaterialButton btnActualizaFacturación;
+        private MaterialSkin.Controls.MaterialButton btnActualizarEmpleado;
     }
 }
