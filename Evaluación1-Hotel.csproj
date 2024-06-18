@@ -140,5 +140,14 @@
   <ItemGroup>
     <None Include="Resources\icons8-emoji-de-flecha-izquierda-48.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-escoba-con-mucho-polvo-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-escoba-con-mucho-polvo-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-escoba-con-mucho-polvo-24 %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

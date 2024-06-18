@@ -103,6 +103,36 @@ namespace Evaluación1_Hotel.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_escoba_con_mucho_polvo_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-escoba-con-mucho-polvo-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_escoba_con_mucho_polvo_24__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-escoba-con-mucho-polvo-24 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_escoba_con_mucho_polvo_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-escoba-con-mucho-polvo-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_hotel_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-hotel-100", resourceCulture);

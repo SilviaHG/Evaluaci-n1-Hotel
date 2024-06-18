@@ -352,6 +352,7 @@ namespace Evaluación1_Hotel.Forms
         }
         private void Principal_Load(object sender, EventArgs e)
         {
+
             //desactiva los botones
             DesactivarBotones();
 
@@ -2009,6 +2010,89 @@ namespace Evaluación1_Hotel.Forms
 
                     }
                 }
+
+            }
+        }
+
+        private void btnCleanHotel_Click(object sender, EventArgs e)
+        {
+            lblID.Text = contHotel.ToString();
+            lblMsj.Text = "";
+            dtHoteles.ClearSelection();
+            limpiar();
+        }
+
+        private void btnCleanHabitacion_Click(object sender, EventArgs e)
+        {
+            lblH.Text = contHabitacion.ToString();
+            lblMsjHabitacion.Text = "";
+            dtHabitaciones.ClearSelection();
+            limpiar();
+
+        }
+
+        private void btnCleanReservacion_Click(object sender, EventArgs e)
+        {
+            lblNumReservacion.Text = contHabitacion.ToString();
+            lblMsjReserevacion.Text = "";
+            dtRersevacion.ClearSelection();
+            limpiar();
+        }
+
+        private void btnCleanCliente_Click(object sender, EventArgs e)
+        {
+            lblMsjCliente.Text = "";
+            dtC.ClearSelection();
+            limpiar();
+        }
+
+        private void btnCleanPago_Click(object sender, EventArgs e)
+        {
+            lblNumPago.Text = contPagos.ToString();
+            lblMsjPago.Text = "";
+            dtPagos.ClearSelection();
+            limpiar();
+        }
+
+        private void btnCleanFacturacion_Click(object sender, EventArgs e)
+        {
+            lblNumFactura.Text = contFacturas.ToString();
+            lblMsjFactura.Text = "";
+            dtFactura.ClearSelection();
+            limpiar();
+        }
+
+        private void btnCleanEmpleado_Click(object sender, EventArgs e)
+        {
+            lblMsjEmpleado.Text = "";
+            dtEmpleado.ClearSelection();
+            limpiar();
+        }
+
+        private void panel9_Enter(object sender, EventArgs e)
+        {
+            Login l = new Login();
+            l.Show();
+            l.Dock = DockStyle.Fill;
+        }
+
+
+        private void tabControl_Selected(object sender, TabControlEventArgs e)
+        {
+           
+        }
+
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl.SelectedTab == pageLogin)
+            {
+
+                Login l = new Login();
+                l.Dock = DockStyle.Fill;
+                l.TopLevel = false; // Indicar que no es un formulario de nivel superior
+                //l.FormBorderStyle = FormBorderStyle.None; // Quitar el borde del formulario
+                pageLogin.Controls.Add(l); // Agregar el formulario como control dentro de tabPage2
+                l.Show();
 
             }
         }
