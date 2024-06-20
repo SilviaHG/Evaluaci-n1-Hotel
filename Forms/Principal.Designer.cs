@@ -78,6 +78,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnAgregarCliente_Reservacion = new System.Windows.Forms.Button();
             this.txtMontoHRservacion = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtCapacidadHReservacion = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtxTipoHReservacion = new MaterialSkin.Controls.MaterialTextBox2();
@@ -92,6 +93,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnActualizarReservacion = new MaterialSkin.Controls.MaterialButton();
             this.btnEliminarReservacion = new MaterialSkin.Controls.MaterialButton();
+            this.btnRegresarPago_Reservacion = new System.Windows.Forms.Button();
             this.btnAgregarReservacion = new MaterialSkin.Controls.MaterialButton();
             this.cbEstado = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -115,6 +117,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnActualizarCliente = new MaterialSkin.Controls.MaterialButton();
             this.btnEliminarCliente = new MaterialSkin.Controls.MaterialButton();
+            this.btnRegresarCliente = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new MaterialSkin.Controls.MaterialButton();
             this.txtDireccionC = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtTel = new MaterialSkin.Controls.MaterialTextBox2();
@@ -126,6 +129,7 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnAgregarPago_Reservacion = new System.Windows.Forms.Button();
             this.lblMsjPago = new System.Windows.Forms.Label();
             this.dtPagos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -146,14 +150,11 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnAgregarCliente_Facturacion = new System.Windows.Forms.Button();
+            this.btnAgregarReservacion_Facturacion = new System.Windows.Forms.Button();
+            this.btnAgregarEmpleado_Facturacion = new System.Windows.Forms.Button();
             this.lblMsjFactura = new System.Windows.Forms.Label();
             this.dtFactura = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnActualizaFacturación = new MaterialSkin.Controls.MaterialButton();
             this.btnEliminarFactura = new MaterialSkin.Controls.MaterialButton();
@@ -171,6 +172,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnActualizarEmpleado = new MaterialSkin.Controls.MaterialButton();
             this.btnEliminarEmpleado = new MaterialSkin.Controls.MaterialButton();
+            this.btnRegresarEmpleado_Facturacion = new System.Windows.Forms.Button();
             this.btnAgregarEmpleado = new MaterialSkin.Controls.MaterialButton();
             this.dtEmpleado = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -186,24 +188,12 @@
             this.txtNombreEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtCedEmpleado = new MaterialSkin.Controls.MaterialTextBox2();
             this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnCleanHotel = new System.Windows.Forms.Button();
-            this.btnAgregarCliente_Reservacion = new System.Windows.Forms.Button();
-            this.btnRegresarPago_Reservacion = new System.Windows.Forms.Button();
-            this.btnRegresarCliente = new System.Windows.Forms.Button();
-            this.btnAgregarPago_Reservacion = new System.Windows.Forms.Button();
-            this.btnAgregarCliente_Facturacion = new System.Windows.Forms.Button();
-            this.btnAgregarReservacion_Facturacion = new System.Windows.Forms.Button();
-            this.btnAgregarEmpleado_Facturacion = new System.Windows.Forms.Button();
-            this.btnRegresarEmpleado_Facturacion = new System.Windows.Forms.Button();
-            this.btnCleanHabitacion = new System.Windows.Forms.Button();
-            this.btnCleanReservacion = new System.Windows.Forms.Button();
-            this.btnCleanCliente = new System.Windows.Forms.Button();
-            this.btnCleanPago = new System.Windows.Forms.Button();
-            this.btnCleanFacturacion = new System.Windows.Forms.Button();
-            this.btnCleanEmpleado = new System.Windows.Forms.Button();
-            this.pageLogin = new System.Windows.Forms.TabPage();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -747,12 +737,12 @@
             this.btnActualizarHabitacion.Depth = 0;
             this.btnActualizarHabitacion.HighEmphasis = true;
             this.btnActualizarHabitacion.Icon = null;
-            this.btnActualizarHabitacion.Location = new System.Drawing.Point(19, 105);
+            this.btnActualizarHabitacion.Location = new System.Drawing.Point(23, 130);
             this.btnActualizarHabitacion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnActualizarHabitacion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizarHabitacion.Name = "btnActualizarHabitacion";
             this.btnActualizarHabitacion.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnActualizarHabitacion.Size = new System.Drawing.Size(99, 40);
+            this.btnActualizarHabitacion.Size = new System.Drawing.Size(89, 40);
             this.btnActualizarHabitacion.TabIndex = 10;
             this.btnActualizarHabitacion.Text = "Actualizar";
             this.btnActualizarHabitacion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -768,12 +758,12 @@
             this.btnEliminarHabitacion.Depth = 0;
             this.btnEliminarHabitacion.HighEmphasis = true;
             this.btnEliminarHabitacion.Icon = null;
-            this.btnEliminarHabitacion.Location = new System.Drawing.Point(19, 54);
+            this.btnEliminarHabitacion.Location = new System.Drawing.Point(23, 68);
             this.btnEliminarHabitacion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEliminarHabitacion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminarHabitacion.Name = "btnEliminarHabitacion";
             this.btnEliminarHabitacion.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnEliminarHabitacion.Size = new System.Drawing.Size(99, 40);
+            this.btnEliminarHabitacion.Size = new System.Drawing.Size(89, 40);
             this.btnEliminarHabitacion.TabIndex = 9;
             this.btnEliminarHabitacion.Text = "Eliminar";
             this.btnEliminarHabitacion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -987,6 +977,14 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "N° ";
             // 
+            // btnAgregarCliente_Reservacion
+            // 
+            this.label2.Location = new System.Drawing.Point(93, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 23);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "N° ";
+            // 
             // txtMontoHRservacion
             // 
             this.txtMontoHRservacion.AnimateReadOnly = false;
@@ -1143,6 +1141,48 @@
             this.panel4.TabIndex = 9;
             // 
             // btnActualizarReservacion
+            // 
+            this.btnActualizarReservacion.AutoSize = false;
+            this.btnActualizarReservacion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnActualizarReservacion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnActualizarReservacion.Depth = 0;
+            this.btnActualizarReservacion.HighEmphasis = true;
+            this.btnActualizarReservacion.Icon = null;
+            this.btnActualizarReservacion.Location = new System.Drawing.Point(24, 109);
+            this.btnActualizarReservacion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnActualizarReservacion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnActualizarReservacion.Name = "btnActualizarReservacion";
+            this.btnActualizarReservacion.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnActualizarReservacion.Size = new System.Drawing.Size(89, 40);
+            this.btnActualizarReservacion.TabIndex = 11;
+            this.btnActualizarReservacion.Text = "Actualizar";
+            this.btnActualizarReservacion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnActualizarReservacion.UseAccentColor = false;
+            this.btnActualizarReservacion.UseVisualStyleBackColor = true;
+            this.btnActualizarReservacion.Click += new System.EventHandler(this.btnActualizarReservacion_Click);
+            // 
+            // btnEliminarReservacion
+            // 
+            this.btnEliminarReservacion.AutoSize = false;
+            this.btnEliminarReservacion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEliminarReservacion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEliminarReservacion.Depth = 0;
+            this.btnEliminarReservacion.HighEmphasis = true;
+            this.btnEliminarReservacion.Icon = null;
+            this.btnEliminarReservacion.Location = new System.Drawing.Point(24, 57);
+            this.btnEliminarReservacion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEliminarReservacion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminarReservacion.Name = "btnEliminarReservacion";
+            this.btnEliminarReservacion.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEliminarReservacion.Size = new System.Drawing.Size(89, 40);
+            this.btnEliminarReservacion.TabIndex = 10;
+            this.btnEliminarReservacion.Text = "Eliminar";
+            this.btnEliminarReservacion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEliminarReservacion.UseAccentColor = false;
+            this.btnEliminarReservacion.UseVisualStyleBackColor = true;
+            this.btnEliminarReservacion.Click += new System.EventHandler(this.btnEliminarReservacion_Click);
+            // 
+            // btnRegresarPago_Reservacion
             // 
             this.btnActualizarReservacion.AutoSize = false;
             this.btnActualizarReservacion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -1488,6 +1528,48 @@
             this.btnEliminarCliente.UseVisualStyleBackColor = true;
             this.btnEliminarCliente.Click += new System.EventHandler(this.btnEliminarCliente_Click);
             // 
+            // btnRegresarCliente
+            // 
+            this.btnActualizarCliente.AutoSize = false;
+            this.btnActualizarCliente.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnActualizarCliente.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnActualizarCliente.Depth = 0;
+            this.btnActualizarCliente.HighEmphasis = true;
+            this.btnActualizarCliente.Icon = null;
+            this.btnActualizarCliente.Location = new System.Drawing.Point(24, 107);
+            this.btnActualizarCliente.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnActualizarCliente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnActualizarCliente.Name = "btnActualizarCliente";
+            this.btnActualizarCliente.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnActualizarCliente.Size = new System.Drawing.Size(101, 36);
+            this.btnActualizarCliente.TabIndex = 3;
+            this.btnActualizarCliente.Text = "Actualizar";
+            this.btnActualizarCliente.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnActualizarCliente.UseAccentColor = false;
+            this.btnActualizarCliente.UseVisualStyleBackColor = true;
+            this.btnActualizarCliente.Click += new System.EventHandler(this.btnActualizarCliente_Click);
+            // 
+            // btnEliminarCliente
+            // 
+            this.btnEliminarCliente.AutoSize = false;
+            this.btnEliminarCliente.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEliminarCliente.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEliminarCliente.Depth = 0;
+            this.btnEliminarCliente.HighEmphasis = true;
+            this.btnEliminarCliente.Icon = null;
+            this.btnEliminarCliente.Location = new System.Drawing.Point(26, 57);
+            this.btnEliminarCliente.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEliminarCliente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminarCliente.Name = "btnEliminarCliente";
+            this.btnEliminarCliente.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEliminarCliente.Size = new System.Drawing.Size(101, 36);
+            this.btnEliminarCliente.TabIndex = 2;
+            this.btnEliminarCliente.Text = "Eliminar";
+            this.btnEliminarCliente.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEliminarCliente.UseAccentColor = false;
+            this.btnEliminarCliente.UseVisualStyleBackColor = true;
+            this.btnEliminarCliente.Click += new System.EventHandler(this.btnEliminarCliente_Click);
+            // 
             // btnAgregarCliente
             // 
             this.btnAgregarCliente.AutoSize = false;
@@ -1729,6 +1811,14 @@
             this.materialCard5.TabIndex = 0;
             // 
             // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(64, 52);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(22, 23);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "N° ";
+            // 
+            // btnAgregarPago_Reservacion
             // 
             this.label12.Location = new System.Drawing.Point(64, 52);
             this.label12.Name = "label12";
@@ -2015,6 +2105,14 @@
             this.label13.TabIndex = 17;
             this.label13.Text = "N° ";
             // 
+            // btnAgregarCliente_Facturacion
+            // 
+            this.label13.Location = new System.Drawing.Point(96, 58);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(20, 23);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "N° ";
+            // 
             // lblMsjFactura
             // 
             this.lblMsjFactura.Location = new System.Drawing.Point(234, 468);
@@ -2026,7 +2124,6 @@
             // dtFactura
             // 
             this.dtFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13,
@@ -2039,36 +2136,6 @@
             this.dtFactura.Size = new System.Drawing.Size(648, 150);
             this.dtFactura.TabIndex = 8;
             this.dtFactura.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtFactura_CellClick);
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.HeaderText = "N°";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "Reservación";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "Cliente";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.HeaderText = "Empleado";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "Monto";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.HeaderText = "Fecha";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             // 
             // panel8
             // 
@@ -2374,6 +2441,48 @@
             this.btnEliminarEmpleado.UseVisualStyleBackColor = true;
             this.btnEliminarEmpleado.Click += new System.EventHandler(this.btnEliminarEmpleado_Click);
             // 
+            // btnRegresarEmpleado_Facturacion
+            // 
+            this.btnActualizarEmpleado.AutoSize = false;
+            this.btnActualizarEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnActualizarEmpleado.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnActualizarEmpleado.Depth = 0;
+            this.btnActualizarEmpleado.HighEmphasis = true;
+            this.btnActualizarEmpleado.Icon = null;
+            this.btnActualizarEmpleado.Location = new System.Drawing.Point(11, 109);
+            this.btnActualizarEmpleado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnActualizarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnActualizarEmpleado.Name = "btnActualizarEmpleado";
+            this.btnActualizarEmpleado.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnActualizarEmpleado.Size = new System.Drawing.Size(111, 36);
+            this.btnActualizarEmpleado.TabIndex = 4;
+            this.btnActualizarEmpleado.Text = "Actualizar";
+            this.btnActualizarEmpleado.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnActualizarEmpleado.UseAccentColor = false;
+            this.btnActualizarEmpleado.UseVisualStyleBackColor = true;
+            this.btnActualizarEmpleado.Click += new System.EventHandler(this.btnActualizarEmpleado_Click);
+            // 
+            // btnEliminarEmpleado
+            // 
+            this.btnEliminarEmpleado.AutoSize = false;
+            this.btnEliminarEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEliminarEmpleado.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEliminarEmpleado.Depth = 0;
+            this.btnEliminarEmpleado.HighEmphasis = true;
+            this.btnEliminarEmpleado.Icon = null;
+            this.btnEliminarEmpleado.Location = new System.Drawing.Point(11, 62);
+            this.btnEliminarEmpleado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEliminarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
+            this.btnEliminarEmpleado.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEliminarEmpleado.Size = new System.Drawing.Size(111, 36);
+            this.btnEliminarEmpleado.TabIndex = 3;
+            this.btnEliminarEmpleado.Text = "Eliminar";
+            this.btnEliminarEmpleado.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEliminarEmpleado.UseAccentColor = false;
+            this.btnEliminarEmpleado.UseVisualStyleBackColor = true;
+            this.btnEliminarEmpleado.Click += new System.EventHandler(this.btnEliminarEmpleado_Click);
+            // 
             // btnAgregarEmpleado
             // 
             this.btnAgregarEmpleado.AutoSize = false;
@@ -2627,187 +2736,35 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Agregar Empleado";
             // 
-            // label1
+            // dataGridViewTextBoxColumn12
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Image = global::Evaluación1_Hotel.Properties.Resources.hotel;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(760, 600);
-            this.label1.TabIndex = 0;
+            this.dataGridViewTextBoxColumn12.HeaderText = "N°";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
-            // btnCleanHotel
+            // dataGridViewTextBoxColumn13
             // 
-            this.btnCleanHotel.BackColor = System.Drawing.Color.White;
-            this.btnCleanHotel.ForeColor = System.Drawing.Color.White;
-            this.btnCleanHotel.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_escoba_con_mucho_polvo_24;
-            this.btnCleanHotel.Location = new System.Drawing.Point(37, 161);
-            this.btnCleanHotel.Name = "btnCleanHotel";
-            this.btnCleanHotel.Size = new System.Drawing.Size(37, 34);
-            this.btnCleanHotel.TabIndex = 10;
-            this.btnCleanHotel.UseVisualStyleBackColor = false;
-            this.btnCleanHotel.Click += new System.EventHandler(this.btnCleanHotel_Click);
+            this.dataGridViewTextBoxColumn13.HeaderText = "Reservación";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
-            // btnAgregarCliente_Reservacion
+            // dataGridViewTextBoxColumn14
             // 
-            this.btnAgregarCliente_Reservacion.BackColor = System.Drawing.Color.White;
-            this.btnAgregarCliente_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
-            this.btnAgregarCliente_Reservacion.Location = new System.Drawing.Point(52, 81);
-            this.btnAgregarCliente_Reservacion.Name = "btnAgregarCliente_Reservacion";
-            this.btnAgregarCliente_Reservacion.Size = new System.Drawing.Size(35, 39);
-            this.btnAgregarCliente_Reservacion.TabIndex = 15;
-            this.btnAgregarCliente_Reservacion.UseVisualStyleBackColor = false;
-            this.btnAgregarCliente_Reservacion.Click += new System.EventHandler(this.btnAgregarCliente_Reservacion_Click);
+            this.dataGridViewTextBoxColumn14.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
-            // btnRegresarPago_Reservacion
+            // dataGridViewTextBoxColumn15
             // 
-            this.btnRegresarPago_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
-            this.btnRegresarPago_Reservacion.Location = new System.Drawing.Point(25, 161);
-            this.btnRegresarPago_Reservacion.Name = "btnRegresarPago_Reservacion";
-            this.btnRegresarPago_Reservacion.Size = new System.Drawing.Size(38, 33);
-            this.btnRegresarPago_Reservacion.TabIndex = 2;
-            this.btnRegresarPago_Reservacion.UseVisualStyleBackColor = true;
-            this.btnRegresarPago_Reservacion.Click += new System.EventHandler(this.btnRegresarPago_Reservacion_Click);
+            this.dataGridViewTextBoxColumn15.HeaderText = "Empleado";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
-            // btnRegresarCliente
+            // dataGridViewTextBoxColumn16
             // 
-            this.btnRegresarCliente.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
-            this.btnRegresarCliente.Location = new System.Drawing.Point(26, 156);
-            this.btnRegresarCliente.Name = "btnRegresarCliente";
-            this.btnRegresarCliente.Size = new System.Drawing.Size(38, 33);
-            this.btnRegresarCliente.TabIndex = 1;
-            this.btnRegresarCliente.UseVisualStyleBackColor = true;
-            this.btnRegresarCliente.Click += new System.EventHandler(this.btnRegresarCliente_Click);
+            this.dataGridViewTextBoxColumn16.HeaderText = "Monto";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             // 
-            // btnAgregarPago_Reservacion
+            // dataGridViewTextBoxColumn17
             // 
-            this.btnAgregarPago_Reservacion.BackColor = System.Drawing.Color.White;
-            this.btnAgregarPago_Reservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
-            this.btnAgregarPago_Reservacion.Location = new System.Drawing.Point(32, 185);
-            this.btnAgregarPago_Reservacion.Name = "btnAgregarPago_Reservacion";
-            this.btnAgregarPago_Reservacion.Size = new System.Drawing.Size(35, 39);
-            this.btnAgregarPago_Reservacion.TabIndex = 16;
-            this.btnAgregarPago_Reservacion.UseVisualStyleBackColor = false;
-            this.btnAgregarPago_Reservacion.Click += new System.EventHandler(this.btnAgregarPago_Reservacion_Click);
-            // 
-            // btnAgregarCliente_Facturacion
-            // 
-            this.btnAgregarCliente_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
-            this.btnAgregarCliente_Facturacion.Location = new System.Drawing.Point(75, 173);
-            this.btnAgregarCliente_Facturacion.Name = "btnAgregarCliente_Facturacion";
-            this.btnAgregarCliente_Facturacion.Size = new System.Drawing.Size(32, 31);
-            this.btnAgregarCliente_Facturacion.TabIndex = 12;
-            this.btnAgregarCliente_Facturacion.UseVisualStyleBackColor = true;
-            this.btnAgregarCliente_Facturacion.Click += new System.EventHandler(this.btnAgregarCliente_Facturacion_Click);
-            // 
-            // btnAgregarReservacion_Facturacion
-            // 
-            this.btnAgregarReservacion_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
-            this.btnAgregarReservacion_Facturacion.Location = new System.Drawing.Point(75, 108);
-            this.btnAgregarReservacion_Facturacion.Name = "btnAgregarReservacion_Facturacion";
-            this.btnAgregarReservacion_Facturacion.Size = new System.Drawing.Size(32, 31);
-            this.btnAgregarReservacion_Facturacion.TabIndex = 11;
-            this.btnAgregarReservacion_Facturacion.UseVisualStyleBackColor = true;
-            this.btnAgregarReservacion_Facturacion.Click += new System.EventHandler(this.btnAgregarReservacion_Facturacion_Click);
-            // 
-            // btnAgregarEmpleado_Facturacion
-            // 
-            this.btnAgregarEmpleado_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_más_24;
-            this.btnAgregarEmpleado_Facturacion.Location = new System.Drawing.Point(296, 108);
-            this.btnAgregarEmpleado_Facturacion.Name = "btnAgregarEmpleado_Facturacion";
-            this.btnAgregarEmpleado_Facturacion.Size = new System.Drawing.Size(32, 31);
-            this.btnAgregarEmpleado_Facturacion.TabIndex = 10;
-            this.btnAgregarEmpleado_Facturacion.UseVisualStyleBackColor = true;
-            this.btnAgregarEmpleado_Facturacion.Click += new System.EventHandler(this.btnAgregarEmpleado_Facturacion_Click);
-            // 
-            // btnRegresarEmpleado_Facturacion
-            // 
-            this.btnRegresarEmpleado_Facturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_emoji_de_flecha_izquierda_48;
-            this.btnRegresarEmpleado_Facturacion.Location = new System.Drawing.Point(12, 157);
-            this.btnRegresarEmpleado_Facturacion.Name = "btnRegresarEmpleado_Facturacion";
-            this.btnRegresarEmpleado_Facturacion.Size = new System.Drawing.Size(38, 33);
-            this.btnRegresarEmpleado_Facturacion.TabIndex = 2;
-            this.btnRegresarEmpleado_Facturacion.UseVisualStyleBackColor = true;
-            this.btnRegresarEmpleado_Facturacion.Click += new System.EventHandler(this.btnRegresarEmpleado_Facturacion_Click);
-            // 
-            // btnCleanHabitacion
-            // 
-            this.btnCleanHabitacion.BackColor = System.Drawing.Color.White;
-            this.btnCleanHabitacion.ForeColor = System.Drawing.Color.White;
-            this.btnCleanHabitacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_escoba_con_mucho_polvo_24;
-            this.btnCleanHabitacion.Location = new System.Drawing.Point(49, 152);
-            this.btnCleanHabitacion.Name = "btnCleanHabitacion";
-            this.btnCleanHabitacion.Size = new System.Drawing.Size(37, 34);
-            this.btnCleanHabitacion.TabIndex = 11;
-            this.btnCleanHabitacion.UseVisualStyleBackColor = false;
-            this.btnCleanHabitacion.Click += new System.EventHandler(this.btnCleanHabitacion_Click);
-            // 
-            // btnCleanReservacion
-            // 
-            this.btnCleanReservacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_escoba_con_mucho_polvo_24;
-            this.btnCleanReservacion.Location = new System.Drawing.Point(75, 158);
-            this.btnCleanReservacion.Name = "btnCleanReservacion";
-            this.btnCleanReservacion.Size = new System.Drawing.Size(38, 33);
-            this.btnCleanReservacion.TabIndex = 12;
-            this.btnCleanReservacion.UseVisualStyleBackColor = true;
-            this.btnCleanReservacion.Click += new System.EventHandler(this.btnCleanReservacion_Click);
-            // 
-            // btnCleanCliente
-            // 
-            this.btnCleanCliente.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_escoba_con_mucho_polvo_24;
-            this.btnCleanCliente.Location = new System.Drawing.Point(87, 156);
-            this.btnCleanCliente.Name = "btnCleanCliente";
-            this.btnCleanCliente.Size = new System.Drawing.Size(38, 33);
-            this.btnCleanCliente.TabIndex = 13;
-            this.btnCleanCliente.UseVisualStyleBackColor = true;
-            this.btnCleanCliente.Click += new System.EventHandler(this.btnCleanCliente_Click);
-            // 
-            // btnCleanPago
-            // 
-            this.btnCleanPago.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_escoba_con_mucho_polvo_24;
-            this.btnCleanPago.Location = new System.Drawing.Point(61, 151);
-            this.btnCleanPago.Name = "btnCleanPago";
-            this.btnCleanPago.Size = new System.Drawing.Size(38, 33);
-            this.btnCleanPago.TabIndex = 14;
-            this.btnCleanPago.UseVisualStyleBackColor = true;
-            this.btnCleanPago.Click += new System.EventHandler(this.btnCleanPago_Click);
-            // 
-            // btnCleanFacturacion
-            // 
-            this.btnCleanFacturacion.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_escoba_con_mucho_polvo_24;
-            this.btnCleanFacturacion.Location = new System.Drawing.Point(61, 143);
-            this.btnCleanFacturacion.Name = "btnCleanFacturacion";
-            this.btnCleanFacturacion.Size = new System.Drawing.Size(38, 33);
-            this.btnCleanFacturacion.TabIndex = 15;
-            this.btnCleanFacturacion.UseVisualStyleBackColor = true;
-            this.btnCleanFacturacion.Click += new System.EventHandler(this.btnCleanFacturacion_Click);
-            // 
-            // btnCleanEmpleado
-            // 
-            this.btnCleanEmpleado.Image = global::Evaluación1_Hotel.Properties.Resources.icons8_escoba_con_mucho_polvo_24;
-            this.btnCleanEmpleado.Location = new System.Drawing.Point(84, 157);
-            this.btnCleanEmpleado.Name = "btnCleanEmpleado";
-            this.btnCleanEmpleado.Size = new System.Drawing.Size(38, 33);
-            this.btnCleanEmpleado.TabIndex = 16;
-            this.btnCleanEmpleado.UseVisualStyleBackColor = true;
-            this.btnCleanEmpleado.Click += new System.EventHandler(this.btnCleanEmpleado_Click);
-            // 
-            // pageLogin
-            // 
-            this.pageLogin.Controls.Add(this.panel9);
-            this.pageLogin.Location = new System.Drawing.Point(4, 22);
-            this.pageLogin.Name = "pageLogin";
-            this.pageLogin.Size = new System.Drawing.Size(764, 604);
-            this.pageLogin.TabIndex = 8;
-            this.pageLogin.Text = "Prueba";
-            this.pageLogin.UseVisualStyleBackColor = true;
-            // 
-            // panel9
-            // 
-            this.panel9.Location = new System.Drawing.Point(35, 35);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(453, 268);
-            this.panel9.TabIndex = 0;
+            this.dataGridViewTextBoxColumn17.HeaderText = "Fecha";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             // 
             // Principal
             // 
@@ -2985,12 +2942,6 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtMontoFacturacion;
         private System.Windows.Forms.Label lblMsjFactura;
         private System.Windows.Forms.DataGridView dtFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.Panel panel8;
         private MaterialSkin.Controls.MaterialButton btnAgregarFactura;
         private MaterialSkin.Controls.MaterialTextBox2 txtMontoHRservacion;
@@ -3028,14 +2979,11 @@
         private MaterialSkin.Controls.MaterialButton btnActualizarPago;
         private MaterialSkin.Controls.MaterialButton btnActualizaFacturación;
         private MaterialSkin.Controls.MaterialButton btnActualizarEmpleado;
-        private System.Windows.Forms.Button btnCleanHotel;
-        private System.Windows.Forms.Button btnCleanHabitacion;
-        private System.Windows.Forms.Button btnCleanReservacion;
-        private System.Windows.Forms.Button btnCleanCliente;
-        private System.Windows.Forms.Button btnCleanPago;
-        private System.Windows.Forms.Button btnCleanFacturacion;
-        private System.Windows.Forms.Button btnCleanEmpleado;
-        private System.Windows.Forms.TabPage pageLogin;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
     }
 }
